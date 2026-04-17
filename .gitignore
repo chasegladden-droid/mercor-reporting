@@ -1,0 +1,5 @@
+.env
+mentions.log
+slack_report.log
+__pycache__/
+*.pyc
