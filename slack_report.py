@@ -27,6 +27,9 @@ TWITTER_PERSONAL_ACCOUNTS = {
     "1029157733528829952": "Adarsh",
 }
 
+# Accounts monitored directly (full note_tweet text checked — bypasses Twitter search truncation)
+WATCHED_TWITTER_USERNAMES = ["ArtificialAnlys", "EpochAIResearch"]
+
 APEX_KEYWORDS = ["apex-agents", "apex-swe", "apex-agents-aa"]
 
 
@@ -165,6 +168,62 @@ def get_third_party_mentions(start_date="2026-01-01", max_results=500):
             break
         params["next_token"] = next_token
 
+    return all_posts
+
+
+def get_watched_account_tweets():
+    headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
+    all_posts = []
+
+    for username in WATCHED_TWITTER_USERNAMES:
+        # Look up user ID
+        resp = requests.get(f"https://api.twitter.com/2/users/by/username/{username}", headers=headers)
+        if not resp.ok:
+            print(f"Could not look up @{username}: {resp.status_code}")
+            continue
+        user_id = resp.json().get("data", {}).get("id")
+        if not user_id:
+            print(f"No user ID found for @{username}")
+            continue
+
+        params = {
+            "max_results": 100,
+            "tweet.fields": "created_at,text,public_metrics,note_tweet",
+            "expansions": "attachments.media_keys",
+        }
+        url = f"https://api.twitter.com/2/users/{user_id}/tweets"
+        while True:
+            resp = requests.get(url, headers=headers, params=params)
+            if not resp.ok or not resp.text.strip():
+                print(f"Timeline fetch failed for @{username}: {resp.status_code}")
+                break
+            try:
+                data = resp.json()
+            except Exception as e:
+                print(f"Parse error for @{username}: {e}")
+                break
+            for t in data.get("data", []):
+                # Use full note_tweet text if available, else short text
+                full_text = t.get("note_tweet", {}).get("text") or t.get("text", "")
+                if not any(kw in full_text.lower() for kw in APEX_KEYWORDS):
+                    continue
+                m = t.get("public_metrics", {})
+                all_posts.append({
+                    "created_time": t["created_at"],
+                    "text": full_text,
+                    "perma_link": f"https://twitter.com/{username}/status/{t['id']}",
+                    "metrics": {
+                        "lifetime.impressions": m.get("impression_count", 0),
+                        "lifetime.engagements": m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0),
+                    },
+                    "source": "3rd Party",
+                })
+            next_token = data.get("meta", {}).get("next_token")
+            if not next_token:
+                break
+            params["pagination_token"] = next_token
+
+    print(f"Found {len(all_posts)} APEX posts from watched accounts ({', '.join('@' + u for u in WATCHED_TWITTER_USERNAMES)})")
     return all_posts
 
 
@@ -357,10 +416,17 @@ if __name__ == "__main__":
     print("Fetching 3rd party mentions...")
     third_party = get_third_party_mentions(start_date="2026-01-01")
 
+    print("Fetching watched account tweets...")
+    watched = get_watched_account_tweets()
+
     print("Fetching Clay web intent data...")
     clay_daily = fetch_clay_web_intent()
 
-    all_posts = posts + personal + third_party
+    # Deduplicate watched posts against third_party by perma_link
+    third_party_links = {p["perma_link"] for p in third_party}
+    watched_new = [p for p in watched if p["perma_link"] not in third_party_links]
+
+    all_posts = posts + personal + third_party + watched_new
     monthly, post_log = build_report(all_posts, profile_map)
     message = format_slack_message(monthly, post_log, profile_map, clay_daily)
     send_to_slack(message)
