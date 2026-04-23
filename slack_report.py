@@ -127,7 +127,6 @@ def get_third_party_mentions(start_date="2026-01-01", max_results=500):
     )
     params = {
         "query": query,
-        "start_time": f"{start_date}T00:00:00Z",
         "max_results": 100,
         "tweet.fields": "created_at,text,public_metrics",
     }
@@ -135,7 +134,18 @@ def get_third_party_mentions(start_date="2026-01-01", max_results=500):
     fetched = 0
 
     while fetched < max_results:
-        data = requests.get("https://api.twitter.com/2/tweets/search/all", headers=headers, params=params).json()
+        resp = requests.get("https://api.twitter.com/2/tweets/search/recent", headers=headers, params=params)
+        if not resp.ok or not resp.text.strip():
+            print(f"Twitter search/recent returned {resp.status_code} — skipping 3rd party mentions")
+            break
+        try:
+            data = resp.json()
+        except Exception as e:
+            print(f"Twitter response parse error: {e} — skipping 3rd party mentions")
+            break
+        if "errors" in data and "data" not in data:
+            print(f"Twitter API error: {data['errors']} — skipping 3rd party mentions")
+            break
         tweets = data.get("data", [])
         for t in tweets:
             m = t.get("public_metrics", {})
