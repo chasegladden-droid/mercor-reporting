@@ -27,7 +27,7 @@ def check_mercor_mentions():
     start_time = (datetime.now(timezone.utc) - timedelta(minutes=lookback)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     params = {
-        "query": "mercor is:verified -from:mercor_ai -from:BrendanFoody -from:adarsh_exe -is:retweet lang:en",
+        "query": "mercor -from:mercor_ai -from:BrendanFoody -from:adarsh_exe -is:retweet lang:en",
         "start_time": start_time,
         "max_results": 100,
         "tweet.fields": "created_at,text,public_metrics,author_id",
