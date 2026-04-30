@@ -22,3 +22,11 @@ jobs:
         env:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Commit sent IDs
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add sent_mention_ids.txt || true
+          git diff --staged --quiet || git commit -m "chore: update sent mention IDs"
+          git push || true

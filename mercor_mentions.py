@@ -11,7 +11,55 @@ SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 MIN_FOLLOWERS = 5000
 FIRST_RUN_HOUR = 9  # 9am PT — first cron run of the day
 FIRST_RUN_LOOKBACK_MINUTES = 725  # 9pm previous day to 9am = 12 hours + 5 min buffer
-LOOKBACK_MINUTES = 65  # all other runs
+LOOKBACK_MINUTES = 240  # 4 hours — buffers up to 3 skipped GitHub Actions runs
+
+SENT_IDS_FILE = "sent_mention_ids.txt"
+SENT_IDS_TTL_DAYS = 7
+
+
+def load_sent_ids():
+    if not os.path.exists(SENT_IDS_FILE):
+        return set()
+    cutoff = datetime.now(timezone.utc) - timedelta(days=SENT_IDS_TTL_DAYS)
+    ids = set()
+    with open(SENT_IDS_FILE) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            parts = line.split(",", 1)
+            if len(parts) == 2:
+                try:
+                    ts = datetime.fromisoformat(parts[0])
+                    if ts > cutoff:
+                        ids.add(parts[1])
+                except ValueError:
+                    pass
+    return ids
+
+
+def save_sent_ids(new_ids):
+    existing = []
+    cutoff = datetime.now(timezone.utc) - timedelta(days=SENT_IDS_TTL_DAYS)
+    if os.path.exists(SENT_IDS_FILE):
+        with open(SENT_IDS_FILE) as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                parts = line.split(",", 1)
+                if len(parts) == 2:
+                    try:
+                        ts = datetime.fromisoformat(parts[0])
+                        if ts > cutoff:
+                            existing.append(line)
+                    except ValueError:
+                        pass
+    now = datetime.now(timezone.utc).isoformat()
+    for tweet_id in new_ids:
+        existing.append(f"{now},{tweet_id}")
+    with open(SENT_IDS_FILE, "w") as f:
+        f.write("\n".join(existing) + "\n")
 
 
 def get_lookback_minutes():
@@ -52,6 +100,7 @@ def check_mercor_mentions():
             followers = author.get("public_metrics", {}).get("followers_count", 0)
             if followers >= MIN_FOLLOWERS:
                 qualifying.append({
+                    "id": tweet["id"],
                     "text": tweet["text"],
                     "created_at": tweet["created_at"],
                     "url": f"https://twitter.com/i/web/status/{tweet['id']}",
@@ -109,4 +158,11 @@ if __name__ == "__main__":
     print(f"Checking for verified Mercor mentions in the last {lookback} minutes...")
     mentions = check_mercor_mentions()
     print(f"Found {len(mentions)} mention(s) with {MIN_FOLLOWERS:,}+ followers.")
-    send_slack_alert(mentions)
+
+    sent_ids = load_sent_ids()
+    new_mentions = [m for m in mentions if m["id"] not in sent_ids]
+    print(f"{len(new_mentions)} new (not previously alerted).")
+
+    send_slack_alert(new_mentions)
+    if new_mentions:
+        save_sent_ids([m["id"] for m in new_mentions])
