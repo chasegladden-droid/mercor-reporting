@@ -1,9 +1,9 @@
-name: Monday Slack Report
+name: Daily Slack Report
 
 on:
   schedule:
-    # Every Monday at 9am PT (16:00 UTC)
-    - cron: "0 16 * * 1"
+    # Every weekday (Mon–Fri) at 9am PT (16:00 UTC)
+    - cron: "0 16 * * 1-5"
   workflow_dispatch:
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
 
       - run: pip install requests python-dotenv
 
-      - run: python slack_report.py
+      - run: python marketing-reports/daily-social-report/slack_report.py
         env:
           SPROUT_API_TOKEN: ${{ secrets.SPROUT_API_TOKEN }}
           SPROUT_CUSTOMER_ID: ${{ secrets.SPROUT_CUSTOMER_ID }}
