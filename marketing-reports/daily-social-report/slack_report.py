@@ -2,7 +2,7 @@ import csv
 import io
 import os
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from collections import defaultdict
 from dotenv import load_dotenv
 
@@ -13,6 +13,12 @@ SPROUT_CUSTOMER_ID = os.getenv("SPROUT_CUSTOMER_ID")
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 CLAY_API_KEY = os.getenv("CLAY_API_KEY")
+PROFOUND_API_KEY = os.getenv("PROFOUND_API_KEY")
+
+PROFOUND_CATEGORIES = [
+    ("4aeb1dff-83d1-47a3-925c-1a4adb25a572", "AI Recruiting"),
+    ("4ffa3cef-713b-465d-8e15-7fb5b836153e", "AI Recruiting Marketplace"),
+]
 
 CLAY_WORKSPACE_ID = "532985"
 CLAY_WEB_INTENT_TABLE_ID = "t_0tdfylwXHPXVGjXUbPe"
@@ -331,7 +337,107 @@ def format_clay_section(daily):
     return "\n".join(lines)
 
 
-def format_slack_message(monthly, post_log, profile_map, clay_daily=None):
+def fetch_profound_data():
+    if not PROFOUND_API_KEY:
+        return None
+    headers = {"x-api-key": PROFOUND_API_KEY, "Content-Type": "application/json"}
+    today = datetime.now(timezone.utc)
+    periods = {
+        "current": (
+            (today - timedelta(days=7)).strftime("%Y-%m-%d"),
+            today.strftime("%Y-%m-%d"),
+        ),
+        "previous": (
+            (today - timedelta(days=14)).strftime("%Y-%m-%d"),
+            (today - timedelta(days=7)).strftime("%Y-%m-%d"),
+        ),
+    }
+
+    results = {}
+    for cat_id, cat_name in PROFOUND_CATEGORIES:
+        results[cat_name] = {}
+        for period, (start, end) in periods.items():
+            vis = requests.post(
+                "https://api.tryprofound.com/v1/reports/visibility",
+                headers=headers,
+                json={
+                    "category_id": cat_id,
+                    "start_date": start,
+                    "end_date": end,
+                    "metrics": ["average_position", "executions", "mentions_count", "share_of_voice", "visibility_score"],
+                },
+                timeout=15,
+            ).json()
+            sent = requests.post(
+                "https://api.tryprofound.com/v1/reports/sentiment",
+                headers=headers,
+                json={
+                    "category_id": cat_id,
+                    "start_date": start,
+                    "end_date": end,
+                    "metrics": ["positive", "negative", "occurrences"],
+                },
+                timeout=15,
+            ).json()
+
+            vis_row = vis.get("data", [{}])[0].get("metrics", [None] * 5)
+            sent_row = sent.get("data", [{}])[0].get("metrics", [None] * 3)
+            results[cat_name][period] = {
+                "average_position": vis_row[0],
+                "executions": vis_row[1],
+                "mentions_count": vis_row[2],
+                "share_of_voice": vis_row[3],
+                "visibility_score": vis_row[4],
+                "positive": sent_row[0],
+                "negative": sent_row[1],
+                "occurrences": sent_row[2],
+            }
+    return results
+
+
+def _wow(curr, prev, pct=False, lower_is_better=False):
+    if curr is None or prev is None or prev == 0:
+        return ""
+    delta = curr - prev
+    arrow = ("↓" if delta < 0 else "↑") if not lower_is_better else ("↑" if delta < 0 else "↓")
+    if pct:
+        return f" {arrow} {abs(delta):.1f}pts WoW"
+    change_pct = (delta / abs(prev)) * 100
+    sign = "+" if delta > 0 else ""
+    return f" {arrow} {sign}{change_pct:.0f}% WoW"
+
+
+def format_profound_section(data):
+    if not data:
+        return None
+    lines = []
+    for cat_name, periods in data.items():
+        c = periods.get("current", {})
+        p = periods.get("previous", {})
+        pos = c.get("average_position")
+        vis = c.get("visibility_score")
+        mentions = c.get("mentions_count")
+        sov = c.get("share_of_voice")
+        pos_sent = c.get("positive", 0) or 0
+        neg_sent = c.get("negative", 0) or 0
+        total_sent = pos_sent + neg_sent
+        sent_pct = (pos_sent / total_sent * 100) if total_sent else 0
+
+        lines.append(f"*{cat_name}*")
+        lines.append(
+            f"  Visibility Score: {vis:.1f}{_wow(vis, p.get('visibility_score'), pct=True)}  |  "
+            f"Avg Position: {pos:.1f}{_wow(pos, p.get('average_position'), lower_is_better=True)}"
+        )
+        lines.append(
+            f"  Mentions: {int(mentions):,}{_wow(mentions, p.get('mentions_count'))}  |  "
+            f"Share of Voice: {sov:.1f}%{_wow(sov, p.get('share_of_voice'), pct=True)}"
+        )
+        lines.append(f"  Sentiment: {sent_pct:.0f}% positive ({int(pos_sent):,} pos / {int(neg_sent):,} neg)")
+        lines.append("")
+    return "\n".join(lines).strip()
+
+
+def format_slack_message(monthly, post_log, profile_map, clay_daily=None, profound_data=None):
     today = datetime.now(timezone.utc).strftime("%B %d, %Y")
     current_month = datetime.now(timezone.utc).strftime("%Y-%m")
 
@@ -392,6 +498,14 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None):
                 {"type": "section", "text": {"type": "mrkdwn", "text": f"*APEX Web Intent — Visits from $10M+ Companies*\n```{clay_text}```"}},
             ]
 
+    if profound_data:
+        profound_text = format_profound_section(profound_data)
+        if profound_text:
+            blocks += [
+                {"type": "divider"},
+                {"type": "section", "text": {"type": "mrkdwn", "text": f"*AEO — AI Visibility (Last 7 Days vs Prior 7 Days)*\n{profound_text}"}},
+            ]
+
     return {"blocks": blocks}
 
 
@@ -422,11 +536,14 @@ if __name__ == "__main__":
     print("Fetching Clay web intent data...")
     clay_daily = fetch_clay_web_intent()
 
+    print("Fetching Profound AEO data...")
+    profound_data = fetch_profound_data()
+
     # Deduplicate watched posts against third_party by perma_link
     third_party_links = {p["perma_link"] for p in third_party}
     watched_new = [p for p in watched if p["perma_link"] not in third_party_links]
 
     all_posts = posts + personal + third_party + watched_new
     monthly, post_log = build_report(all_posts, profile_map)
-    message = format_slack_message(monthly, post_log, profile_map, clay_daily)
+    message = format_slack_message(monthly, post_log, profile_map, clay_daily, profound_data)
     send_to_slack(message)

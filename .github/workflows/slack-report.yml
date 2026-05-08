@@ -25,3 +25,4 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           CLAY_API_KEY: ${{ secrets.CLAY_API_KEY }}
+          PROFOUND_API_KEY: ${{ secrets.PROFOUND_API_KEY }}
