@@ -14,6 +14,8 @@ TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 CLAY_API_KEY = os.getenv("CLAY_API_KEY")
 PROFOUND_API_KEY = os.getenv("PROFOUND_API_KEY")
+NOTION_API_KEY = os.getenv("NOTION_API_KEY")
+NOTION_PARENT_PAGE_ID = os.getenv("NOTION_PARENT_PAGE_ID", "35a5392cc93e81a4bd4fca8d2fd0e8b0")
 
 PROFOUND_CATEGORIES = [
     ("4aeb1dff-83d1-47a3-925c-1a4adb25a572", "AI Recruiting"),
@@ -509,6 +511,151 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None, profou
     return {"blocks": blocks}
 
 
+def _notion_text(content, bold=False, code=False):
+    annotations = {}
+    if bold:
+        annotations["bold"] = True
+    if code:
+        annotations["code"] = True
+    block = {"type": "text", "text": {"content": content[:2000]}}
+    if annotations:
+        block["annotations"] = annotations
+    return block
+
+
+def _notion_paragraph(*parts):
+    return {"object": "block", "type": "paragraph", "paragraph": {"rich_text": list(parts)}}
+
+
+def _notion_heading(level, text):
+    t = f"heading_{level}"
+    return {"object": "block", "type": t, t: {"rich_text": [_notion_text(text)]}}
+
+
+def _notion_code(content, language="plain text"):
+    return {
+        "object": "block",
+        "type": "code",
+        "code": {"rich_text": [_notion_text(content[:2000])], "language": language},
+    }
+
+
+def _notion_divider():
+    return {"object": "block", "type": "divider", "divider": {}}
+
+
+def post_to_notion(monthly, post_log, profile_map, clay_daily=None, profound_data=None):
+    if not NOTION_API_KEY:
+        print("No NOTION_API_KEY — skipping Notion.")
+        return
+
+    headers = {
+        "Authorization": f"Bearer {NOTION_API_KEY}",
+        "Notion-Version": "2022-06-28",
+        "Content-Type": "application/json",
+    }
+
+    today = datetime.now(timezone.utc)
+    date_str = today.strftime("%Y-%m-%d")
+    date_display = today.strftime("%B %d, %Y")
+
+    resp = requests.post(
+        "https://api.notion.com/v1/pages",
+        headers=headers,
+        json={
+            "parent": {"page_id": NOTION_PARENT_PAGE_ID},
+            "properties": {"title": {"title": [{"text": {"content": date_str}}]}},
+        },
+    )
+    page = resp.json()
+    page_id = page.get("id")
+    if not page_id:
+        print(f"Notion page creation failed: {page}")
+        return
+
+    current_month = today.strftime("%Y-%m")
+    ytd_impressions = sum(v["Total Impressions"] for v in monthly.values())
+    ytd_engagements = sum(v["Total Engagements"] for v in monthly.values())
+
+    li_personal = sorted([v for v in profile_map.values() if "LinkedIn" in v and v != "Mercor LinkedIn"])
+    header_row = (
+        f"{'Month':<10} {'TW:Mercor':>9} {'TW:Bren':>8} {'TW:Adar':>8} "
+        f"{'TW:3Pty':>8} {'TW:Tot':>8} {'LI:Mercor':>9}"
+        + "".join(f" {'LI:' + a.split()[0]:>8}" for a in li_personal)
+        + f" {'LI:Tot':>8} {'Total':>9}"
+    )
+    table_rows = [header_row, "-" * len(header_row)]
+    for month in sorted(monthly.keys()):
+        label = datetime.strptime(month, "%Y-%m").strftime("%b %Y")
+        m = monthly[month]
+        marker = " ◀" if month == current_month else ""
+        li_vals = "".join(f" {m.get(f'{a} Impressions', 0):>8,}" for a in li_personal)
+        table_rows.append(
+            f"{label:<10} "
+            f"{m.get('Mercor Twitter Impressions', 0):>9,} "
+            f"{m.get('Brendan Impressions', 0):>8,} "
+            f"{m.get('Adarsh Impressions', 0):>8,} "
+            f"{m.get('3rd Party Impressions', 0):>8,} "
+            f"{m.get('Twitter Total Impressions', 0):>8,} "
+            f"{m.get('Mercor LinkedIn Impressions', 0):>9,}"
+            f"{li_vals} "
+            f"{m.get('LinkedIn Total Impressions', 0):>8,} "
+            f"{m.get('Total Impressions', 0):>9,}{marker}"
+        )
+    table_text = "\n".join(table_rows)
+
+    blocks = [
+        _notion_heading(1, f"APEX Social Report — {date_display}"),
+        _notion_paragraph(
+            _notion_text(f"YTD Impressions: {ytd_impressions:,}", bold=True),
+            _notion_text(f"  |  YTD Engagements: {ytd_engagements:,}"),
+        ),
+        _notion_divider(),
+        _notion_heading(2, "Impressions by Month"),
+        _notion_code(table_text),
+        _notion_divider(),
+        _notion_heading(2, "Top APEX Posts (All-Time)"),
+    ]
+
+    top = sorted(post_log, key=lambda p: p["impressions"], reverse=True)[:5]
+    for i, p in enumerate(top, 1):
+        blocks.append(
+            _notion_paragraph(
+                _notion_text(f"{i}. {p['date']} · {p['account']} · ", bold=True),
+                _notion_text(f"{p['impressions']:,} impressions", bold=True),
+            )
+        )
+        blocks.append(_notion_paragraph(_notion_text(p["text"][:200])))
+        blocks.append(_notion_paragraph(_notion_text(p["link"])))
+
+    if clay_daily:
+        clay_text = format_clay_section(clay_daily)
+        if clay_text:
+            blocks += [
+                _notion_divider(),
+                _notion_heading(2, "APEX Web Intent — Visits from $10M+ Companies"),
+                _notion_code(clay_text),
+            ]
+
+    if profound_data:
+        profound_text = format_profound_section(profound_data)
+        if profound_text:
+            blocks += [
+                _notion_divider(),
+                _notion_heading(2, "AEO — AI Visibility (Last 7 Days vs Prior 7 Days)"),
+            ]
+            for line in profound_text.split("\n"):
+                if line.strip():
+                    blocks.append(_notion_paragraph(_notion_text(line)))
+
+    requests.patch(
+        f"https://api.notion.com/v1/blocks/{page_id}/children",
+        headers=headers,
+        json={"children": blocks},
+    )
+    print(f"Report posted to Notion: https://notion.so/{page_id.replace('-', '')}")
+
+
 def send_to_slack(message):
     resp = requests.post(SLACK_WEBHOOK_URL, json=message)
     if resp.status_code == 200:
@@ -547,3 +694,4 @@ if __name__ == "__main__":
     monthly, post_log = build_report(all_posts, profile_map)
     message = format_slack_message(monthly, post_log, profile_map, clay_daily, profound_data)
     send_to_slack(message)
+    post_to_notion(monthly, post_log, profile_map, clay_daily, profound_data)

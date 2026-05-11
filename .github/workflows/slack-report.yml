@@ -54,3 +54,5 @@ jobs:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           CLAY_API_KEY: ${{ secrets.CLAY_API_KEY }}
           PROFOUND_API_KEY: ${{ secrets.PROFOUND_API_KEY }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_PARENT_PAGE_ID: 35a5392cc93e81a4bd4fca8d2fd0e8b0
