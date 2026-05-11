@@ -13,6 +13,9 @@ SPROUT_CUSTOMER_ID = os.getenv("SPROUT_CUSTOMER_ID")
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 CLAY_API_KEY = os.getenv("CLAY_API_KEY")
+NOTION_TOKEN = os.getenv("NOTION_TOKEN")
+
+NOTION_DAILY_GOALS_PAGE_ID = "35d5392cc93e80a68fd5d8d73ff9ff97"
 
 CLAY_WORKSPACE_ID = "532985"
 CLAY_WEB_INTENT_TABLE_ID = "t_0tdfylwXHPXVGjXUbPe"
@@ -403,6 +406,84 @@ def send_to_slack(message):
         print(f"Slack error {resp.status_code}: {resp.text}")
 
 
+def post_to_notion(monthly, post_log, clay_daily=None):
+    if not NOTION_TOKEN:
+        print("NOTION_TOKEN not set — skipping Notion post.")
+        return
+
+    today = datetime.now(timezone.utc)
+    title = f"Social Report — {today.strftime('%B %d, %Y')}"
+
+    current_month = today.strftime("%Y-%m")
+    ytd_impressions = sum(v["Total Impressions"] for v in monthly.values())
+    ytd_engagements = sum(v["Total Engagements"] for v in monthly.values())
+
+    # Build monthly table as plain text for a code block
+    li_personal = sorted([v for v in set(p["account"] for p in post_log) if "LinkedIn" in v and v != "Mercor LinkedIn"])
+    table_lines = ["Month      TW:Mercor  TW:Bren  TW:Adar  TW:3Pty   TW:Tot  LI:Mercor   LI:Tot     Total"]
+    table_lines.append("-" * len(table_lines[0]))
+    for month in sorted(monthly.keys()):
+        label = datetime.strptime(month, "%Y-%m").strftime("%b %Y")
+        m = monthly[month]
+        marker = " ◀" if month == current_month else ""
+        table_lines.append(
+            f"{label:<10} {m.get('Mercor Twitter Impressions',0):>9,} {m.get('Brendan Impressions',0):>8,} "
+            f"{m.get('Adarsh Impressions',0):>8,} {m.get('3rd Party Impressions',0):>8,} "
+            f"{m.get('Twitter Total Impressions',0):>8,} {m.get('Mercor LinkedIn Impressions',0):>9,} "
+            f"{m.get('LinkedIn Total Impressions',0):>8,} {m.get('Total Impressions',0):>9,}{marker}"
+        )
+    table_text = "\n".join(table_lines)
+
+    top = sorted(post_log, key=lambda p: p["impressions"], reverse=True)[:3]
+    top_text = "\n".join(
+        f"{i+1}. {p['date']} · {p['account']} · {p['impressions']:,} impressions\n   {p['text'][:100]}\n   {p['link']}"
+        for i, p in enumerate(top)
+    )
+
+    blocks = [
+        {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "YTD Summary"}}]}},
+        {"object": "block", "type": "paragraph", "paragraph": {"rich_text": [{"type": "text", "text": {"content": f"YTD Impressions: {ytd_impressions:,}   |   YTD Engagements: {ytd_engagements:,}"}, "annotations": {"bold": True}}]}},
+        {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "Impressions by Month"}}]}},
+        {"object": "block", "type": "code", "code": {"rich_text": [{"type": "text", "text": {"content": table_text}}], "language": "plain text"}},
+        {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "Top APEX Posts (All-Time)"}}]}},
+        {"object": "block", "type": "code", "code": {"rich_text": [{"type": "text", "text": {"content": top_text}}], "language": "plain text"}},
+    ]
+
+    if clay_daily:
+        clay_lines = []
+        total_all = total_high = 0
+        for date in sorted(clay_daily.keys()):
+            d = clay_daily[date]
+            pct = (d["high_rev"] / d["total"] * 100) if d["total"] else 0
+            clay_lines.append(f"{date}  {d['total']:>5,} visits  {d['high_rev']:>5,} from $10M+  ({pct:.0f}%)")
+            total_all += d["total"]
+            total_high += d["high_rev"]
+        overall_pct = (total_high / total_all * 100) if total_all else 0
+        clay_lines.append(f"{'─'*50}")
+        clay_lines.append(f"Total     {total_all:>5,} visits  {total_high:>5,} from $10M+  ({overall_pct:.0f}%)")
+        blocks += [
+            {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "APEX Web Intent — $10M+ Company Visits"}}]}},
+            {"object": "block", "type": "code", "code": {"rich_text": [{"type": "text", "text": {"content": "\n".join(clay_lines)}}], "language": "plain text"}},
+        ]
+
+    headers = {
+        "Authorization": f"Bearer {NOTION_TOKEN}",
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28",
+    }
+    payload = {
+        "parent": {"page_id": NOTION_DAILY_GOALS_PAGE_ID},
+        "properties": {"title": {"title": [{"text": {"content": title}}]}},
+        "children": blocks,
+    }
+    resp = requests.post("https://api.notion.com/v1/pages", headers=headers, json=payload)
+    if resp.status_code == 200:
+        page_url = resp.json().get("url", "")
+        print(f"Notion page created: {page_url}")
+    else:
+        print(f"Notion error {resp.status_code}: {resp.text}")
+
+
 if __name__ == "__main__":
     print("Fetching Sprout profiles...")
     profile_ids, profile_map = get_sprout_profiles()
@@ -430,3 +511,4 @@ if __name__ == "__main__":
     monthly, post_log = build_report(all_posts, profile_map)
     message = format_slack_message(monthly, post_log, profile_map, clay_daily)
     send_to_slack(message)
+    post_to_notion(monthly, post_log, clay_daily)

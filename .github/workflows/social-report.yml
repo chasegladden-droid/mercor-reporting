@@ -1,0 +1,29 @@
+name: Daily Social Report
+
+on:
+  schedule:
+    - cron: '0 16 * * 1-5'  # 9am PDT (UTC-7) weekdays
+  workflow_dispatch:         # allow manual runs
+
+jobs:
+  run-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Run social report
+        env:
+          SPROUT_API_TOKEN: ${{ secrets.SPROUT_API_TOKEN }}
+          SPROUT_CUSTOMER_ID: ${{ secrets.SPROUT_CUSTOMER_ID }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          CLAY_API_KEY: ${{ secrets.CLAY_API_KEY }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python slack_report.py
