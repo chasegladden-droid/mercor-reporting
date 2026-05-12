@@ -6,6 +6,10 @@ on:
     - cron: "0 16 * * 1-5"
   workflow_dispatch:
 
+concurrency:
+  group: slack-daily-report
+  cancel-in-progress: false
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -20,12 +24,12 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               workflow_id: 'slack-report.yml',
-              status: 'success',
               per_page: 10,
             });
             const alreadySentToday = runs.data.workflow_runs.some(r => {
-              return r.id !== context.runId && r.conclusion === 'success' &&
-                     r.updated_at.slice(0, 10) === today;
+              return r.id !== context.runId &&
+                     r.created_at.slice(0, 10) === today &&
+                     (r.conclusion === 'success' || r.status === 'in_progress' || r.status === 'queued');
             });
             if (alreadySentToday) {
               core.warning('A successful run already completed today — skipping to avoid duplicate Slack message.');
