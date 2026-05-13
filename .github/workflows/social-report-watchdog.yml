@@ -2,9 +2,9 @@ name: Social Report Watchdog
 
 on:
   schedule:
-    - cron: '0 17 * * 1-5'  # 10am PDT — check if 9am run happened
-    - cron: '0 18 * * 1-5'  # 11am PDT — second check
-    - cron: '0 19 * * 1-5'  # 12pm PDT — final check
+    - cron: '5 16 * * 1-5'   # 9:05am PDT — check if 9am run happened
+    - cron: '30 16 * * 1-5'  # 9:30am PDT — second check
+    - cron: '0 17 * * 1-5'   # 10am PDT — final check
   workflow_dispatch:
 
 jobs:
