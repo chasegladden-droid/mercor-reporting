@@ -1,0 +1,53 @@
+name: Social Report Watchdog
+
+on:
+  schedule:
+    - cron: '0 17 * * 1-5'  # 10am PDT — check if 9am run happened
+    - cron: '0 18 * * 1-5'  # 11am PDT — second check
+    - cron: '0 19 * * 1-5'  # 12pm PDT — final check
+  workflow_dispatch:
+
+jobs:
+  check-and-trigger:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Check if social report ran successfully today
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get the most recent successful run of the social report
+          LAST_SUCCESS=$(gh run list \
+            --repo ${{ github.repository }} \
+            --workflow=social-report.yml \
+            --status=success \
+            --limit=1 \
+            --json createdAt \
+            --jq '.[0].createdAt // empty')
+
+          if [ -z "$LAST_SUCCESS" ]; then
+            echo "No successful run found — triggering"
+            echo "should_trigger=true" >> $GITHUB_OUTPUT
+          else
+            # Check if the last success was today (UTC date matches)
+            LAST_DATE=$(echo "$LAST_SUCCESS" | cut -c1-10)
+            TODAY=$(date -u +%Y-%m-%d)
+            if [ "$LAST_DATE" = "$TODAY" ]; then
+              echo "Already ran today ($LAST_SUCCESS) — skipping"
+              echo "should_trigger=false" >> $GITHUB_OUTPUT
+            else
+              echo "Last run was $LAST_DATE, not today — triggering"
+              echo "should_trigger=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Trigger social report
+        if: steps.check.outputs.should_trigger == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run social-report.yml \
+            --repo ${{ github.repository }}
+          echo "Triggered social-report.yml"
