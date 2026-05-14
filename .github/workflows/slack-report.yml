@@ -60,3 +60,12 @@ jobs:
           PROFOUND_API_KEY: ${{ secrets.PROFOUND_API_KEY }}
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_PARENT_PAGE_ID: 35a5392cc93e81a4bd4fca8d2fd0e8b0
+
+      - name: Notify Slack on failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -s -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-type: application/json' \
+            -d "{\"text\":\":red_circle: *Daily Slack Report failed*\nRun: https://github.com/chasegladden-droid/mercor-reporting/actions/runs/${{ github.run_id }}\"}"
