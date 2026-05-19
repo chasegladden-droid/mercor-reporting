@@ -132,7 +132,7 @@ def get_personal_tweets(start_date="2026-01-01"):
 def get_third_party_mentions(start_date="2026-01-01", max_results=500):
     headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
     query = (
-        '(apex-agents OR "apex-swe" OR "apex-agents-aa" OR (apex mercor)) '
+        '("apex-agents" OR "apex-swe" OR "apex-agents-aa" OR (apex mercor)) '
         '-from:mercor_ai -from:BrendanFoody -from:adarsh_exe '
         '-"apex folders" -is:retweet lang:en'
     )
