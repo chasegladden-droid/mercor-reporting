@@ -479,7 +479,9 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None, profou
         )
     table = "\n".join([header, divider] + rows)
 
-    top = sorted(post_log, key=lambda p: p["impressions"], reverse=True)[:3]
+    mtd_posts = [p for p in post_log if p["date"].startswith(current_month)]
+    top = sorted(mtd_posts, key=lambda p: p["impressions"], reverse=True)[:3]
+    month_label = datetime.now(timezone.utc).strftime("%B %Y")
     top_text = "\n".join(
         f">*{i+1}.* {p['date']} · {p['account']} · *{p['impressions']:,} impressions*\n"
         f">{p['text'][:90]}...\n"
@@ -493,7 +495,7 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None, profou
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*YTD Impressions: {ytd_impressions:,}*  |  YTD Engagements: {ytd_engagements:,}"}},
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*Impressions by Month*\n```{table}```"}},
         {"type": "divider"},
-        {"type": "section", "text": {"type": "mrkdwn", "text": f"*Top APEX Posts (All-Time)*\n{top_text}"}},
+        {"type": "section", "text": {"type": "mrkdwn", "text": f"*Top APEX Posts — {month_label} MTD*\n{top_text}"}},
     ]
 
     if clay_daily:
@@ -502,14 +504,6 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None, profou
             blocks += [
                 {"type": "divider"},
                 {"type": "section", "text": {"type": "mrkdwn", "text": f"*APEX Web Intent — Visits from $10M+ Companies*\n```{clay_text}```"}},
-            ]
-
-    if profound_data:
-        profound_text = format_profound_section(profound_data)
-        if profound_text:
-            blocks += [
-                {"type": "divider"},
-                {"type": "section", "text": {"type": "mrkdwn", "text": f"*AEO — AI Visibility (Last 7 Days vs Prior 7 Days)*\n{profound_text}"}},
             ]
 
     return {"blocks": blocks}
@@ -687,15 +681,12 @@ if __name__ == "__main__":
     print("Fetching Clay web intent data...")
     clay_daily = fetch_clay_web_intent()
 
-    print("Fetching Profound AEO data...")
-    profound_data = fetch_profound_data()
-
     # Deduplicate watched posts against third_party by perma_link
     third_party_links = {p["perma_link"] for p in third_party}
     watched_new = [p for p in watched if p["perma_link"] not in third_party_links]
 
     all_posts = posts + personal + third_party + watched_new
     monthly, post_log = build_report(all_posts, profile_map)
-    message = format_slack_message(monthly, post_log, profile_map, clay_daily, profound_data)
+    message = format_slack_message(monthly, post_log, profile_map, clay_daily)
     send_to_slack(message)
-    post_to_notion(monthly, post_log, profile_map, clay_daily, profound_data)
+    post_to_notion(monthly, post_log, profile_map, clay_daily)
