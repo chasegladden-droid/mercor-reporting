@@ -498,14 +498,6 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None, profou
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*Top APEX Posts — {month_label} MTD*\n{top_text}"}},
     ]
 
-    if clay_daily:
-        clay_text = format_clay_section(clay_daily)
-        if clay_text:
-            blocks += [
-                {"type": "divider"},
-                {"type": "section", "text": {"type": "mrkdwn", "text": f"*APEX Web Intent — Visits from $10M+ Companies*\n```{clay_text}```"}},
-            ]
-
     return {"blocks": blocks}
 
 
@@ -678,15 +670,12 @@ if __name__ == "__main__":
     print("Fetching watched account tweets...")
     watched = get_watched_account_tweets()
 
-    print("Fetching Clay web intent data...")
-    clay_daily = fetch_clay_web_intent()
-
     # Deduplicate watched posts against third_party by perma_link
     third_party_links = {p["perma_link"] for p in third_party}
     watched_new = [p for p in watched if p["perma_link"] not in third_party_links]
 
     all_posts = posts + personal + third_party + watched_new
     monthly, post_log = build_report(all_posts, profile_map)
-    message = format_slack_message(monthly, post_log, profile_map, clay_daily)
+    message = format_slack_message(monthly, post_log, profile_map)
     send_to_slack(message)
-    post_to_notion(monthly, post_log, profile_map, clay_daily)
+    post_to_notion(monthly, post_log, profile_map)
