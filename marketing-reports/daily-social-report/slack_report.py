@@ -15,7 +15,7 @@ SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 CLAY_API_KEY = os.getenv("CLAY_API_KEY")
 PROFOUND_API_KEY = os.getenv("PROFOUND_API_KEY")
 NOTION_API_KEY = os.getenv("NOTION_API_KEY")
-NOTION_PARENT_PAGE_ID = os.getenv("NOTION_PARENT_PAGE_ID", "35a5392cc93e81a4bd4fca8d2fd0e8b0")
+NOTION_PARENT_PAGE_ID = os.getenv("NOTION_PARENT_PAGE_ID", "3645392cc93e80ff8bdae23b8f51c91c")
 
 PROFOUND_CATEGORIES = [
     ("4aeb1dff-83d1-47a3-925c-1a4adb25a572", "AI Recruiting"),
@@ -38,7 +38,7 @@ TWITTER_PERSONAL_ACCOUNTS = {
 # Accounts monitored directly (full note_tweet text checked — bypasses Twitter search truncation)
 WATCHED_TWITTER_USERNAMES = ["ArtificialAnlys", "EpochAIResearch"]
 
-APEX_KEYWORDS = ["apex-agents", "apex-swe", "apex-agents-aa"]
+APEX_KEYWORDS = ["apex-agents", "apex agents", "apex-swe", "apex swe", "apex-ace", "apex ace"]
 
 
 def get_sprout_profiles():
@@ -132,9 +132,10 @@ def get_personal_tweets(start_date="2026-01-01"):
 def get_third_party_mentions(start_date="2026-01-01", max_results=500):
     headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
     query = (
-        '("apex-agents" OR "apex-swe" OR "apex-agents-aa" OR (apex mercor)) '
+        '("apex-agents" OR "apex agents" OR "apex-swe" OR "apex swe" '
+        'OR ("apex-ace" mercor) OR ("apex ace" mercor) OR (apex mercor)) '
         '-from:mercor_ai -from:BrendanFoody -from:adarsh_exe '
-        '-"apex folders" -is:retweet lang:en'
+        '-"apex legends" -"apex predator" -"apex folders" -is:retweet lang:en'
     )
     params = {
         "query": query,
