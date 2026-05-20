@@ -44,7 +44,15 @@ APEX_KEYWORDS = ["apex-agents", "apex agents", "apex-swe", "apex swe", "apex-ace
 def get_sprout_profiles():
     url = f"https://api.sproutsocial.com/v1/{SPROUT_CUSTOMER_ID}/metadata/customer"
     headers = {"Authorization": f"Bearer {SPROUT_API_TOKEN}"}
-    profiles = requests.get(url, headers=headers).json().get("data", [])
+    try:
+        r = requests.get(url, headers=headers)
+        if not r.ok or not r.text.strip():
+            print(f"Sprout profiles returned {r.status_code} — skipping Sprout data")
+            return [], {}
+        profiles = r.json().get("data", [])
+    except Exception as e:
+        print(f"Sprout profiles error: {e} — skipping Sprout data")
+        return [], {}
 
     profile_ids = []
     profile_map = {}
@@ -65,6 +73,8 @@ def get_sprout_profiles():
 
 
 def get_all_posts(profile_ids, start_date="2026-01-01", end_date=None):
+    if not profile_ids:
+        return []
     if end_date is None:
         end_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
@@ -85,7 +95,15 @@ def get_all_posts(profile_ids, start_date="2026-01-01", end_date=None):
             "limit": 100,
             "page": page,
         }
-        posts = requests.post(url, headers=headers, json=payload).json().get("data", [])
+        try:
+            r = requests.post(url, headers=headers, json=payload)
+            if not r.ok or not r.text.strip():
+                print(f"Sprout posts returned {r.status_code} — stopping pagination")
+                break
+            posts = r.json().get("data", [])
+        except Exception as e:
+            print(f"Sprout posts error: {e} — stopping pagination")
+            break
         if not posts:
             break
         all_posts.extend(posts)
@@ -108,7 +126,15 @@ def get_personal_tweets(start_date="2026-01-01"):
         }
         url = f"https://api.twitter.com/2/users/{user_id}/tweets"
         while True:
-            data = requests.get(url, headers=headers, params=params).json()
+            try:
+                r = requests.get(url, headers=headers, params=params)
+                if not r.ok or not r.text.strip():
+                    print(f"Personal tweets for {name} returned {r.status_code} — skipping")
+                    break
+                data = r.json()
+            except Exception as e:
+                print(f"Personal tweets error for {name}: {e} — skipping")
+                break
             for t in data.get("data", []):
                 m = t.get("public_metrics", {})
                 all_posts.append({
