@@ -426,14 +426,17 @@ def format_profound_section(data):
         total_sent = pos_sent + neg_sent
         sent_pct = (pos_sent / total_sent * 100) if total_sent else 0
 
+        fmt = lambda v, d=1: f"{v:.{d}f}" if v is not None else "N/A"
         lines.append(f"*{cat_name}*")
         lines.append(
-            f"  Visibility Score: {vis:.1f}{_wow(vis, p.get('visibility_score'), pct=True)}  |  "
-            f"Avg Position: {pos:.1f}{_wow(pos, p.get('average_position'), lower_is_better=True)}"
+            f"  Visibility Score: {fmt(vis)}{_wow(vis, p.get('visibility_score'), pct=True)}  |  "
+            f"Avg Position: {fmt(pos)}{_wow(pos, p.get('average_position'), lower_is_better=True)}"
         )
         lines.append(
             f"  Mentions: {int(mentions):,}{_wow(mentions, p.get('mentions_count'))}  |  "
-            f"Share of Voice: {sov:.1f}%{_wow(sov, p.get('share_of_voice'), pct=True)}"
+            f"Share of Voice: {fmt(sov)}%{_wow(sov, p.get('share_of_voice'), pct=True)}"
+            if mentions is not None else
+            f"  Mentions: N/A  |  Share of Voice: N/A"
         )
         lines.append(f"  Sentiment: {sent_pct:.0f}% positive ({int(pos_sent):,} pos / {int(neg_sent):,} neg)")
         lines.append("")
