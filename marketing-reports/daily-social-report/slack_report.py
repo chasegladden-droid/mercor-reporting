@@ -705,3 +705,41 @@ if __name__ == "__main__":
     message = format_slack_message(monthly, post_log, profile_map)
     send_to_slack(message)
     post_to_notion(monthly, post_log, profile_map)
+
+    # Write Notion-ready data to a temp file so the remote routine doesn't re-fetch all APIs
+    import json as _json
+    today = datetime.now(timezone.utc)
+    cm = today.strftime("%Y-%m")
+    ytd_imp = sum(v["Total Impressions"] for v in monthly.values())
+    ytd_eng = sum(v["Total Engagements"] for v in monthly.values())
+    li_p = sorted([v for v in profile_map.values() if "LinkedIn" in v and v != "Mercor LinkedIn"])
+    hdr = (
+        f"{'Month':<12} {'TW:Mercor':>9} {'TW:Bren':>8} {'TW:Adar':>8} {'TW:3Pty':>8} {'TW:Tot':>8} {'LI:Mercor':>9}"
+        + "".join(f" {'LI:'+a.split()[0]:>8}" for a in li_p)
+        + f" {'LI:Tot':>8} {'Total':>9}"
+    )
+    rows = [hdr, "-" * len(hdr)]
+    for month in sorted(monthly.keys()):
+        label = datetime.strptime(month, "%Y-%m").strftime("%b %Y")
+        m = monthly[month]
+        marker = " ◄" if month == cm else ""
+        li_v = "".join(f" {m.get(f'{a} Impressions', 0):>8,}" for a in li_p)
+        rows.append(
+            f"{(label+marker):<12} {m.get('Mercor Twitter Impressions',0):>9,} {m.get('Brendan Impressions',0):>8,}"
+            f" {m.get('Adarsh Impressions',0):>8,} {m.get('3rd Party Impressions',0):>8,}"
+            f" {m.get('Twitter Total Impressions',0):>8,} {m.get('Mercor LinkedIn Impressions',0):>9,}"
+            f"{li_v} {m.get('LinkedIn Total Impressions',0):>8,} {m.get('Total Impressions',0):>9,}"
+        )
+    mtd = sorted([p for p in post_log if p["date"].startswith(cm)], key=lambda x: x["impressions"], reverse=True)
+    notion_payload = {
+        "date": today.strftime("%Y-%m-%d"),
+        "display_date": today.strftime("%B %d, %Y"),
+        "month_label": today.strftime("%B %Y"),
+        "ytd_imp": ytd_imp,
+        "ytd_eng": ytd_eng,
+        "table": "\n".join(rows),
+        "mtd": mtd,
+    }
+    with open("/tmp/apex_notion_data.json", "w") as f:
+        _json.dump(notion_payload, f)
+    print("Notion data written to /tmp/apex_notion_data.json")
