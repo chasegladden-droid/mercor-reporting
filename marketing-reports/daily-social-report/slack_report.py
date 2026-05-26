@@ -156,7 +156,9 @@ def discover_personal_tweets(cache):
             if "errors" in data and "data" not in data:
                 print(f"Twitter API error for {name}: {data['errors']} — skipping")
                 break
-            for t in data.get("data", []):
+            page_tweets = data.get("data", [])
+            all_cached = all(t["id"] in tweets for t in page_tweets) if page_tweets else True
+            for t in page_tweets:
                 if t["id"] in tweets:
                     continue
                 full_text = t.get("text", "")
@@ -175,7 +177,7 @@ def discover_personal_tweets(cache):
                 }
                 new_count += 1
             next_token = data.get("meta", {}).get("next_token")
-            if not next_token:
+            if not next_token or all_cached:
                 break
             params["pagination_token"] = next_token
     print(f"Discovered {new_count} new personal tweets (Brendan, Adarsh) from {start_date}")
@@ -234,6 +236,10 @@ def discover_third_party_mentions(cache):
 def discover_watched_account_tweets(cache):
     headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
     tweets = cache.setdefault("tweets", {})
+    start_date = (
+        "2026-01-01" if not tweets
+        else (datetime.now(timezone.utc) - timedelta(days=8)).strftime("%Y-%m-%d")
+    )
     new_count = 0
     for username in WATCHED_TWITTER_USERNAMES:
         resp = requests.get(f"https://api.twitter.com/2/users/by/username/{username}", headers=headers)
@@ -245,6 +251,7 @@ def discover_watched_account_tweets(cache):
             print(f"No user ID found for @{username}")
             continue
         params = {
+            "start_time": f"{start_date}T00:00:00Z",
             "max_results": 100,
             "tweet.fields": "created_at,text,public_metrics,note_tweet",
             "expansions": "attachments.media_keys",
@@ -260,7 +267,9 @@ def discover_watched_account_tweets(cache):
             except Exception as e:
                 print(f"Parse error for @{username}: {e}")
                 break
-            for t in data.get("data", []):
+            page_tweets = data.get("data", [])
+            all_cached = all(t["id"] in tweets for t in page_tweets) if page_tweets else True
+            for t in page_tweets:
                 if t["id"] in tweets:
                     continue
                 full_text = t.get("note_tweet", {}).get("text") or t.get("text", "")
@@ -279,7 +288,7 @@ def discover_watched_account_tweets(cache):
                 }
                 new_count += 1
             next_token = data.get("meta", {}).get("next_token")
-            if not next_token:
+            if not next_token or all_cached:
                 break
             params["pagination_token"] = next_token
     print(f"Found {new_count} new APEX posts from watched accounts ({', '.join('@' + u for u in WATCHED_TWITTER_USERNAMES)})")
