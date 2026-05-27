@@ -132,7 +132,7 @@ def discover_personal_tweets(cache):
     headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
     tweets = cache.setdefault("tweets", {})
     start_date = (
-        "2026-01-01" if not tweets
+        "2026-01-01" if not cache.get("initialized")
         else (datetime.now(timezone.utc) - timedelta(days=8)).strftime("%Y-%m-%d")
     )
     new_count = 0
@@ -237,7 +237,7 @@ def discover_watched_account_tweets(cache):
     headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
     tweets = cache.setdefault("tweets", {})
     start_date = (
-        "2026-01-01" if not tweets
+        "2026-01-01" if not cache.get("initialized")
         else (datetime.now(timezone.utc) - timedelta(days=8)).strftime("%Y-%m-%d")
     )
     new_count = 0
@@ -782,6 +782,7 @@ if __name__ == "__main__":
     discover_watched_account_tweets(cache)
     print("Refreshing tweet impressions...")
     refresh_tweet_impressions(cache)
+    cache["initialized"] = True
     save_tweet_cache(cache)
 
     all_posts = posts + cache_to_posts(cache)
