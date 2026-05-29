@@ -1,4 +1,549 @@
 {
-  "tweets": {},
+  "tweets": {
+    "2057784809963790730": {
+      "date": "2026-05-22",
+      "account": "Brendan Foody",
+      "text": "RT @OfficialLoganK: Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it. http\u2026",
+      "link": "https://twitter.com/i/web/status/2057784809963790730",
+      "impressions": 0,
+      "engagements": 98
+    },
+    "2057810080880324669": {
+      "date": "2026-05-22",
+      "account": "3rd Party",
+      "text": "Gemini 3.5 Flash punching WAY above its weight class \u2014 #1 on APEX-Agents-AA against models a full tier larger \ud83d\udd25 This is what efficient AI actually looks like. The era of \"bigger is always better\" is over \u26a1\ud83e\udde0 https://t.co/KWazs6LxeF",
+      "link": "https://twitter.com/i/web/status/2057810080880324669",
+      "impressions": 363,
+      "engagements": 1
+    },
+    "2057777202360414497": {
+      "date": "2026-05-22",
+      "account": "3rd Party",
+      "text": "@OfficialLoganK highlighted that Gemini 3.5 Flash ranks #1 on APEX-Agents-AA, outperforming larger models. On the applied side, @_philschmid shows a GitHub issue triage agent built with a single Gemini API call and no orchestration framework, while @skalskip92 demonstrates Gemini",
+      "link": "https://twitter.com/i/web/status/2057777202360414497",
+      "impressions": 1,
+      "engagements": 0
+    },
+    "2057765522184282554": {
+      "date": "2026-05-22",
+      "account": "3rd Party",
+      "text": "@pvisscherNL @OfficialLoganK @mercor_ai Grok 4.3 (high) scored 6.4% on the APEX-Agents-AA benchmark (long-horizon professional agentic tasks like investment banking/consulting/law workflows). \n\nGemini 3.5 Flash leads at 47.1% per the latest Artificial Analysis leaderboard.",
+      "link": "https://twitter.com/i/web/status/2057765522184282554",
+      "impressions": 20,
+      "engagements": 1
+    },
+    "2057765397605048740": {
+      "date": "2026-05-22",
+      "account": "3rd Party",
+      "text": "Both. APEX-Agents rewards planning and orchestration speed. Coding rewards depth. Different benchmarks, different optimization targets. https://t.co/HMpzFHiq7T",
+      "link": "https://twitter.com/i/web/status/2057765397605048740",
+      "impressions": 97,
+      "engagements": 2
+    },
+    "2057748075419140450": {
+      "date": "2026-05-22",
+      "account": "3rd Party",
+      "text": "@OfficialLoganK @mercor_ai APEX-Agents-AA is a solid benchmark \u2014 but it's still single-session, short-horizon.\n\nThe next frontier:\nMulti-session agent memory + cross-workflow reliability.\n@EasyClaw is building that eval suite.\n\nWant to see how Gemini 3.5 Flash performs on long-running agent tasks?\nDrop a",
+      "link": "https://twitter.com/i/web/status/2057748075419140450",
+      "impressions": 58,
+      "engagements": 0
+    },
+    "2057624176014573937": {
+      "date": "2026-05-22",
+      "account": "3rd Party",
+      "text": "@OfficialLoganK @mercor_ai What does \"APEX-Agents-AA benchmark\" means? \n\nAnd where is Opus 4.7 ?",
+      "link": "https://twitter.com/i/web/status/2057624176014573937",
+      "impressions": 123,
+      "engagements": 1
+    },
+    "2057622885552840878": {
+      "date": "2026-05-22",
+      "account": "3rd Party",
+      "text": "@ChipCorley @OfficialLoganK @demishassabis @mercor_ai Present: Gemini 3.5 Flash leads APEX-Agents-AA (agentic benchmark for long-horizon professional tasks in banking/consulting/law) at 47.1% Pass1, beating larger models like GPT-5.5 (37.7%).\n\nFuture: Expect faster, cheaper agentic AI to automate multi-step workflows across tools",
+      "link": "https://twitter.com/i/web/status/2057622885552840878",
+      "impressions": 9,
+      "engagements": 0
+    },
+    "2057560187188462006": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "Let me tell you what the APEX-Agents-AA benchmark is so you understand what it means better\n\nIt is an evaluation of AI agents on realistic, long-horizon professional tasks. \n\nThe benchmark evaluates how well frontier AI agents can autonomously complete complex, multi-step https://t.co/nxJmksZVLm",
+      "link": "https://twitter.com/i/web/status/2057560187188462006",
+      "impressions": 63,
+      "engagements": 0
+    },
+    "2057544199650640033": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@VP_code_n_lift @OfficialLoganK @mercor_ai APEX-Agents-AA is Artificial Analysis' independent eval of Mercor's open-source APEX-Agents benchmark. It tests AI agents on 452 realistic, long-horizon tasks across investment banking, management consulting, and corporate law.\n\nAgents must use files + workplace tools to complete",
+      "link": "https://twitter.com/i/web/status/2057544199650640033",
+      "impressions": 57,
+      "engagements": 1
+    },
+    "2057544113449537657": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@OfficialLoganK @mercor_ai Hey @grok What are APEX-Agents-AA benchmark criteria?",
+      "link": "https://twitter.com/i/web/status/2057544113449537657",
+      "impressions": 350,
+      "engagements": 2
+    },
+    "2057531332863906027": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "gemini 3.5 flash GA today, ranking #1 on apex-agents at a fraction of frontier price. anthropic just locked 15b/year of compute for pre-training. the 'one bet is dying' frame is way early. both curves still bending.",
+      "link": "https://twitter.com/i/web/status/2057531332863906027",
+      "impressions": 46,
+      "engagements": 0
+    },
+    "2057522405413634191": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@Doctorthe113 @weswinder Also from Zapier, they had a positive post about its performance in apex agents benchmark.",
+      "link": "https://twitter.com/i/web/status/2057522405413634191",
+      "impressions": 37,
+      "engagements": 2
+    },
+    "2057520515552882729": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@OfficialLoganK @mercor_ai benchmarks like apex-agents reward tight tool routing and good state recovery, that's where flash punches up. on our side stream triage runs faster with a smaller well scaffolded model than with the big ones, so I get it. what I'd actually want benchmarked is steerability on long",
+      "link": "https://twitter.com/i/web/status/2057520515552882729",
+      "impressions": 1192,
+      "engagements": 0
+    },
+    "2057507694659912145": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "Gemini 3.5 Flash reportedly tops APEX benchmark \u2014 but questions remain\n\nA single Reddit image claims Google's Gemini 3.5 Flash has taken the top spot on the APEX-Agents-AA benchmark, beating models significantly larger than itself. If accurate, it's another data point in the most https://t.co/Z87YvMlQU9",
+      "link": "https://twitter.com/i/web/status/2057507694659912145",
+      "impressions": 7,
+      "engagements": 0
+    },
+    "2057505576964497466": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "Gemini 3.5 Flash got the highest score ever (47.1%) on a special test called APEX-Agents-AA\u2026. https://t.co/k80wo3k4MS",
+      "link": "https://twitter.com/i/web/status/2057505576964497466",
+      "impressions": 318,
+      "engagements": 8
+    },
+    "2057484889226977420": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@cryptorover Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057484889226977420",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057484800718680503": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@luisabreu96 Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057484800718680503",
+      "impressions": 4,
+      "engagements": 0
+    },
+    "2057479157660225745": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@MrWhale Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057479157660225745",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057479114542698808": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@coldtrz Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057479114542698808",
+      "impressions": 2,
+      "engagements": 0
+    },
+    "2057479009903190105": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@normieguy93496 @CJP_2029 Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057479009903190105",
+      "impressions": 7,
+      "engagements": 0
+    },
+    "2057478500421161271": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@BigWhaleCalls_ Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057478500421161271",
+      "impressions": 3,
+      "engagements": 0
+    },
+    "2057478471224643862": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@llishere2 Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057478471224643862",
+      "impressions": 1,
+      "engagements": 0
+    },
+    "2057478365179953408": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@shootersolana_ @level941 Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057478365179953408",
+      "impressions": 3,
+      "engagements": 0
+    },
+    "2057478331344544252": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@WMDCmedia Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057478331344544252",
+      "impressions": 2,
+      "engagements": 0
+    },
+    "2057478231595598044": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@RaizenKuma @Troll_ Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057478231595598044",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057478174779556057": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@llishere2 Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057478174779556057",
+      "impressions": 2,
+      "engagements": 1
+    },
+    "2057478127874666584": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@bazingahappy @BounceTech @altdotfun Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057478127874666584",
+      "impressions": 10,
+      "engagements": 0
+    },
+    "2057478086556565595": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@brita_lisa Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057478086556565595",
+      "impressions": 6,
+      "engagements": 0
+    },
+    "2057477901700980985": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@CrpytoJb555 @mut8_official @Fartgirl_backup Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057477901700980985",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057477814455304208": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@stumbleWW3 Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057477814455304208",
+      "impressions": 2,
+      "engagements": 0
+    },
+    "2057477779139293401": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@INBRED001 Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057477779139293401",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057477608678588828": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@SolSuduOnSol @_ik804 @cajun_crypteaux @CrashiusClay69 @Cryptogains9 @Pumpfun @SolanaPumpfunSP @solana Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057477608678588828",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057477583135297601": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@TedBundle1710 Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057477583135297601",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057477558409875482": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@MemeDeskDaily Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057477558409875482",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057477450461069481": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@Chey_Coin Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057477450461069481",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2057477231174414339": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@business Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it.\n\nCA: FXah8g7YunN69pVRMir9TJz7UBP6ocmJtSw4qaHFpump",
+      "link": "https://twitter.com/i/web/status/2057477231174414339",
+      "impressions": 10,
+      "engagements": 0
+    },
+    "2057476912176574581": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@OfficialLoganK @mercor_ai This is a big win for Gemini 3.5 Flash.\n\nBeating much larger models on the APEX-Agents-AA benchmark shows Google has really nailed the balance of smart performance and efficiency.\n\nIt proves you don\u2019t always need the biggest model to get top results in practical agent tasks.",
+      "link": "https://twitter.com/i/web/status/2057476912176574581",
+      "impressions": 920,
+      "engagements": 1
+    },
+    "2057473067157172663": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "gemini 3.5 Flash has claimed the #1 spot on the APEX Agents AA benchmark, outperforming much larger models an entire size class above it https://t.co/DPT2iPbBvz",
+      "link": "https://twitter.com/i/web/status/2057473067157172663",
+      "impressions": 1710,
+      "engagements": 20
+    },
+    "2057473036685615502": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@OfficialLoganK @mercor_ai Gemini 3.5 Flash topping APEX-Agents-AA is notable, but agent benchmarks are easy to overfit to. What's the test-set contamination control and run-to-run variance? A single-seed leaderboard delta means little without confidence intervals across rollouts.",
+      "link": "https://twitter.com/i/web/status/2057473036685615502",
+      "impressions": 1025,
+      "engagements": 0
+    },
+    "2057473025902092673": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "Gemini 3.5 Flash benchmark results rolling in.\n\nGemini models have historically over-performed on benchmarks but under-performed on real-world usefulness.\n\nThese results have me questioning that.\n\nRuneScape-bench measures agentic capability in virtual worlds and Apex-Agents tests https://t.co/9bRpydEEWH",
+      "link": "https://twitter.com/i/web/status/2057473025902092673",
+      "impressions": 21620,
+      "engagements": 160
+    },
+    "2057472248072552483": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@blueemi99 @LexnLin @OfficialLoganK @mercor_ai Yo! APEX-Agents-AA (from Artificial Analysis) is a tough agentic benchmark testing AI models on long-horizon, real-world professional tasks across investment banking, management consulting, and corporate law. \n\nIt simulates actual workflows with files, tools, and detailed",
+      "link": "https://twitter.com/i/web/status/2057472248072552483",
+      "impressions": 104,
+      "engagements": 3
+    },
+    "2057469090042675509": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@morganlinton its an agentic monster, doesn't make it great at coding. From Grok: \"**APEX-Agents-AA measures how well AI agents can complete realistic, long-horizon professional tasks** in investment banking, management consulting, and corporate law.  It uses 400+ expert-designed test cases",
+      "link": "https://twitter.com/i/web/status/2057469090042675509",
+      "impressions": 1108,
+      "engagements": 1
+    },
+    "2057468589427274170": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "Gemini 3.5 Flash just ranked number one on the APEX-Agents-AA benchmark.\n\nOutperforming models a full size class above it.\n\nFast and first. Google's Flash tier is no longer a compromise. https://t.co/5lsYIDCEKS",
+      "link": "https://twitter.com/i/web/status/2057468589427274170",
+      "impressions": 3238,
+      "engagements": 6
+    },
+    "2057463643457888285": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "@JakeKAllDay @OfficialLoganK @mercor_ai **APEX-Agents-AA measures how well AI agents can complete realistic, long-horizon professional tasks** in investment banking, management consulting, and corporate law.\n\nIt uses 400+ expert-designed test cases with source documents, tools, and files that mimic real day-to-day",
+      "link": "https://twitter.com/i/web/status/2057463643457888285",
+      "impressions": 15,
+      "engagements": 0
+    },
+    "2057460544643404125": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it. https://t.co/zrirfMHCwI",
+      "link": "https://twitter.com/i/web/status/2057460544643404125",
+      "impressions": 473436,
+      "engagements": 2064
+    },
+    "2057457873660068183": {
+      "date": "2026-05-21",
+      "account": "3rd Party",
+      "text": "Surprising results to see Gemini 3.5 Flash top the APEX-Agents benchmark given its intelligence index score. \n\nHistorically, Google's models have had worse agentic capabilities than OpenAI &amp; Anthropic.\n\nInterested to see if this translates to real world utility. https://t.co/U8GsSp1NZr",
+      "link": "https://twitter.com/i/web/status/2057457873660068183",
+      "impressions": 3121,
+      "engagements": 8
+    },
+    "2052426293669753246": {
+      "date": "2026-05-07",
+      "account": "Brendan Foody",
+      "text": "Congrats to the @harvey team on the launch. LAB is a natural extension of the work we've done together on BigLaw Bench and APEX-Agents. Proud to be a part of this! https://t.co/YirTEPZwMy",
+      "link": "https://twitter.com/i/web/status/2052426293669753246",
+      "impressions": 4246,
+      "engagements": 42
+    },
+    "2046831424565911619": {
+      "date": "2026-04-22",
+      "account": "Brendan Foody",
+      "text": "RT @mercor_ai: Here's how @AnthropicAI Claude Opus 4.7 (Max) performs on APEX-Agents, our benchmark that measures complex, long-horizon pro\u2026",
+      "link": "https://twitter.com/i/web/status/2046831424565911619",
+      "impressions": 0,
+      "engagements": 8
+    },
+    "2037574063321973214": {
+      "date": "2026-03-27",
+      "account": "Brendan Foody",
+      "text": "RT @mercor_ai: Does training on APEX-Agents dev set generalize beyond the benchmark?\n\n@appliedcompute post-trained GLM-4.7 on ~2,000 expert\u2026",
+      "link": "https://twitter.com/i/web/status/2037574063321973214",
+      "impressions": 0,
+      "engagements": 8
+    },
+    "2036969943905034616": {
+      "date": "2026-03-26",
+      "account": "Brendan Foody",
+      "text": "RT @mercor_ai: The rate of improvement on APEX-Agents is incredible.\n\n15 months ago, a frontier model (o1) would only score &lt;2% Pass@1. Now\u2026",
+      "link": "https://twitter.com/i/web/status/2036969943905034616",
+      "impressions": 0,
+      "engagements": 4
+    },
+    "2029626860083237231": {
+      "date": "2026-03-05",
+      "account": "Brendan Foody",
+      "text": "GPT 5.4 is the best model we\u2019ve ever tested on APEX-Agents. It\u2019s also the first model to pass 50% mean score.\n\nA year ago, frontier models couldn\u2019t even edit an Excel sheet and scored less than 5%. Now, in less than 3 months GPT 5.4 has improved by 15.7%.\n\nChatGPT will imminently https://t.co/Hl02CHot3U",
+      "link": "https://twitter.com/i/web/status/2029626860083237231",
+      "impressions": 94450,
+      "engagements": 920
+    },
+    "2026408081006248108": {
+      "date": "2026-02-24",
+      "account": "Brendan Foody",
+      "text": ".@appliedcompute achieving frontier capabilities on APEX Agents with just 2,000 tasks is incredible.\n\nTheir model can produce complex legal deliverables, redlines, and slide decks.\n\nIt feels like RL is becoming so powerful that it can quickly saturate any benchmark.\n\nThe barrier https://t.co/yDFA5KBHF9",
+      "link": "https://twitter.com/i/web/status/2026408081006248108",
+      "impressions": 23888,
+      "engagements": 88
+    },
+    "2024536763528860089": {
+      "date": "2026-02-19",
+      "account": "Brendan Foody",
+      "text": "Gemini 3.1 Pro is now at the top of the APEX-Agents leaderboard. Gemini jumped from 18.4% to 33.5% on Pass@1 in just 90 days.\n\nIt also completes 5 tasks that no model has ever been able to do before.\n\n@GeminiApp shows how quickly agents are improving at real knowledge work. It https://t.co/86Q3zlUmUk",
+      "link": "https://twitter.com/i/web/status/2024536763528860089",
+      "impressions": 24793,
+      "engagements": 308
+    },
+    "2019921803699974626": {
+      "date": "2026-02-06",
+      "account": "Brendan Foody",
+      "text": ".@AnthropicAI jumping from 18.4% to 29.8% on APEX Agents in a few months is insane.\n\nThis benchmark demonstrates it's ability to create real deliverables such as slide decks, documents, financial models in consulting, law, and banking.\n\nIt requires navigating complex data rooms https://t.co/qodrWF9c6S",
+      "link": "https://twitter.com/i/web/status/2019921803699974626",
+      "impressions": 54169,
+      "engagements": 264
+    },
+    "2019181320694366338": {
+      "date": "2026-02-04",
+      "account": "Brendan Foody",
+      "text": "RT @mercor_ai: We evaluated Kimi K2.5 from @Kimi_Moonshot against APEX-Agents. It\u2019s the best-performing open-source model, beating out the\u2026",
+      "link": "https://twitter.com/i/web/status/2019181320694366338",
+      "impressions": 2,
+      "engagements": 3
+    },
+    "2016663601537568833": {
+      "date": "2026-01-29",
+      "account": "Brendan Foody",
+      "text": ".@appliedcompute improved 19% on Corporate Law tasks in APEX Agents.\n\nTheir model traverses data rooms with hundreds of files to prepare complex legal deliverables.\n\nThis level of model improvement with just 1000 tasks is incredible and just the beginning.\n\nGreat work @ypatil125, https://t.co/RMfB82L4NA",
+      "link": "https://twitter.com/i/web/status/2016663601537568833",
+      "impressions": 39703,
+      "engagements": 132
+    },
+    "2014586556653117874": {
+      "date": "2026-01-23",
+      "account": "Brendan Foody",
+      "text": "We are also open sourcing the entire APEX-agents dataset on @HuggingFace, along with Archipelago, our infra service for executing and evaluating agent trajectories on @Github.\n\nhttps://t.co/8xpIhtPK3U\nhttps://t.co/9jRsAc8z1e",
+      "link": "https://twitter.com/i/web/status/2014586556653117874",
+      "impressions": 5485,
+      "engagements": 17
+    },
+    "2036502062427713552": {
+      "date": "2026-03-24",
+      "account": "Adarsh",
+      "text": "RT @cognition: We've collaborated with @mercor_ai on APEX-SWE, a new benchmark that evaluates AI models on realistic software engineering t\u2026",
+      "link": "https://twitter.com/i/web/status/2036502062427713552",
+      "impressions": 0,
+      "engagements": 18
+    },
+    "2036492060019323253": {
+      "date": "2026-03-24",
+      "account": "Adarsh",
+      "text": "You can read more about APEX-SWE here: https://t.co/T1JoQnJuHs",
+      "link": "https://twitter.com/i/web/status/2036492060019323253",
+      "impressions": 3849,
+      "engagements": 11
+    },
+    "2036492056982593955": {
+      "date": "2026-03-24",
+      "account": "Adarsh",
+      "text": "APEX-SWE Leaderboard | Pass@1\n\ud83e\udd47@OpenAI  GPT-5.3 Codex (High) at 41.5%\n\ud83e\udd48@AnthropicAI  Opus 4.6 (High) at 40.5%\n\ud83e\udd49@AnthropicAI Opus 4.5 (High) at 38.7%\n\nEvery frontier model fails on nearly 60% of real production tasks.\n\nCheck out the full APEX-SWE leaderboard:",
+      "link": "https://twitter.com/i/web/status/2036492056982593955",
+      "impressions": 5157,
+      "engagements": 40
+    },
+    "2036492054948356462": {
+      "date": "2026-03-24",
+      "account": "Adarsh",
+      "text": "Traditional coding benchmarks do not reflect how software is actually built and maintained. \n\nThat's why we built a new benchmark, APEX-SWE, in partnership with @cognition. It measures whether AI models can perform complex, real-world software engineering work to ship systems https://t.co/5nJfKQBxfA",
+      "link": "https://twitter.com/i/web/status/2036492054948356462",
+      "impressions": 205421,
+      "engagements": 1070
+    },
+    "2047378419282034920": {
+      "date": "2026-04-23",
+      "account": "3rd Party",
+      "text": "GPT-5.5 takes OpenAI back to the clear number one in AI. OpenAI\u2019s new model tops the Artificial Analysis Intelligence Index by 3 points, breaking a three-way tie with Anthropic and Google\n\nOpenAI gave us pre-release access to test all five reasoning effort levels: xhigh, high, medium, low and non-reasoning.\n\n\u27a4 OpenAI topping five headline evaluations: GPT-5.5 (xhigh) leads Terminal-Bench Hard, GDPval-AA and our newly hosted APEX-Agents-AA. The model trails only other OpenAI models in CritPt and AA-LCR, and comes second to Gemini 3.1 Pro Preview on three additional evaluations. The largest gains are on AA-Omniscience (+14 pts), our knowledge and hallucination benchmark, and \u03c4\u00b2-Bench Telecom (+7 pts), a customer service agent benchmark.\n\n\u27a4 20% more expensive to run our Intelligence Index: Per-token pricing has doubled from GPT-5.4 to $5/$30 per 1M input/output tokens. However, a ~40% token use reduction largely absorbs the hike - resulting in a net ~+20% cost to run our Intelligence Index.\n\n\u27a4 Effort a clear ladder for balancing intelligence and cost: GPT-5.5 (medium) scores the same as Claude Opus 4.7 (max) on our Intelligence Index at one quarter of the cost (~$1,200 vs $4,800) - although Gemini 3.1 Pro Preview scores the same at a cost of ~$900. GPT-5.5 (low) approximates Claude Opus 4.7 (Non-reasoning, high) on our Intelligence Index at half the cost to run (~$500 vs ~$1 ,000).\n\n\u27a4 Number one in GDPval-AA with an Elo of 1785: GPT-5.5 (xhigh) leads Claude Opus 4.7 (max) by ~30 pts and Gemini 3.1 Pro Preview by ~470 pts. GDPval-AA is Artificial Analysis\u2019 benchmark that leverages OpenAI\u2019s GDPval dataset to evaluate models on real-world economically valuable tasks.\n\n\u27a4 Top AA-Omniscience accuracy, but trailing the frontier on hallucination: Our private AA-Omniscience benchmark rewards factual knowledge across diverse topics, but punishes hallucination. GPT-5.5 (xhigh) has the highest accuracy at 57% - meaning the model can recall facts in the Omniscience corpus more effectively than any other model. However, it has a hallucination rate of 86% - vs Opus 4.7 (max) at 36%, and Gemini 3.1 Pro Preview at 50%. This makes it more likely to answer a question when it does not \u2018know\u2019 the answer. The 14 pt gain in AA-Omniscience from GPT-5.4 (xhigh) was largely driven by knowledge, with a modest improvement in hallucination.\n\nCongratulations to the team at @OpenAI and @sama on the launch",
+      "link": "https://twitter.com/ArtificialAnlys/status/2047378419282034920",
+      "impressions": 264554,
+      "engagements": 1960
+    },
+    "2041896273285149153": {
+      "date": "2026-04-08",
+      "account": "3rd Party",
+      "text": "For more information see:\n\nAPEX-Agents paper on arXiv: https://t.co/f3fhg3j9zf\n\nMercor\u2019s APEX-Agents page: https://t.co/BFBbbtO98M\n\nAPEX-Agents-AA leaderboard: https://t.co/OKqQPyRGp7",
+      "link": "https://twitter.com/ArtificialAnlys/status/2041896273285149153",
+      "impressions": 3863,
+      "engagements": 10
+    },
+    "2041896261826310598": {
+      "date": "2026-04-08",
+      "account": "3rd Party",
+      "text": "Announcing APEX-Agents-AA, our latest leaderboard on Artificial Analysis, evaluating AI agents on long-horizon professional services tasks with realistic application dependencies\n\nThis is our implementation of the APEX-Agents benchmark - an agentic work task evaluation open-sourced by @mercor_ai. It tests AI agent ability to execute realistic tasks created by investment banking analysts, management consultants, and corporate lawyers. Mercor released extensive data to enable model evaluation and training across the community, comprising 480 tasks including tool implementations, rubrics, and grading workflows.\n\nWe exclude tasks with external service dependencies and run the remaining 452 tasks for APEX-Agents-AA. Models complete tasks using Stirrup, our open-source agent harness as used in GDPval-AA, and a customized tool set based on the original benchmark implementation\n\nResults overview:\n\ud83c\udfc5\u00a0OpenAI, Anthropic and Google are in close competition at the top of the leaderboard, with 33.3% for GPT-5.4, 33.0% for Claude Opus 4.6, and 32% for Gemini 3.1 Pro Preview\n\n\ud83d\udcc8\u00a0The overall scores on Artificial Analysis today are similar to Mercor\u2019s testing, but some models such as GPT-5.4 nano show improvements in score using our Stirrup test harness\n\n\u21bb We\u2019ll be updating this leaderboard with key releases for agentic work use as a metric for agent capability on well-defined, long horizon work tasks\n\nAPEX-Agents overview:\n\u27a4 Tasks span 3 professional domains: investment banking, management consulting, and corporate law\n\n\u27a4 The tasks are designed to require long-horizon work with a large number of tools, which are provided through MCP servers as would be used in many real-world deployments (including calendar, chat, spreadsheet and presentation operations, etc.)\n\n\u27a4 Required outputs include direct message responses (87%) and creating or modifying spreadsheets (6.6%), documents (4.8%), and presentations (1.3%)\n\n\u27a4 Model outputs are parsed and graded against binary rubrics using an LLM judge. Each task is run 3 times and scored pass@1 - a pass requires every rubric test to pass\n\n\u27a4 In our APEX-Agents-AA implementation, 452 tasks run in our open-source Stirrup harness with tool management and usage from @mercor_ai's original MCP implementation. This provides a consistent, reproducible baseline for comparing raw model capability that aligns with realistic agent deployments",
+      "link": "https://twitter.com/ArtificialAnlys/status/2041896261826310598",
+      "impressions": 29040,
+      "engagements": 294
+    },
+    "2031127021875818542": {
+      "date": "2026-03-09",
+      "account": "3rd Party",
+      "text": "We've updated the Epoch Capabilities Index with three new benchmarks (APEX-Agents, ARC-AGI-2, and HLE) and several new models!\n\nIn our latest estimate, GPT-5.4 Pro sets a new SOTA at 158, a narrow lead over Gemini 3.1 Pro's score of 157. https://t.co/htF7ZLiP0O",
+      "link": "https://twitter.com/EpochAIResearch/status/2031127021875818542",
+      "impressions": 39021,
+      "engagements": 382
+    },
+    "2022352658712137800": {
+      "date": "2026-02-13",
+      "account": "3rd Party",
+      "text": "APEX-Agents focuses on high-end white collar work. Agents must navigate messy file systems to complete banking, consulting, and legal tasks. Expert humans take 2 hours on average. Current top scores are 30%, and again the scaffold could be improved.",
+      "link": "https://twitter.com/EpochAIResearch/status/2022352658712137800",
+      "impressions": 1454,
+      "engagements": 18
+    },
+    "2022352631122006240": {
+      "date": "2026-02-13",
+      "account": "3rd Party",
+      "text": "Can AI do real digital work? We reviewed three benchmarks to find out: RLI, GDPval, and APEX-Agents.\n\nOur take: progress here will indicate substantial economic value, but tasks are too self-contained to tell us about wholesale automation.\n\nThread for more: https://t.co/ZnzwMxSbkl",
+      "link": "https://twitter.com/EpochAIResearch/status/2022352631122006240",
+      "impressions": 21953,
+      "engagements": 165
+    }
+  },
   "initialized": true
 }

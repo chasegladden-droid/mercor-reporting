@@ -133,7 +133,7 @@ def discover_personal_tweets(cache):
     tweets = cache.setdefault("tweets", {})
     start_date = (
         "2026-01-01" if not cache.get("initialized")
-        else (datetime.now(timezone.utc) - timedelta(days=8)).strftime("%Y-%m-%d")
+        else (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%d")
     )
     new_count = 0
     for user_id, name in TWITTER_PERSONAL_ACCOUNTS.items():
@@ -199,7 +199,11 @@ def discover_third_party_mentions(cache):
     }
     new_count = 0
     while True:
-        resp = requests.get("https://api.twitter.com/2/tweets/search/recent", headers=headers, params=params)
+        try:
+            resp = requests.get("https://api.twitter.com/2/tweets/search/recent", headers=headers, params=params)
+        except Exception as e:
+            print(f"Twitter search/recent connection error: {e} — skipping 3rd party mentions")
+            break
         if not resp.ok:
             print(f"Twitter search/recent returned {resp.status_code} — skipping 3rd party mentions")
             break
@@ -238,7 +242,7 @@ def discover_watched_account_tweets(cache):
     tweets = cache.setdefault("tweets", {})
     start_date = (
         "2026-01-01" if not cache.get("initialized")
-        else (datetime.now(timezone.utc) - timedelta(days=8)).strftime("%Y-%m-%d")
+        else (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%d")
     )
     new_count = 0
     for username in WATCHED_TWITTER_USERNAMES:
@@ -646,7 +650,7 @@ def _notion_divider():
     return {"object": "block", "type": "divider", "divider": {}}
 
 
-def post_to_notion(monthly, post_log, profile_map, clay_daily=None, profound_data=None):
+def post_to_notion(monthly, post_log, profile_map, profound_data=None):
     if not NOTION_API_KEY:
         print("No NOTION_API_KEY — skipping Notion.")
         return
@@ -719,8 +723,12 @@ def post_to_notion(monthly, post_log, profile_map, clay_daily=None, profound_dat
         _notion_heading(2, "Top APEX Posts (All-Time)"),
     ]
 
-    top = sorted(post_log, key=lambda p: p["impressions"], reverse=True)[:5]
-    for i, p in enumerate(top, 1):
+    current_month = today.strftime("%Y-%m")
+    mtd_posts = sorted(
+        [p for p in post_log if p["date"].startswith(current_month)],
+        key=lambda p: p["impressions"], reverse=True
+    )
+    for i, p in enumerate(mtd_posts, 1):
         blocks.append(
             _notion_paragraph(
                 _notion_text(f"{i}. {p['date']} · {p['account']} · ", bold=True),
@@ -729,15 +737,6 @@ def post_to_notion(monthly, post_log, profile_map, clay_daily=None, profound_dat
         )
         blocks.append(_notion_paragraph(_notion_text(p["text"][:200])))
         blocks.append(_notion_paragraph(_notion_text(p["link"])))
-
-    if clay_daily:
-        clay_text = format_clay_section(clay_daily)
-        if clay_text:
-            blocks += [
-                _notion_divider(),
-                _notion_heading(2, "APEX Web Intent — Visits from $10M+ Companies"),
-                _notion_code(clay_text),
-            ]
 
     if profound_data:
         profound_text = format_profound_section(profound_data)
