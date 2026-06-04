@@ -370,7 +370,9 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None):
         )
     table = "\n".join([header, divider] + rows)
 
-    top = sorted(post_log, key=lambda p: p["impressions"], reverse=True)[:3]
+    mtd_posts = [p for p in post_log if p["date"].startswith(current_month)]
+    top = sorted(mtd_posts, key=lambda p: p["impressions"], reverse=True)[:3]
+    month_label = datetime.now(timezone.utc).strftime("%B %Y")
     top_text = "\n".join(
         f">*{i+1}.* {p['date']} · {p['account']} · *{p['impressions']:,} impressions*\n"
         f">{p['text'][:90]}...\n"
@@ -384,7 +386,7 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None):
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*YTD Impressions: {ytd_impressions:,}*  |  YTD Engagements: {ytd_engagements:,}"}},
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*Impressions by Month*\n```{table}```"}},
         {"type": "divider"},
-        {"type": "section", "text": {"type": "mrkdwn", "text": f"*Top APEX Posts (All-Time)*\n{top_text}"}},
+        {"type": "section", "text": {"type": "mrkdwn", "text": f"*Top APEX Posts — {month_label} MTD*\n{top_text}"}},
     ]
 
     if clay_daily:
