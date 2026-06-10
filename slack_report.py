@@ -3,7 +3,7 @@ import io
 import json
 import os
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from collections import defaultdict
 from dotenv import load_dotenv
 
@@ -35,6 +35,8 @@ TWITTER_PERSONAL_ACCOUNTS = {
 WATCHED_TWITTER_USERNAMES = ["ArtificialAnlys", "EpochAIResearch"]
 
 APEX_KEYWORDS = ["apex-agents", "apex-swe", "apex-agents-aa"]
+
+TWEET_CACHE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tweet_cache.json")
 
 
 def get_sprout_profiles():
@@ -92,10 +94,26 @@ def get_all_posts(profile_ids, start_date="2026-01-01", end_date=None):
     return all_posts
 
 
-def get_personal_tweets(start_date="2026-01-01"):
-    headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
-    all_posts = []
+def load_tweet_cache():
+    if os.path.exists(TWEET_CACHE_PATH):
+        with open(TWEET_CACHE_PATH) as f:
+            return json.load(f)
+    return {"tweets": {}}
 
+
+def save_tweet_cache(cache):
+    with open(TWEET_CACHE_PATH, "w") as f:
+        json.dump(cache, f, indent=2)
+
+
+def discover_personal_tweets(cache):
+    headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
+    tweets = cache.setdefault("tweets", {})
+    start_date = (
+        "2026-01-01" if not cache.get("initialized")
+        else (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%d")
+    )
+    new_count = 0
     for user_id, name in TWITTER_PERSONAL_ACCOUNTS.items():
         params = {
             "start_time": f"{start_date}T00:00:00Z",
@@ -104,45 +122,65 @@ def get_personal_tweets(start_date="2026-01-01"):
         }
         url = f"https://api.twitter.com/2/users/{user_id}/tweets"
         while True:
-            data = requests.get(url, headers=headers, params=params).json()
-            for t in data.get("data", []):
+            try:
+                r = requests.get(url, headers=headers, params=params)
+                if not r.ok:
+                    print(f"Personal tweets for {name} returned {r.status_code} — skipping")
+                    break
+                data = r.json()
+            except Exception as e:
+                print(f"Personal tweets error for {name}: {e} — skipping")
+                break
+            if "errors" in data and "data" not in data:
+                print(f"Twitter API error for {name}: {data['errors']} — skipping")
+                break
+            page_tweets = data.get("data", [])
+            all_cached = all(t["id"] in tweets for t in page_tweets) if page_tweets else True
+            for t in page_tweets:
+                if t["id"] in tweets:
+                    continue
+                full_text = t.get("text", "")
+                if not any(kw in full_text.lower() for kw in APEX_KEYWORDS):
+                    continue
                 m = t.get("public_metrics", {})
-                all_posts.append({
-                    "created_time": t["created_at"],
-                    "text": t["text"],
-                    "perma_link": f"https://twitter.com/{name}/status/{t['id']}",
-                    "metrics": {
-                        "lifetime.impressions": m.get("impression_count", 0),
-                        "lifetime.engagements": m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0),
-                    },
-                    "source": name,
-                })
+                tweets[t["id"]] = {
+                    "date": t["created_at"][:10],
+                    "account": name,
+                    "text": full_text,
+                    "link": f"https://twitter.com/i/web/status/{t['id']}",
+                    "impressions": m.get("impression_count", 0),
+                    "engagements": m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0),
+                }
+                new_count += 1
             next_token = data.get("meta", {}).get("next_token")
-            if not next_token:
+            if not next_token or all_cached:
                 break
             params["pagination_token"] = next_token
+    print(f"Discovered {new_count} new personal tweets (Brendan, Adarsh) from {start_date}")
 
-    return all_posts
 
-
-def get_third_party_mentions(start_date="2026-01-01", max_results=500):
+def discover_third_party_mentions(cache):
     headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
+    tweets = cache.setdefault("tweets", {})
     query = (
-        '(apex-agents OR "apex-swe" OR "apex-agents-aa" OR (apex mercor)) '
+        '("apex-agents" OR "apex agents" OR "apex-swe" OR "apex swe" '
+        'OR ("apex-ace" mercor) OR ("apex ace" mercor) OR (apex mercor)) '
         '-from:mercor_ai -from:BrendanFoody -from:adarsh_exe '
-        '-"apex folders" -is:retweet lang:en'
+        '-"apex legends" -"apex predator" -"apex folders" -is:retweet lang:en'
     )
     params = {
         "query": query,
         "max_results": 100,
         "tweet.fields": "created_at,text,public_metrics",
     }
-    all_posts = []
-    fetched = 0
-
-    while fetched < max_results:
-        resp = requests.get("https://api.twitter.com/2/tweets/search/recent", headers=headers, params=params)
-        if not resp.ok or not resp.text.strip():
+    new_count = 0
+    while True:
+        try:
+            resp = requests.get("https://api.twitter.com/2/tweets/search/recent", headers=headers, params=params)
+        except Exception as e:
+            print(f"Twitter search/recent connection error: {e} — skipping 3rd party mentions")
+            break
+        if not resp.ok:
             print(f"Twitter search/recent returned {resp.status_code} — skipping 3rd party mentions")
             break
         try:
@@ -153,34 +191,35 @@ def get_third_party_mentions(start_date="2026-01-01", max_results=500):
         if "errors" in data and "data" not in data:
             print(f"Twitter API error: {data['errors']} — skipping 3rd party mentions")
             break
-        tweets = data.get("data", [])
-        for t in tweets:
+        for t in data.get("data", []):
+            if t["id"] in tweets:
+                continue
             m = t.get("public_metrics", {})
-            all_posts.append({
-                "created_time": t["created_at"],
-                "text": t["text"],
-                "perma_link": f"https://twitter.com/i/web/status/{t['id']}",
-                "metrics": {
-                    "lifetime.impressions": m.get("impression_count", 0),
-                    "lifetime.engagements": m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0),
-                },
-                "source": "3rd Party",
-            })
-        fetched += len(tweets)
+            tweets[t["id"]] = {
+                "date": t["created_at"][:10],
+                "account": "3rd Party",
+                "text": t.get("text", ""),
+                "link": f"https://twitter.com/i/web/status/{t['id']}",
+                "impressions": m.get("impression_count", 0),
+                "engagements": m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0),
+            }
+            new_count += 1
         next_token = data.get("meta", {}).get("next_token")
-        if not next_token or not tweets:
+        if not next_token or not data.get("data"):
             break
         params["next_token"] = next_token
+    print(f"Discovered {new_count} new 3rd party mention tweets")
 
-    return all_posts
 
-
-def get_watched_account_tweets():
+def discover_watched_account_tweets(cache):
     headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
-    all_posts = []
-
+    tweets = cache.setdefault("tweets", {})
+    start_date = (
+        "2026-01-01" if not cache.get("initialized")
+        else (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%d")
+    )
+    new_count = 0
     for username in WATCHED_TWITTER_USERNAMES:
-        # Look up user ID
         resp = requests.get(f"https://api.twitter.com/2/users/by/username/{username}", headers=headers)
         if not resp.ok:
             print(f"Could not look up @{username}: {resp.status_code}")
@@ -189,8 +228,8 @@ def get_watched_account_tweets():
         if not user_id:
             print(f"No user ID found for @{username}")
             continue
-
         params = {
+            "start_time": f"{start_date}T00:00:00Z",
             "max_results": 100,
             "tweet.fields": "created_at,text,public_metrics,note_tweet",
             "expansions": "attachments.media_keys",
@@ -198,7 +237,7 @@ def get_watched_account_tweets():
         url = f"https://api.twitter.com/2/users/{user_id}/tweets"
         while True:
             resp = requests.get(url, headers=headers, params=params)
-            if not resp.ok or not resp.text.strip():
+            if not resp.ok:
                 print(f"Timeline fetch failed for @{username}: {resp.status_code}")
                 break
             try:
@@ -206,29 +245,83 @@ def get_watched_account_tweets():
             except Exception as e:
                 print(f"Parse error for @{username}: {e}")
                 break
-            for t in data.get("data", []):
-                # Use full note_tweet text if available, else short text
+            page_tweets = data.get("data", [])
+            all_cached = all(t["id"] in tweets for t in page_tweets) if page_tweets else True
+            for t in page_tweets:
+                if t["id"] in tweets:
+                    continue
                 full_text = t.get("note_tweet", {}).get("text") or t.get("text", "")
                 if not any(kw in full_text.lower() for kw in APEX_KEYWORDS):
                     continue
                 m = t.get("public_metrics", {})
-                all_posts.append({
-                    "created_time": t["created_at"],
+                tweets[t["id"]] = {
+                    "date": t["created_at"][:10],
+                    "account": "3rd Party",
                     "text": full_text,
-                    "perma_link": f"https://twitter.com/{username}/status/{t['id']}",
-                    "metrics": {
-                        "lifetime.impressions": m.get("impression_count", 0),
-                        "lifetime.engagements": m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0),
-                    },
-                    "source": "3rd Party",
-                })
+                    "link": f"https://twitter.com/{username}/status/{t['id']}",
+                    "impressions": m.get("impression_count", 0),
+                    "engagements": m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0),
+                }
+                new_count += 1
             next_token = data.get("meta", {}).get("next_token")
-            if not next_token:
+            if not next_token or all_cached:
                 break
             params["pagination_token"] = next_token
+    print(f"Found {new_count} new APEX posts from watched accounts ({', '.join('@' + u for u in WATCHED_TWITTER_USERNAMES)})")
 
-    print(f"Found {len(all_posts)} APEX posts from watched accounts ({', '.join('@' + u for u in WATCHED_TWITTER_USERNAMES)})")
-    return all_posts
+
+def refresh_tweet_impressions(cache):
+    headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
+    tweets = cache.get("tweets", {})
+    ids = list(tweets.keys())
+    if not ids:
+        print("No cached tweets to refresh")
+        return
+    updated = 0
+    for i in range(0, len(ids), 100):
+        batch = ids[i:i + 100]
+        try:
+            resp = requests.get(
+                "https://api.twitter.com/2/tweets",
+                headers=headers,
+                params={"ids": ",".join(batch), "tweet.fields": "public_metrics"},
+            )
+            if not resp.ok:
+                print(f"Impression refresh batch {i // 100 + 1} failed: {resp.status_code}")
+                continue
+            data = resp.json()
+        except Exception as e:
+            print(f"Impression refresh error: {e}")
+            continue
+        if "errors" in data and "data" not in data:
+            print(f"Twitter API error in impression refresh: {data['errors']}")
+            continue
+        for t in data.get("data", []):
+            if t["id"] not in tweets:
+                continue
+            m = t.get("public_metrics", {})
+            tweets[t["id"]]["impressions"] = m.get("impression_count", 0)
+            tweets[t["id"]]["engagements"] = (
+                m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0)
+            )
+            updated += 1
+    print(f"Refreshed impressions for {updated}/{len(ids)} cached tweets ({(len(ids) + 99) // 100} API calls)")
+
+
+def cache_to_posts(cache):
+    posts = []
+    for tweet_id, t in cache.get("tweets", {}).items():
+        posts.append({
+            "created_time": t["date"] + "T12:00:00+00:00",
+            "text": t["text"],
+            "perma_link": t["link"],
+            "metrics": {
+                "lifetime.impressions": t["impressions"],
+                "lifetime.engagements": t["engagements"],
+            },
+            "source": t["account"],
+        })
+    return posts
 
 
 def is_apex_post(post):
@@ -499,20 +592,24 @@ if __name__ == "__main__":
     print("Fetching Sprout posts...")
     posts = get_all_posts(profile_ids, start_date="2026-01-01")
 
-    print("Fetching personal tweets...")
-    personal = get_personal_tweets(start_date="2026-01-01")
+    print("Loading tweet cache...")
+    cache = load_tweet_cache()
 
-    print("Fetching 3rd party mentions...")
-    third_party = get_third_party_mentions(start_date="2026-01-01")
+    print("Discovering personal tweets...")
+    discover_personal_tweets(cache)
 
-    print("Fetching watched account tweets...")
-    watched = get_watched_account_tweets()
+    print("Discovering 3rd party mentions...")
+    discover_third_party_mentions(cache)
 
-    # Deduplicate watched posts against third_party by perma_link
-    third_party_links = {p["perma_link"] for p in third_party}
-    watched_new = [p for p in watched if p["perma_link"] not in third_party_links]
+    print("Discovering watched account tweets...")
+    discover_watched_account_tweets(cache)
 
-    all_posts = posts + personal + third_party + watched_new
+    print("Refreshing tweet impressions...")
+    refresh_tweet_impressions(cache)
+    cache["initialized"] = True
+    save_tweet_cache(cache)
+
+    all_posts = posts + cache_to_posts(cache)
     fresh_monthly, post_log = build_report(all_posts, profile_map)
 
     baseline = load_baseline()

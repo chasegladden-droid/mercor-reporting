@@ -32,7 +32,7 @@ jobs:
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
-          git add monthly_baseline.json || true
+          git add monthly_baseline.json tweet_cache.json || true
           git diff --staged --quiet || git commit -m "chore: update monthly baseline"
           git push || true
 
