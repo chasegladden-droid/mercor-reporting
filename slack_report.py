@@ -335,7 +335,7 @@ def format_clay_section(daily):
     return "\n".join(lines)
 
 
-def format_slack_message(monthly, post_log, profile_map, clay_daily=None):
+def format_slack_message(monthly, post_log, profile_map):
     today = datetime.now(timezone.utc).strftime("%B %d, %Y")
     current_month = datetime.now(timezone.utc).strftime("%Y-%m")
 
@@ -390,14 +390,6 @@ def format_slack_message(monthly, post_log, profile_map, clay_daily=None):
         {"type": "section", "text": {"type": "mrkdwn", "text": f"*Top APEX Posts — {month_label} MTD*\n{top_text}"}},
     ]
 
-    if clay_daily:
-        clay_text = format_clay_section(clay_daily)
-        if clay_text:
-            blocks += [
-                {"type": "divider"},
-                {"type": "section", "text": {"type": "mrkdwn", "text": f"*APEX Web Intent — Visits from $10M+ Companies*\n```{clay_text}```"}},
-            ]
-
     return {"blocks": blocks}
 
 
@@ -409,7 +401,7 @@ def send_to_slack(message):
         print(f"Slack error {resp.status_code}: {resp.text}")
 
 
-def post_to_notion(monthly, post_log, clay_daily=None):
+def post_to_notion(monthly, post_log):
     if not NOTION_TOKEN:
         print("NOTION_TOKEN not set — skipping Notion post.")
         return
@@ -451,23 +443,6 @@ def post_to_notion(monthly, post_log, clay_daily=None):
         {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "Top APEX Posts (All-Time)"}}]}},
         {"object": "block", "type": "code", "code": {"rich_text": [{"type": "text", "text": {"content": top_text}}], "language": "plain text"}},
     ]
-
-    if clay_daily:
-        clay_lines = []
-        total_all = total_high = 0
-        for date in sorted(clay_daily.keys()):
-            d = clay_daily[date]
-            pct = (d["high_rev"] / d["total"] * 100) if d["total"] else 0
-            clay_lines.append(f"{date}  {d['total']:>5,} visits  {d['high_rev']:>5,} from $10M+  ({pct:.0f}%)")
-            total_all += d["total"]
-            total_high += d["high_rev"]
-        overall_pct = (total_high / total_all * 100) if total_all else 0
-        clay_lines.append(f"{'─'*50}")
-        clay_lines.append(f"Total     {total_all:>5,} visits  {total_high:>5,} from $10M+  ({overall_pct:.0f}%)")
-        blocks += [
-            {"object": "block", "type": "heading_2", "heading_2": {"rich_text": [{"type": "text", "text": {"content": "APEX Web Intent — $10M+ Company Visits"}}]}},
-            {"object": "block", "type": "code", "code": {"rich_text": [{"type": "text", "text": {"content": "\n".join(clay_lines)}}], "language": "plain text"}},
-        ]
 
     headers = {
         "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -533,9 +508,6 @@ if __name__ == "__main__":
     print("Fetching watched account tweets...")
     watched = get_watched_account_tweets()
 
-    print("Fetching Clay web intent data...")
-    clay_daily = fetch_clay_web_intent()
-
     # Deduplicate watched posts against third_party by perma_link
     third_party_links = {p["perma_link"] for p in third_party}
     watched_new = [p for p in watched if p["perma_link"] not in third_party_links]
@@ -548,6 +520,6 @@ if __name__ == "__main__":
     save_baseline(monthly)
     print("Baseline updated.")
 
-    message = format_slack_message(monthly, post_log, profile_map, clay_daily)
+    message = format_slack_message(monthly, post_log, profile_map)
     send_to_slack(message)
-    post_to_notion(monthly, post_log, clay_daily)
+    post_to_notion(monthly, post_log)
