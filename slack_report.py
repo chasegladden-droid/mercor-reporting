@@ -1,5 +1,6 @@
 import csv
 import io
+import json
 import os
 import requests
 from datetime import datetime, timezone
@@ -486,6 +487,36 @@ def post_to_notion(monthly, post_log, clay_daily=None):
         print(f"Notion error {resp.status_code}: {resp.text}")
 
 
+BASELINE_PATH = os.path.join(os.path.dirname(__file__), "monthly_baseline.json")
+
+
+def load_baseline():
+    if os.path.exists(BASELINE_PATH):
+        with open(BASELINE_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def save_baseline(merged):
+    with open(BASELINE_PATH, "w") as f:
+        json.dump({m: dict(v) for m, v in merged.items()}, f, indent=2)
+
+
+def merge_with_baseline(fresh, baseline):
+    current_month = datetime.now(timezone.utc).strftime("%Y-%m")
+    merged = defaultdict(lambda: defaultdict(int))
+
+    all_months = set(fresh.keys()) | set(baseline.keys())
+    for month in all_months:
+        for key in set(fresh.get(month, {}).keys()) | set(baseline.get(month, {}).keys()):
+            fresh_val = fresh.get(month, {}).get(key, 0)
+            base_val = baseline.get(month, {}).get(key, 0)
+            # Current month: always use fresh data; past months: take the max
+            merged[month][key] = fresh_val if month == current_month else max(fresh_val, base_val)
+
+    return merged
+
+
 if __name__ == "__main__":
     print("Fetching Sprout profiles...")
     profile_ids, profile_map = get_sprout_profiles()
@@ -510,7 +541,13 @@ if __name__ == "__main__":
     watched_new = [p for p in watched if p["perma_link"] not in third_party_links]
 
     all_posts = posts + personal + third_party + watched_new
-    monthly, post_log = build_report(all_posts, profile_map)
+    fresh_monthly, post_log = build_report(all_posts, profile_map)
+
+    baseline = load_baseline()
+    monthly = merge_with_baseline(fresh_monthly, baseline)
+    save_baseline(monthly)
+    print("Baseline updated.")
+
     message = format_slack_message(monthly, post_log, profile_map, clay_daily)
     send_to_slack(message)
     post_to_notion(monthly, post_log, clay_daily)
