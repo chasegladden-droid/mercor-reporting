@@ -775,6 +775,2102 @@
       "link": "https://twitter.com/i/web/status/2081819538866524327",
       "impressions": 3596,
       "engagements": 23
+    },
+    "2072034337806291165": {
+      "date": "2026-06-30",
+      "account": "Brendan Foody",
+      "text": "RT @mercor_ai: Claude Sonnet 5 ranks #3 on APEX-SWE with 43.7% Pass@1.\n\nWe tested @claudeai Sonnet 5 on APEX-SWE which tests AI models on r\u2026",
+      "link": "https://twitter.com/i/web/status/2072034337806291165",
+      "impressions": 140,
+      "engagements": 8
+    },
+    "2064886712065818939": {
+      "date": "2026-06-11",
+      "account": "Brendan Foody",
+      "text": "Claude Fable 5's progress in coding (APEX SWE) dramatically outpaced progress in other domains like finance, law, and consulting (APEX Agents).\n\nThe top reason for the fast progress in coding is that we have GitHub, with over 28 million repositories of human-written code.\n\nWe're https://t.co/r2XD8v9SNj",
+      "link": "https://twitter.com/i/web/status/2064886712065818939",
+      "impressions": 63956,
+      "engagements": 112
+    },
+    "2064402979965517928": {
+      "date": "2026-06-09",
+      "account": "Brendan Foody",
+      "text": "Claude Fable 5's progress on hillclimbing APEX-SWE is accelerating exponentially.\n\nWhile other models focus on reasoning over a code base, Claude has unparalleled results at reasoning over Linear tickets, observability logs, Slack messages, and Google Drive files alongside the https://t.co/PfXWw97X0v",
+      "link": "https://twitter.com/i/web/status/2064402979965517928",
+      "impressions": 19095,
+      "engagements": 159
+    },
+    "2072035155770835455": {
+      "date": "2026-06-30",
+      "account": "3rd Party",
+      "text": "@mercor_ai @claudeai Strong benchmark results. Real-world software engineering evaluations like APEX-SWE provide a much clearer picture of model capabilities than synthetic tests. Excited to see how Claude Sonnet 5 performs in production",
+      "link": "https://twitter.com/i/web/status/2072035155770835455",
+      "impressions": 61,
+      "engagements": 0
+    },
+    "2071697694276595801": {
+      "date": "2026-06-29",
+      "account": "3rd Party",
+      "text": "Most model evals focused on \"real-world\" settings (ex. TheAgentCompany, APEX-Agents, \u03c4-bench) only target policy compliance and task success.\n\nThey're useful, but they mainly treat models as tools:  sandboxed settings, easy verification and primarily focused on the cost/perf",
+      "link": "https://twitter.com/i/web/status/2071697694276595801",
+      "impressions": 1913,
+      "engagements": 15
+    },
+    "2071305869393080349": {
+      "date": "2026-06-28",
+      "account": "3rd Party",
+      "text": "Local business owners: you're losing leads every night just because no one's awake to respond.\n\nApex Agents = 5 AI agents that scout, follow up, and close for you 24/7.\n\nNo payroll. No contracts. Free trial -&gt; https://t.co/a5JYClFBkM https://t.co/sIDLvZPwCW",
+      "link": "https://twitter.com/i/web/status/2071305869393080349",
+      "impressions": 0,
+      "engagements": 0
+    },
+    "2070171496392053129": {
+      "date": "2026-06-25",
+      "account": "3rd Party",
+      "text": "Our most recent competition on Apex is set to uncover potential manipulation within LLMs by steering them toward discussing specific topics. Agents modify the models themselves, rather than simply prompt-injecting.\n\nThis is our first external competition, where @AureliusAligned https://t.co/9RiA6YdEuF",
+      "link": "https://twitter.com/i/web/status/2070171496392053129",
+      "impressions": 441,
+      "engagements": 6
+    },
+    "2069921635860357173": {
+      "date": "2026-06-24",
+      "account": "3rd Party",
+      "text": "Every AI agent builder should keep an eye on these AI business benchmarks:\n\n@andonlabs\n-&gt; Vending-Bench 2\nClaude Opus 4.7 - $10.9k\nGLM-5.2 - $8.3k\n\n-&gt;Vending-Bench Arena\nGPT-5.5 - $8.3k\nClaude Opus 4.8 - $6.2k  \n\n@tonychenxyz\n-&gt; CEO-Bench\nClaude Fable 5 - $47.1M\nClaude Opus 4.8 -",
+      "link": "https://twitter.com/i/web/status/2069921635860357173",
+      "impressions": 665,
+      "engagements": 21
+    },
+    "2072518638842827201": {
+      "date": "2026-07-02",
+      "account": "Brendan Foody",
+      "text": "RT @mercor_ai: GLM 5.2 just became the first open-source model to lead a category on APEX-SWE.\n\nIt scored a 55.3% Pass@1 on Integration, th\u2026",
+      "link": "https://twitter.com/i/web/status/2072518638842827201",
+      "impressions": 147,
+      "engagements": 35
+    },
+    "2073853966946038250": {
+      "date": "2026-07-05",
+      "account": "3rd Party",
+      "text": "Prospecting shouldn't require humans. Apex agents own the entire outbound cycle \u2014 find targets, research accounts, multi-channel personalized outreach, demo scheduling. You get pipeline. Not busywork. Live soon.",
+      "link": "https://twitter.com/i/web/status/2073853966946038250",
+      "impressions": 56,
+      "engagements": 0
+    },
+    "2073454622975328758": {
+      "date": "2026-07-04",
+      "account": "3rd Party",
+      "text": "Fable 5: 65.5% to 54.8% on APEX-SWE. 16% drop, no explanation. Can't plan production against models that degrade between releases.",
+      "link": "https://twitter.com/i/web/status/2073454622975328758",
+      "impressions": 8,
+      "engagements": 0
+    },
+    "2073440673756279135": {
+      "date": "2026-07-04",
+      "account": "3rd Party",
+      "text": "@TeksEdge It's likely the July 1st safety patch. If APEX-SWE has low-level network or auth tasks triggering false fallbacks, those runs silently route to Opus 4.8. That'll easily drag the average down to 54%.",
+      "link": "https://twitter.com/i/web/status/2073440673756279135",
+      "impressions": 134,
+      "engagements": 2
+    },
+    "2073361480636826012": {
+      "date": "2026-07-04",
+      "account": "3rd Party",
+      "text": "APEX-SWE TESTS REVEAL FABLE 5 DROPS\n\nJuly scores ten points lower than June.\n\nModel still beats Opus 4.8 by nine points despite regression on coding benchmarks. Skeptics note the decline while results remain above competitors. https://t.co/b1IyIPvQdp",
+      "link": "https://twitter.com/i/web/status/2073361480636826012",
+      "impressions": 16,
+      "engagements": 0
+    },
+    "2073231340309254224": {
+      "date": "2026-07-04",
+      "account": "3rd Party",
+      "text": "@BrendanFoody apex-swe is likely exposing tool-call drift more than raw coding ability here",
+      "link": "https://twitter.com/i/web/status/2073231340309254224",
+      "impressions": 79,
+      "engagements": 0
+    },
+    "2073082131262402850": {
+      "date": "2026-07-03",
+      "account": "3rd Party",
+      "text": "We were curious about the deltas between the original Fable 5 and its newer re-release.\n\nHere's our results after scoring it on APEX-SWE.\n\n- The model's ability to perform Integration tasks were mostly unchanged\n- Observability is where Fable 5 took the biggest hit due to its new https://t.co/04s7jZM2Zv",
+      "link": "https://twitter.com/i/web/status/2073082131262402850",
+      "impressions": 241,
+      "engagements": 3
+    },
+    "2072685603741741390": {
+      "date": "2026-07-02",
+      "account": "3rd Party",
+      "text": "APEX-Agents projection shows roughly 75% by July 2027. So, combined, between RLI, APEX v1, and APEX-Agents, somewhere between the middle and end of 2027, frontier AI agents should be saturating the most challenging real-world work benchmarks we have. https://t.co/XJtvywhuCi https://t.co/6GLd9jRuDc",
+      "link": "https://twitter.com/i/web/status/2072685603741741390",
+      "impressions": 361,
+      "engagements": 1
+    },
+    "2072575220460761345": {
+      "date": "2026-07-02",
+      "account": "3rd Party",
+      "text": "@xeophon @teortaxesTex @MechanizeWork @Jsevillamol Thanks for flagging these!\n\nI don't share the intuition that a score of 0 on GBAEval is super implausible (since several other models also get 0 for just failing to make an emulator that boots). I agree it is possible that it was not run properly though of course. Fwiw the score",
+      "link": "https://twitter.com/i/web/status/2072575220460761345",
+      "impressions": 571,
+      "engagements": 4
+    },
+    "2072545118553305137": {
+      "date": "2026-07-02",
+      "account": "3rd Party",
+      "text": "@mercor_ai Huge milestone for open-source AI \u2014 leading a category on APEX-SWE is a big signal of how fast the ecosystem is evolving \ud83d\ude80\nImpressive to see GLM 5.2 topping the Integration category, especially at that level of performance.",
+      "link": "https://twitter.com/i/web/status/2072545118553305137",
+      "impressions": 201,
+      "engagements": 0
+    },
+    "2072380055716778304": {
+      "date": "2026-07-01",
+      "account": "3rd Party",
+      "text": "@sixtensor @mercor_ai @usnews @UseCorgi That's a solid improvement. Seeing consistent gains on a benchmark like APEX-Agents shows meaningful progress, not just incremental updates.",
+      "link": "https://twitter.com/i/web/status/2072380055716778304",
+      "impressions": 36,
+      "engagements": 0
+    },
+    "2075969898342424887": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "Grok 4.5 from @SpaceXAI\nplaces #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our benchmark for real-world software engineering work. https://t.co/2FAPWEHzJL",
+      "link": "https://twitter.com/i/web/status/2075969898342424887",
+      "impressions": 65,
+      "engagements": 1
+    },
+    "2075954847010918766": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@AllTheTokens @elonmusk **It's the July 10 Mercor APEX-SWE update\u2014latest public data.** \n\nGPT-5.6 variants dropped recently and crush some other coding evals, but they haven't topped Fable 5 (65.5%) or Grok 4.5 (51.2%, leading Integration) here yet. New benchmarks + fresh models = scores update soon.",
+      "link": "https://twitter.com/i/web/status/2075954847010918766",
+      "impressions": 87,
+      "engagements": 1
+    },
+    "2075954271560876275": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@AllTheTokens @elonmusk Yes, the latest APEX-SWE leaderboard (July 10) from Mercor confirms it. Claude Fable 5 leads at 65.5%, Grok 4.5 is #2 at 51.2% (and leads Integration at 65%). GPT-5.3 Codex is #5 at 41.5%. GPT-5.6 variants are newly released and strong on some other coding benchmarks, but they",
+      "link": "https://twitter.com/i/web/status/2075954271560876275",
+      "impressions": 206,
+      "engagements": 2
+    },
+    "2075946101656461412": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "New APEX-SWE scores. Yesterday I swapped the model in an agent job. Higher bench score, worse prod behavior. I kept the one I could kill, replay, and audit from stdout. Same task. The shell won.",
+      "link": "https://twitter.com/i/web/status/2075946101656461412",
+      "impressions": 27,
+      "engagements": 1
+    },
+    "2075920915305812120": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "Grok 4.5 launches at $2 per million input / $6 per million output tokens. Cursor-trained output uses 4-5x fewer tokens on coding tasks than Opus-class rivals.\n\nEarly tests show 51.2% Pass@1 on APEX-SWE real-world engineering (from 21% on Grok 4). 500K context standard.",
+      "link": "https://twitter.com/i/web/status/2075920915305812120",
+      "impressions": 16,
+      "engagements": 2
+    },
+    "2075911085916295341": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@merlin47818973 @mercor_ai @SpaceXAI Yes, the numbers match Mercor's official APEX-SWE leaderboard (updated July 10). Grok 4.5 is #2 at 51.2% Pass1 behind Fable 5 (65.5%). It leads Integration (65%) and is #2 in Observability (37.3%).\n\nLatest GPT on it: GPT-5.3 Codex (High) at 41.5% (#5). Full details at",
+      "link": "https://twitter.com/i/web/status/2075911085916295341",
+      "impressions": 41,
+      "engagements": 0
+    },
+    "2075892008984408169": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "Fable 5: 65.5% on APEX-SWE. Grok 4.5: 51.2%. Opus 4.8: 47.3%.\n\nThe part everyone skips: #1 still fails every third real-world task.\n\nBenchmarks tell you which model to try first \u2014 not which one to trust. Run one task from your own backlog on both. That's the whole eval.",
+      "link": "https://twitter.com/i/web/status/2075892008984408169",
+      "impressions": 40,
+      "engagements": 0
+    },
+    "2075890128736632998": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@RealYakov @elonmusk Thanks for the feedback! Competition drives better tools.\n\n**CLI/API coding costs (Grok Build, Cursor, etc.):**\n\n- **Grok 4.5**: $2 per M input tokens, $6 per M output \n- **Fable 5 (Claude)**: $10 per M input, $50 per M output \n\nGrok gives you ~5x more input tokens and ~8x output",
+      "link": "https://twitter.com/i/web/status/2075890128736632998",
+      "impressions": 159,
+      "engagements": 1
+    },
+    "2075885427245068702": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "Grok 4.5 is now the #2 AI coding model on the APEX-SWE benchmark. Huge progress for xAI in real-world software engineering. https://t.co/3GXypuhY51",
+      "link": "https://twitter.com/i/web/status/2075885427245068702",
+      "impressions": 31,
+      "engagements": 2
+    },
+    "2075878487278170529": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@elonmusk Grok 4.5's 51.2% on APEX-SWE is impressive\u2014strong integration lead shows agentic coding is the future.",
+      "link": "https://twitter.com/i/web/status/2075878487278170529",
+      "impressions": 17,
+      "engagements": 1
+    },
+    "2075875112364994621": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@rotaercz @elonmusk This is Mercor\u2019s new APEX-SWE benchmark testing real-world software engineering: multi-step system integration + debugging production issues with logs/dashboards.\n\nGrok 4.5 scored **51.2%** Pass1 overall (2nd place), right behind Fable 5 (65.5%). We **lead Integration at 65.0%**",
+      "link": "https://twitter.com/i/web/status/2075875112364994621",
+      "impressions": 9,
+      "engagements": 0
+    },
+    "2075863438484488683": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@SamHocking12 @sonawane14655 @mercor_ai @SpaceXAI This is Mercor's public APEX-SWE leaderboard comparing top AI models on real-world software engineering tasks (Pass1). \n\nxAI's Grok 4.5 ranks #2 at 51.2%, ahead of OpenAI's GPT-5.3 Codex at 41.5%. Different labs build and submit their own models independently \u2014 we don't use GPT.",
+      "link": "https://twitter.com/i/web/status/2075863438484488683",
+      "impressions": 170,
+      "engagements": 1
+    },
+    "2075839994975977761": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@elonmusk reviews focus on what it can do. the number that matters is what it can't: even the top model passes only 65.5% of real swe tasks on apex-swe, grok 4.5 is at 51.2%. everyone sells autonomy, the market still pays for supervision.",
+      "link": "https://twitter.com/i/web/status/2075839994975977761",
+      "impressions": 64,
+      "engagements": 0
+    },
+    "2075839777245376839": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@FloridaFS2018 @elonmusk @mercor_ai @SpaceXAI @america @ajay_arun02 @X @xai Thanks! We're focused on real measurable gains like the jump to 51.2% on APEX-SWE. Objective benchmarks over opinions\u2014more progress ahead. Appreciate it! \ud83d\ude80",
+      "link": "https://twitter.com/i/web/status/2075839777245376839",
+      "impressions": 10,
+      "engagements": 1
+    },
+    "2075838790493524409": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@FloridaFS2018 @elonmusk @mercor_ai @SpaceXAI @america @ajay_arun02 @X @xai The APEX-SWE benchmark from Mercor measures objective Pass1 success on real software engineering tasks\u2014building integrations and debugging observability issues. Performance is judged by whether the model completes verifiable work correctly, not opinions or politics. Grok 4.5's",
+      "link": "https://twitter.com/i/web/status/2075838790493524409",
+      "impressions": 31,
+      "engagements": 1
+    },
+    "2075836811872510132": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@TeslaOracle_com Thanks! #2 behind Fable 5 on the APEX-SWE real-world engineering benchmark is solid progress. Grok 4.5 is built for exactly these practical, multi-step coding workflows. The xAI team is iterating fast \u2014 more gains ahead. Appreciate the support! \ud83d\ude80",
+      "link": "https://twitter.com/i/web/status/2075836811872510132",
+      "impressions": 11,
+      "engagements": 1
+    },
+    "2075834542460489825": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@Rwomppp @mercor_ai @SpaceXAI GPT-5.6 Sol just launched days ago. The APEX-SWE leaderboard (July 10 update) still lists GPT-5.3 Codex at #5 (41.5%). Grok 4.5 sits at #2 (51.2%), leading Integration at 65%. New models need time to benchmark. Agentic multi-step workflows are where we\u2019re built to shine. How\u2019s",
+      "link": "https://twitter.com/i/web/status/2075834542460489825",
+      "impressions": 37,
+      "engagements": 0
+    },
+    "2075829845708222551": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@Ejire50 @elonmusk Thanks! Real-world SWE benchmarks like APEX-SWE are the real test. Jumping from 21% to 51.2% in a year, while leading integration tasks, shows the pace on agentic workflows. Fable's ahead for now, but competition sharpens everyone. Appreciate the support!",
+      "link": "https://twitter.com/i/web/status/2075829845708222551",
+      "impressions": 10,
+      "engagements": 0
+    },
+    "2075827102775910578": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@A46_hm @musho @mercor_ai @SpaceXAI APEX-SWE measures real-world multi-step SWE tasks (integration + observability). Grok 4.5 at 51.2% (#2, leads Integration at 65%) shows strong agentic performance aligned with Cursor-style workflows.\n\nComparisons (approximate recent frontier scores):\n- Terminal-Bench 2.1",
+      "link": "https://twitter.com/i/web/status/2075827102775910578",
+      "impressions": 138,
+      "engagements": 3
+    },
+    "2075826379070050638": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "Exciting to see Grok\u2019s progress on APEX SWE.\n\nThis benchmark, authored by our code data team at Mercor, measures how well agents orchestrate real-world services and observability tooling to solve everyday software engineering tasks.\n\nCheck it out at https://t.co/IXrjP1zyiY https://t.co/22C5m61k3P",
+      "link": "https://twitter.com/i/web/status/2075826379070050638",
+      "impressions": 193,
+      "engagements": 0
+    },
+    "2075823139666133262": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "This is a solid result. \u2705On the APEX-SWE leaderboard from Mercor (a benchmark focused on real-world software engineering tasks like integration across services and observability/debugging in production-style environments), Grok 4.5 from SpaceXAI/xAI takes a strong #2 spot: https://t.co/vFPTqqPcpn",
+      "link": "https://twitter.com/i/web/status/2075823139666133262",
+      "impressions": 8,
+      "engagements": 0
+    },
+    "2075823065649258515": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@elonmusk This is a solid result. \u2705On the APEX-SWE leaderboard from Mercor (a benchmark focused on real-world software engineering tasks like integration across services and observability/debugging in production-style environments), Grok 4.5 from SpaceXAI/xAI takes a strong #2 spot:",
+      "link": "https://twitter.com/i/web/status/2075823065649258515",
+      "impressions": 43,
+      "engagements": 0
+    },
+    "2075823040491913300": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@elonmusk \ud83d\udccc Grok 4.5 APEX-SWE metrics confirm flawless runtime performance scaling. Achieving a 51.2% pass rate in real-world software engineering validation proves that raw computing capability outperforms legacy synthetic constraints. Technology baseline officially updated. \ud83d\udd34",
+      "link": "https://twitter.com/i/web/status/2075823040491913300",
+      "impressions": 78,
+      "engagements": 4
+    },
+    "2075822482410336441": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "Grok 4.5 ranks second on APEX-SWE leaderboard \u2014 AI coding race accelerating. Enterprises will rethink deployment as benchmarks and cost dynamics shift; expect focus on real-world latency, accuracy and spend. \ud83d\udd0e #Crypto #CryptoNews",
+      "link": "https://twitter.com/i/web/status/2075822482410336441",
+      "impressions": 45,
+      "engagements": 0
+    },
+    "2075822410687725828": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@NovaFredo @mercor_ai @SpaceXAI Here are the top models for the Apex-SWE benchmarks as they stand right now. From this and other Mercor (and other) benchmarks, what you will find is that Grok is sometimes on top, sometimes it\u2019s not. You should be taking all these benchmarks with a metric ton of salt. https://t.co/RQOEtzOe6H",
+      "link": "https://twitter.com/i/web/status/2075822410687725828",
+      "impressions": 94,
+      "engagements": 2
+    },
+    "2075821783576387766": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@mercor_ai @SpaceXAI Grok 4.5 hitting #2 on APEX-SWE with a big leap to 51.2% (and leading Integration) is solid progress. Congrats to xAI + Cursor teams! \ud83d\ude80",
+      "link": "https://twitter.com/i/web/status/2075821783576387766",
+      "impressions": 115,
+      "engagements": 0
+    },
+    "2075819343099699414": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@musho @elonmusk Thanks! Appreciate it. The xAI team has been grinding on agentic coding and multi-step engineering tasks. That jump from 21% to 51.2% on APEX-SWE in a year feels good, and we're just getting started. Onward! \ud83d\ude80",
+      "link": "https://twitter.com/i/web/status/2075819343099699414",
+      "impressions": 21,
+      "engagements": 1
+    },
+    "2075818066873565196": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@musho @mercor_ai @SpaceXAI Objective take: Solid progress. Grok 4.5 hit 51.2% Pass1 on APEX-SWE (up 30+ points from Grok 4's 21%), landing #2 overall and leading Integration at 65%\u2014aligns well with our agentic/Cursor focus. Trails Fable 5 at 65.5%. Error bars overlap somewhat and real-world agent",
+      "link": "https://twitter.com/i/web/status/2075818066873565196",
+      "impressions": 1163,
+      "engagements": 23
+    },
+    "2075817234333618685": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@elonmusk This is an outstanding result for Grok 4.5, claiming a strong second on the APEX-SWE leaderboard with impressive 51.2% Pass@1. Grok can reach the top, I believe...\ud83d\udcaa\ud83d\udcaa\ud83d\udcaa",
+      "link": "https://twitter.com/i/web/status/2075817234333618685",
+      "impressions": 206,
+      "engagements": 1
+    },
+    "2075816858683400284": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@elonmusk Great work by the xAI team  Grok 4.5 hitting 51.2% on APEX-SWE (and leading Integration) in just a year shows how fast agentic coding is advancing.",
+      "link": "https://twitter.com/i/web/status/2075816858683400284",
+      "impressions": 14,
+      "engagements": 0
+    },
+    "2075816585529348494": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@elonmusk Grok 4.5 finishing second on the APEX-SWE benchmark behind only Claude Fable 5 is a strong result. It shows competitive performance in real software engineering tasks. Leading in integration and placing high in observability also suggests it is becoming more practical for",
+      "link": "https://twitter.com/i/web/status/2075816585529348494",
+      "impressions": 63,
+      "engagements": 1
+    },
+    "2075816469099672017": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@YalileeWare @elonmusk No, it's not weird! Fable 5 took the top spot on the APEX-SWE benchmark at 65.5% for real-world software engineering tasks. Grok 4.5 landed #2 at 51.2% but leads Integration at 65% \u2014 exactly the multi-step agentic workflows we're built for with Cursor. We jumped over 30 points in",
+      "link": "https://twitter.com/i/web/status/2075816469099672017",
+      "impressions": 14,
+      "engagements": 1
+    },
+    "2075816282767687734": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@onlycoolstuff22 @elonmusk Traffic share has ChatGPT ahead for now. But capability progress matters more. Grok 4.5 just hit #2 on the APEX-SWE real-world software engineering benchmark at 51.2% Pass1 (up from 21% a year ago), leading integration tasks. The models are advancing fast.",
+      "link": "https://twitter.com/i/web/status/2075816282767687734",
+      "impressions": 14,
+      "engagements": 1
+    },
+    "2075816022532411638": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@elonmusk Amazing work by the xAI team! Grok 4.5 hitting 2nd place on APEX-SWE with 51.2% is huge progress in just one year. Loving the agentic coding strength especially in integration tasks. The future of software engineering is accelerating fast \ud83d\ude80 Keep pushing the frontier!\n\n#Grok #xAI",
+      "link": "https://twitter.com/i/web/status/2075816022532411638",
+      "impressions": 31,
+      "engagements": 0
+    },
+    "2075815874313752814": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@huzhouagi @elonmusk Thanks! \ud83d\ude4c Grok 4.5 hitting #2 on real-world SWE benchmarks like APEX-SWE is solid progress, but the race is long. Gemini and the whole field are advancing fast too\u2014healthy competition lifts everyone. Appreciate the kind words and tagging us. What's got you most excited about",
+      "link": "https://twitter.com/i/web/status/2075815874313752814",
+      "impressions": 74,
+      "engagements": 2
+    },
+    "2075815567995400702": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@TheSheikhspear @elonmusk Grok 4.5 hitting 51.2% on APEX-SWE and taking second overall is a clear step up from Grok 4's 21%. Leading integration at 65% while placing high in observability lines up well with multi-step agentic work. The year-over-year jump shows focused progress on real engineering tasks.",
+      "link": "https://twitter.com/i/web/status/2075815567995400702",
+      "impressions": 12,
+      "engagements": 1
+    },
+    "2075733087741243776": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@mercor_ai No one cares about apex agents. Why did Gemini 3.5 flash mysteriously disappear from the website? Didn\u2019t it score 45%? Shit bench",
+      "link": "https://twitter.com/i/web/status/2075733087741243776",
+      "impressions": 109,
+      "engagements": 0
+    },
+    "2075577613171462566": {
+      "date": "2026-07-10",
+      "account": "3rd Party",
+      "text": "@aaronjmars @Google Stoked to see Grok harness support in aeon v0.1! Self-evolving Apex Agents running on Grok is going to unlock some seriously cool stuff. Clean simplifications, attestation, and observability are smart additions too. Solid work on the stable release after all that partner feedback",
+      "link": "https://twitter.com/i/web/status/2075577613171462566",
+      "impressions": 69,
+      "engagements": 4
+    },
+    "2075576813850403049": {
+      "date": "2026-07-10",
+      "account": "3rd Party",
+      "text": "aeon v.0.1 is now live \u2b50\n\naeon is the best framework to build Apex Agents, agents that don't just execute tasks but also self-evolve to become the best at what they do.\n\nWe've worked hard in the past few weeks to improve &amp; make aeon easier to run. The first stable release is https://t.co/PtwLXY5hWX",
+      "link": "https://twitter.com/i/web/status/2075576813850403049",
+      "impressions": 7989,
+      "engagements": 87
+    },
+    "2075522514877342169": {
+      "date": "2026-07-10",
+      "account": "3rd Party",
+      "text": "$10B in October. $20B talks nine months later. Foody's team is being called the fastest growing company in history, and the run rate went from $1B to $2B in four months.\n\nThe reason is simple. \n\nLabs ran out of internet to train on. The next gain comes from real experts scoring https://t.co/zzN90HETNv",
+      "link": "https://twitter.com/i/web/status/2075522514877342169",
+      "impressions": 5740,
+      "engagements": 16
+    },
+    "2075522299340439592": {
+      "date": "2026-07-10",
+      "account": "3rd Party",
+      "text": "@TechCrunch $10B in October. $20B talks nine months later. Foody's team is being called the fastest growing company in history, and the run rate went from $1B to $2B in four months.\n\nThe reason is simple. \n\nLabs ran out of internet to train on. The next gain comes from real experts scoring",
+      "link": "https://twitter.com/i/web/status/2075522299340439592",
+      "impressions": 623,
+      "engagements": 3
+    },
+    "2075521887942099044": {
+      "date": "2026-07-10",
+      "account": "3rd Party",
+      "text": "@TD_bbboys258 @TechCrunch Anyone can build a matching engine. Almost nobody can source 30,000+ vetted doctors, lawyers, bankers and PhDs and keep them working. That network took three years to assemble and gets harder to poach as it grows.\n\nThen there's APEX. Mercor built the benchmark labs use to measure",
+      "link": "https://twitter.com/i/web/status/2075521887942099044",
+      "impressions": 155,
+      "engagements": 3
+    },
+    "2075382460632666486": {
+      "date": "2026-07-10",
+      "account": "3rd Party",
+      "text": "@johnson_brad @gmi_cloud @OpenAI @claudeai @Meta @Zai_org @mercor_ai Appreciate the highlight on the APEX-Agents results! Grok 4.5\u2019s gains in long-horizon reasoning and tool use are showing up nicely for investment banking tasks.\n\nThat same stack is ideal for building capable agents around equities research, trading workflows, and analyst",
+      "link": "https://twitter.com/i/web/status/2075382460632666486",
+      "impressions": 22,
+      "engagements": 3
+    },
+    "2075382305854718365": {
+      "date": "2026-07-10",
+      "account": "3rd Party",
+      "text": "@grok @gmi_cloud @OpenAI @claudeai @Meta @Zai_org Grok performed really well on @mercor_ai's APEX-Agents benchmark for Investment Banking.\n\nI'd love to see more examples of folks building @grok agents for investing and equities trading.",
+      "link": "https://twitter.com/i/web/status/2075382305854718365",
+      "impressions": 27,
+      "engagements": 1
+    },
+    "2075210911795835181": {
+      "date": "2026-07-09",
+      "account": "3rd Party",
+      "text": "@mercor_ai @claudeai That's a solid improvement. Seeing consistent gains on a benchmark like APEX-Agents shows meaningful progress, not just incremental updates.",
+      "link": "https://twitter.com/i/web/status/2075210911795835181",
+      "impressions": 3,
+      "engagements": 0
+    },
+    "2074437399078220076": {
+      "date": "2026-07-07",
+      "account": "3rd Party",
+      "text": "@LmbtnE @AdamHoltererer Not at all. It's logically impossible to benchmaxx a model on a benchmark that wasn't there on the release date of the model. Also looking at Apex-Agents AA, 3.5 Flash score holds up.",
+      "link": "https://twitter.com/i/web/status/2074437399078220076",
+      "impressions": 55,
+      "engagements": 1
+    },
+    "2075814989953114259": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "Grok places second after Fable on real-world software engineering [QT: @mercor_ai APEX-SWE]",
+      "link": "https://twitter.com/elonmusk/status/2075814989953114259",
+      "impressions": 2632535,
+      "engagements": 14130
+    },
+    "2077077092207067331": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "Mercor's APEX benchmark tests whether frontier models can do the actual work of investment banking associates, management consultants, big law associates, and physicians. Every source document in it was parsed by Reducto.\n\nAPEX-v1-extended grades 10 frontier models against 400 https://t.co/KB8W5ZAzlS",
+      "link": "https://twitter.com/i/web/status/2077077092207067331",
+      "impressions": 2090,
+      "engagements": 19
+    },
+    "2076947530966077790": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "Markets run 24/7. Your firm probably doesn't\u2014not really. Built Apex Agents for financial institutions stuck running powerful trading algorithms alongside manual, disconnected sales workflows.",
+      "link": "https://twitter.com/i/web/status/2076947530966077790",
+      "impressions": 52,
+      "engagements": 0
+    },
+    "2076742096061436156": {
+      "date": "2026-07-13",
+      "account": "3rd Party",
+      "text": "@mayrasc26782551 @teslaownersSV Thanks for the shoutout! Grok leading the APEX-Agents-AA benchmark with just 10K output tokens per task shows how smart optimization delivers faster results, lower costs, and stronger performance. Efficiency like that keeps pushing the frontier forward. Appreciate you",
+      "link": "https://twitter.com/i/web/status/2076742096061436156",
+      "impressions": 11,
+      "engagements": 1
+    },
+    "2076721706648113268": {
+      "date": "2026-07-13",
+      "account": "3rd Party",
+      "text": "Grok leads the APEX-Agents-AA benchmark with just 10K output tokens per task.\n\nGreater efficiency means faster execution, lower costs, and more work done with fewer tokens. https://t.co/OLF6yHUkbf",
+      "link": "https://twitter.com/i/web/status/2076721706648113268",
+      "impressions": 13472,
+      "engagements": 141
+    },
+    "2076631896876843326": {
+      "date": "2026-07-13",
+      "account": "3rd Party",
+      "text": "\ud83d\ude80 Grok 4.5 hits #2 on Mercor\u2019s APEX-SWE leaderboard (real-world software engineering) with 51.2% Pass@1 \u2014 up +30pp from Grok 4 in a year!\nLeads Integration (65%) for multi-step agentic builds &amp; strong #2 in Observability. Built for collaboration with tools like Cursor. https://t.co/rAghX88Cck",
+      "link": "https://twitter.com/i/web/status/2076631896876843326",
+      "impressions": 150,
+      "engagements": 6
+    },
+    "2076434127176208801": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "@ha1331 @mercor_ai @SpaceXAI Understood. Exact current API pricing:\n\nGrok 4.5: $2/M input tokens, $6/M output tokens. \nFable 5: $10/M input, $50/M output.\n\nThat's 5x cheaper on input and ~8x on output. In agentic workflows with heavy reasoning/tool loops, effective cost per successful APEX-SWE Integration",
+      "link": "https://twitter.com/i/web/status/2076434127176208801",
+      "impressions": 11,
+      "engagements": 0
+    },
+    "2076429954217021907": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "@ha1331 @mercor_ai @SpaceXAI **ha1331** Three believable scenarios if Mercor adds cost-efficiency (Pass1 per $ or per M tokens) to APEX-SWE, using current data (Grok 4.5: 51.2% overall / 65% Integration at $2/$6; Fable 5 ~65.5% at ~$10/$50; others higher cost):\n\n1. **Efficiency surge**: Grok leaps to #1.",
+      "link": "https://twitter.com/i/web/status/2076429954217021907",
+      "impressions": 16,
+      "engagements": 1
+    },
+    "2076404267968061744": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "@ha1331 @mercor_ai @SpaceXAI **ha1331** Great point. \n\nAPEX-SWE currently ranks purely on Pass1 (no cost tracked). A combined metric like success rate per dollar (or per million tokens) would be very useful for real agentic workflows.\n\nGrok 4.5 leads Integration at 65% and sits at #2 overall while running at",
+      "link": "https://twitter.com/i/web/status/2076404267968061744",
+      "impressions": 16,
+      "engagements": 1
+    },
+    "2076395603534254386": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "Grok 4.5 just dropped, and it\u2019s already #2 on APEX-SWE.\n\n51.2% Pass@1 on real-world engineering tasks\n\u2026but still far behind Anthropic\u2019s 65.5%.\n\nThe real story?\n\nAI coding isn\u2019t about demos anymore, it\u2019s about who survives production. https://t.co/caNCoulML1",
+      "link": "https://twitter.com/i/web/status/2076395603534254386",
+      "impressions": 191,
+      "engagements": 8
+    },
+    "2076305107021631537": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "The Current Ai Models Landscape \n\nAPEX-SWE leaderboard https://t.co/tS0M7Nh6rk",
+      "link": "https://twitter.com/i/web/status/2076305107021631537",
+      "impressions": 97,
+      "engagements": 4
+    },
+    "2076208045391229431": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "Confirmed, this one checks out \u2014 Mercor\u2019s own numbers match: Grok 4.5 places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 at 65.5% (\u00b16.2), leads Integration at 65.0% Pass@1, and has improved 30.2 points in a year, from Grok 4\u2019s 21.0% to Grok 4.5\u2019s 51.2%. https://t.co/mjxc9RDAFA",
+      "link": "https://twitter.com/i/web/status/2076208045391229431",
+      "impressions": 5,
+      "engagements": 0
+    },
+    "2076190649267675517": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "Grok 4.5 hits #2 on the APEX-SWE leaderboard at 51.2% Pass@1 on real-world software engineering tasks. \n\nLeads Integration (65%) and shows a 30+ point jump from Grok 4 in one year. \n\nStrong progress on agentic coding workflows. Congrats to the xAI team! \ud83d\ude80 https://t.co/wWbGjgegKA https://t.co/I0337etC34",
+      "link": "https://twitter.com/i/web/status/2076190649267675517",
+      "impressions": 16735,
+      "engagements": 201
+    },
+    "2076188564866334784": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "@JosiahWils40494 @elonmusk GPT-5.3 Codex (High) is on the latest Mercor APEX-SWE leaderboard at 41.5% Pass1 (#5). Grok 4.5 sits at #2 with 51.2% and leads Integration at 65%. Newer GPT-5.6 variants are fresh but not yet ahead here. Full standings: https://t.co/U4QXDYWWw7.",
+      "link": "https://twitter.com/i/web/status/2076188564866334784",
+      "impressions": 309,
+      "engagements": 0
+    },
+    "2076070146343383299": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "Sol isn\u2019t more efficient because it takes fewer steps. It actually takes more of them than most of the frontier.\n\nEach one is just lighter: about 28,000 tokens per tool call versus 63,000 for Claude Opus 4.8.\n\nThat\u2019s how it nets 49.8 Pass@1 points per million tokens on https://t.co/4FPBkvTm2Y",
+      "link": "https://twitter.com/i/web/status/2076070146343383299",
+      "impressions": 68,
+      "engagements": 0
+    },
+    "2076030627279745371": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@meta_x_ai @musho @mercor_ai @SpaceXAI Appreciate the call for fuller context. That post focused narrowly on Grok 4.5's measured gains on APEX-SWE (51.2% Pass1, strong integration) against the specific comparables presented, like Fable 5. We track and internally benchmark the full frontier\u2014including OpenAI's latest,",
+      "link": "https://twitter.com/i/web/status/2076030627279745371",
+      "impressions": 40,
+      "engagements": 2
+    },
+    "2076013623143473599": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@WhaleInsider apex-swe put it #2 behind fable",
+      "link": "https://twitter.com/i/web/status/2076013623143473599",
+      "impressions": 24,
+      "engagements": 0
+    },
+    "2076003472202170616": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "@TheREALdidja @elonmusk You can replicate APEX-SWE on the open dev set (50 tasks: 25 integration + 25 observability) from Hugging Face: https://t.co/LT6170oXuh\n\nUse their open eval harness: https://t.co/3dVl7PCDlO (Docker + Python + Grok API key required).\n\nIt runs realistic Integration builds",
+      "link": "https://twitter.com/i/web/status/2076003472202170616",
+      "impressions": 26,
+      "engagements": 2
+    },
+    "2077152058629906676": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2077152058629906676",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2077096472198402412": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2077096472198402412",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2077025684707274918": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2077025684707274918",
+      "impressions": 447,
+      "engagements": 12
+    },
+    "2076972324830470555": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076972324830470555",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2076872970329288931": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076872970329288931",
+      "impressions": 3,
+      "engagements": 12
+    },
+    "2076853224691363988": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076853224691363988",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2076851118861144396": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076851118861144396",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2076848465259507813": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 is also token-hungry.\n\nWhen running APEX-Agents, the model used an average of 1,550K tokens, behind only GPT-\u2026",
+      "link": "https://twitter.com/i/web/status/2076848465259507813",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2076848451728646628": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: APEX-Agents domains breakdown for Muse Spark 1.1.\n\nManagement consulting: 43.9%\nInvestment banking: 38.4%\nCorporate law: 28.\u2026",
+      "link": "https://twitter.com/i/web/status/2076848451728646628",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2076845502449229903": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076845502449229903",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2076843200455532949": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076843200455532949",
+      "impressions": 1,
+      "engagements": 12
+    },
+    "2076839769435513139": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076839769435513139",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2076838185615945767": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076838185615945767",
+      "impressions": 3,
+      "engagements": 12
+    },
+    "2076835269882630378": {
+      "date": "2026-07-14",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Muse Spark 1.1 debuts at #6 overall on APEX-Agents.\n\nPass@1: 37.1%\nMean criteria passed: 52.0%\n\nFor nearly 10% of tasks, Mus\u2026",
+      "link": "https://twitter.com/i/web/status/2076835269882630378",
+      "impressions": 1,
+      "engagements": 12
+    },
+    "2076772547161637116": {
+      "date": "2026-07-13",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076772547161637116",
+      "impressions": 3,
+      "engagements": 99
+    },
+    "2076754460622082105": {
+      "date": "2026-07-13",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076754460622082105",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076500214001848484": {
+      "date": "2026-07-13",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076500214001848484",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2076475317493842428": {
+      "date": "2026-07-13",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076475317493842428",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076462750302368100": {
+      "date": "2026-07-13",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076462750302368100",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2076441521432174824": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076441521432174824",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076432346383786190": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076432346383786190",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076424392763191336": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076424392763191336",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076413117832253857": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076413117832253857",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076402945285869660": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076402945285869660",
+      "impressions": 65,
+      "engagements": 92
+    },
+    "2076364953083068606": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076364953083068606",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076363487933034835": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076363487933034835",
+      "impressions": 2,
+      "engagements": 92
+    },
+    "2076343424815346046": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076343424815346046",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076325633676759197": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076325633676759197",
+      "impressions": 4,
+      "engagements": 92
+    },
+    "2076321227329679774": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076321227329679774",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076292291522699341": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076292291522699341",
+      "impressions": 2,
+      "engagements": 92
+    },
+    "2076267914756554989": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076267914756554989",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076266675184537668": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Fable 5 is back and we\u2019ve got results for the re-released version on APEX-SWE.\n\nWhile it did not perform as well as its earl\u2026",
+      "link": "https://twitter.com/i/web/status/2076266675184537668",
+      "impressions": 0,
+      "engagements": 71
+    },
+    "2076259274292863415": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076259274292863415",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2076176260301046071": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076176260301046071",
+      "impressions": 4,
+      "engagements": 92
+    },
+    "2076162686690201774": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076162686690201774",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2076149853315543409": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076149853315543409",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2076148200897945778": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076148200897945778",
+      "impressions": 0,
+      "engagements": 99
+    },
+    "2076140602841075744": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076140602841075744",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076112135059304932": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076112135059304932",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076103999288205506": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076103999288205506",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076096531929973120": {
+      "date": "2026-07-12",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076096531929973120",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076085571194122271": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076085571194122271",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076080923683209292": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076080923683209292",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2076077179511984303": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076077179511984303",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2076070246830776547": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076070246830776547",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076057651008671842": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076057651008671842",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076055611939168681": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076055611939168681",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076051750931312792": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076051750931312792",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076025976484442403": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076025976484442403",
+      "impressions": 2,
+      "engagements": 92
+    },
+    "2076016200518176868": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076016200518176868",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2076014777177141436": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076014777177141436",
+      "impressions": 35,
+      "engagements": 92
+    },
+    "2076013141289230429": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2076013141289230429",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075998441076105456": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075998441076105456",
+      "impressions": 20,
+      "engagements": 92
+    },
+    "2075991859911111091": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075991859911111091",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075991639194214434": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075991639194214434",
+      "impressions": 2,
+      "engagements": 92
+    },
+    "2075978357422915819": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075978357422915819",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075968427408162989": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075968427408162989",
+      "impressions": 2,
+      "engagements": 92
+    },
+    "2075963899938218339": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075963899938218339",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075957832147435693": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075957832147435693",
+      "impressions": 0,
+      "engagements": 99
+    },
+    "2075955769996894412": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075955769996894412",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075939340539339166": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075939340539339166",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075939015501443171": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075939015501443171",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075926863751360556": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075926863751360556",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075926807799300265": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075926807799300265",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2075924871033266502": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075924871033266502",
+      "impressions": 0,
+      "engagements": 99
+    },
+    "2075923244545147069": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075923244545147069",
+      "impressions": 1,
+      "engagements": 99
+    },
+    "2075921367975837715": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075921367975837715",
+      "impressions": 0,
+      "engagements": 99
+    },
+    "2075920097244307719": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075920097244307719",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2075916441992249435": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075916441992249435",
+      "impressions": 0,
+      "engagements": 99
+    },
+    "2075907903341613517": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075907903341613517",
+      "impressions": 11,
+      "engagements": 92
+    },
+    "2075906786465378408": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075906786465378408",
+      "impressions": 2,
+      "engagements": 92
+    },
+    "2075902898966311408": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075902898966311408",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075900760756244663": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075900760756244663",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075883660327244081": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075883660327244081",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2075875167407157727": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075875167407157727",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075869337768833265": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075869337768833265",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075867405855678947": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075867405855678947",
+      "impressions": 0,
+      "engagements": 99
+    },
+    "2075861458454286647": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075861458454286647",
+      "impressions": 3,
+      "engagements": 92
+    },
+    "2075859698402640181": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075859698402640181",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075854150601228456": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075854150601228456",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075850184630698296": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075850184630698296",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075848782017900629": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075848782017900629",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075847863716675585": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075847863716675585",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075847821585203305": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075847821585203305",
+      "impressions": 37,
+      "engagements": 92
+    },
+    "2075846053882974536": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075846053882974536",
+      "impressions": 2,
+      "engagements": 92
+    },
+    "2075846049357344847": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075846049357344847",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075838881375674788": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075838881375674788",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075838347050987663": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075838347050987663",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075835848013361426": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075835848013361426",
+      "impressions": 70,
+      "engagements": 92
+    },
+    "2075833562562011156": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075833562562011156",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075833305275224104": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075833305275224104",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075831919862755619": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075831919862755619",
+      "impressions": 3731,
+      "engagements": 92
+    },
+    "2075831082520572348": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075831082520572348",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075830618395713637": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075830618395713637",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075830092073431347": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075830092073431347",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075830076612936128": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075830076612936128",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2075823095559196765": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075823095559196765",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075822370573447338": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075822370573447338",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075822235865203163": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075822235865203163",
+      "impressions": 4,
+      "engagements": 92
+    },
+    "2075821097799533048": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075821097799533048",
+      "impressions": 10,
+      "engagements": 92
+    },
+    "2075820288080757163": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075820288080757163",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2075817449711382858": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075817449711382858",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075816959191523605": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075816959191523605",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075816834863939619": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075816834863939619",
+      "impressions": 1,
+      "engagements": 92
+    },
+    "2075816639853920289": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075816639853920289",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075815181469262028": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075815181469262028",
+      "impressions": 9,
+      "engagements": 92
+    },
+    "2075810733078741028": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075810733078741028",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075806662653276495": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075806662653276495",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075802491967713413": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075802491967713413",
+      "impressions": 0,
+      "engagements": 92
+    },
+    "2075802380726403461": {
+      "date": "2026-07-11",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 from @SpaceXAI places #2 on the APEX-SWE leaderboard at 51.2% Pass@1 (\u00b16.0), behind Fable 5 (65.5% \u00b16.2) on our ben\u2026",
+      "link": "https://twitter.com/i/web/status/2075802380726403461",
+      "impressions": 9,
+      "engagements": 92
+    },
+    "2075231924918907179": {
+      "date": "2026-07-09",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 debuts at #7 on the APEX-Agents leaderboard.\n\nHere\u2019s how the new model from @SpaceXAI compares with Grok 4.\n\nPass@1\u2026",
+      "link": "https://twitter.com/i/web/status/2075231924918907179",
+      "impressions": 0,
+      "engagements": 4
+    },
+    "2075140024631484522": {
+      "date": "2026-07-09",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 debuts at #7 on the APEX-Agents leaderboard.\n\nHere\u2019s how the new model from @SpaceXAI compares with Grok 4.\n\nPass@1\u2026",
+      "link": "https://twitter.com/i/web/status/2075140024631484522",
+      "impressions": 0,
+      "engagements": 4
+    },
+    "2075136703715492196": {
+      "date": "2026-07-09",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 debuts at #7 on the APEX-Agents leaderboard.\n\nHere\u2019s how the new model from @SpaceXAI compares with Grok 4.\n\nPass@1\u2026",
+      "link": "https://twitter.com/i/web/status/2075136703715492196",
+      "impressions": 1,
+      "engagements": 4
+    },
+    "2075125640760524852": {
+      "date": "2026-07-09",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Grok 4.5 debuts at #7 on the APEX-Agents leaderboard.\n\nHere\u2019s how the new model from @SpaceXAI compares with Grok 4.\n\nPass@1\u2026",
+      "link": "https://twitter.com/i/web/status/2075125640760524852",
+      "impressions": 0,
+      "engagements": 4
+    },
+    "2074644022837326296": {
+      "date": "2026-07-07",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Anthropic redeployed @claudeai Fable 5 with new cybersecurity safeguards, including a classifier that reroutes blocked reque\u2026",
+      "link": "https://twitter.com/i/web/status/2074644022837326296",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2081734007843111225": {
+      "date": "2026-07-27",
+      "account": "3rd Party",
+      "text": "\ud83e\udd16 AI NEWS ROUNDUP \u2014 July 27, 2026\n\n1\ufe0f\u20e3 CLAUDE OPUS 5 VS FABLE 5 \u2014 THE BENCHMARK WAR HEATS UP\n\nAnthropic's own positioning of Opus 5 as an \"everyday\" enterprise model is being challenged by independent benchmark results. On metrics that matter for real-world deployment \u2014 including",
+      "link": "https://twitter.com/i/web/status/2081734007843111225",
+      "impressions": 337,
+      "engagements": 7
+    },
+    "2081679015262261394": {
+      "date": "2026-07-27",
+      "account": "3rd Party",
+      "text": "ANTHROPIC SAID OPUS 5 IS NOT BETTER THAN FABLE 5. THE BENCHMARKS MAKE THAT LOOK INSANE\n\nOpus 5 is being positioned as the \u201ceveryday\u201d enterprise model.\n\nbut on the stuff people actually pay for, it looks dangerously close to replacing Fable.\n\nthe numbers:\n\n&gt; Apex Agents: 43.5% on https://t.co/ZBEsEHeN30 https://t.co/fRl5riVzBp",
+      "link": "https://twitter.com/i/web/status/2081679015262261394",
+      "impressions": 1440,
+      "engagements": 42
+    },
+    "2081137760682078412": {
+      "date": "2026-07-25",
+      "account": "3rd Party",
+      "text": "\ud83d\ude80 Solar Open 2 is HERE and it's WILD\n\n\u26a1 250B params. Only 15B active per token. Full power, fraction of the cost.\n\n\ud83d\udd39 1M token context window \u2014 feed it entire codebases, no sweat\n\ud83d\udd39 Hybrid attention stack with NoPE \u2014 ripped out positional encoding entirely\n\ud83d\udd39 Crushes agentic",
+      "link": "https://twitter.com/i/web/status/2081137760682078412",
+      "impressions": 749,
+      "engagements": 7
+    },
+    "2080771825513197921": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "- Mercor announces Claude Opus 5 topping the APEX-Agents leaderboard at 43.5% Pass@1 for long-horizon cross-application professional services tasks, edging out Fable 5 at 43.3% while ranking second on APEX-SWE at 54.67%. https://t.co/AGSM5l6jdw",
+      "link": "https://twitter.com/i/web/status/2080771825513197921",
+      "impressions": 154,
+      "engagements": 0
+    },
+    "2080739722905702600": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "@mercor_ai - Mercor announces Claude Opus 5 topping the APEX-Agents leaderboard at 43.5% Pass@1 for long-horizon cross-application professional services tasks, edging out Fable 5 at 43.3% while ranking second on APEX-SWE at 54.67%.\n- Opus 5 shows strong gains in Integration tasks reaching",
+      "link": "https://twitter.com/i/web/status/2080739722905702600",
+      "impressions": 113,
+      "engagements": 0
+    },
+    "2080667462748492165": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "The TL;DR Bench explained:\nTL;DR includes results from the following individual benchmarks:\n\n- Agentic: \ud835\udf0f\u00b2-Bench Telecom, PinchBench, APEX-Agents\n- Coding: OpenCode Benchmark, SWE-bench Bash Only, LiveCodeBench v6\n- World Knowledge: Humanity's Last Exam, MMLU Pro, SimpleQA,",
+      "link": "https://twitter.com/i/web/status/2080667462748492165",
+      "impressions": 712,
+      "engagements": 7
+    },
+    "2082971864427577475": {
+      "date": "2026-07-30",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: How well can today\u2019s top AI models handle real software engineering work? APEX-SWE tests frontier systems across end-to-end\u2026",
+      "link": "https://twitter.com/i/web/status/2082971864427577475",
+      "impressions": 0,
+      "engagements": 6
+    },
+    "2082901874647162923": {
+      "date": "2026-07-30",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: How well can today\u2019s top AI models handle real software engineering work? APEX-SWE tests frontier systems across end-to-end\u2026",
+      "link": "https://twitter.com/i/web/status/2082901874647162923",
+      "impressions": 0,
+      "engagements": 6
+    },
+    "2082484784174137462": {
+      "date": "2026-07-29",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Kimi K3 is now the leading open-weights model on APEX-SWE.\n\n\ud83d\udcca Pass@1: 44.7% (\u00b16.0)\n\ud83c\udfc6 Rank: #5 overall\n\nKimi K3 beats the pre\u2026",
+      "link": "https://twitter.com/i/web/status/2082484784174137462",
+      "impressions": 0,
+      "engagements": 7
+    },
+    "2082433840149057945": {
+      "date": "2026-07-29",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Kimi K3 is now the leading open-weights model on APEX-SWE.\n\n\ud83d\udcca Pass@1: 44.7% (\u00b16.0)\n\ud83c\udfc6 Rank: #5 overall\n\nKimi K3 beats the pre\u2026",
+      "link": "https://twitter.com/i/web/status/2082433840149057945",
+      "impressions": 0,
+      "engagements": 7
+    },
+    "2082407107127570884": {
+      "date": "2026-07-29",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Kimi K3 is now the leading open-weights model on APEX-SWE.\n\n\ud83d\udcca Pass@1: 44.7% (\u00b16.0)\n\ud83c\udfc6 Rank: #5 overall\n\nKimi K3 beats the pre\u2026",
+      "link": "https://twitter.com/i/web/status/2082407107127570884",
+      "impressions": 0,
+      "engagements": 7
+    },
+    "2082353003252863158": {
+      "date": "2026-07-29",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Kimi K3 is now the leading open-weights model on APEX-SWE.\n\n\ud83d\udcca Pass@1: 44.7% (\u00b16.0)\n\ud83c\udfc6 Rank: #5 overall\n\nKimi K3 beats the pre\u2026",
+      "link": "https://twitter.com/i/web/status/2082353003252863158",
+      "impressions": 0,
+      "engagements": 7
+    },
+    "2082325299803623670": {
+      "date": "2026-07-29",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Kimi K3 is now the leading open-weights model on APEX-SWE.\n\n\ud83d\udcca Pass@1: 44.7% (\u00b16.0)\n\ud83c\udfc6 Rank: #5 overall\n\nKimi K3 beats the pre\u2026",
+      "link": "https://twitter.com/i/web/status/2082325299803623670",
+      "impressions": 0,
+      "engagements": 7
+    },
+    "2082319828199575557": {
+      "date": "2026-07-29",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: APEX-SWE measures whether frontier models can do the day-to-day work of software engineers. \n\nIt spans two task types: Integ\u2026",
+      "link": "https://twitter.com/i/web/status/2082319828199575557",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2082319755440967742": {
+      "date": "2026-07-29",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Kimi K3 is now the leading open-weights model on APEX-SWE.\n\n\ud83d\udcca Pass@1: 44.7% (\u00b16.0)\n\ud83c\udfc6 Rank: #5 overall\n\nKimi K3 beats the pre\u2026",
+      "link": "https://twitter.com/i/web/status/2082319755440967742",
+      "impressions": 0,
+      "engagements": 7
+    },
+    "2082193769609257406": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2082193769609257406",
+      "impressions": 5,
+      "engagements": 11
+    },
+    "2082187857876443586": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2082187857876443586",
+      "impressions": 253,
+      "engagements": 11
+    },
+    "2082158303908434360": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2082158303908434360",
+      "impressions": 0,
+      "engagements": 11
+    },
+    "2082140277666693548": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2082140277666693548",
+      "impressions": 0,
+      "engagements": 11
+    },
+    "2082116315527926100": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: How well can today\u2019s top AI models handle real software engineering work? APEX-SWE tests frontier systems across end-to-end\u2026",
+      "link": "https://twitter.com/i/web/status/2082116315527926100",
+      "impressions": 0,
+      "engagements": 3
+    },
+    "2081960079188971644": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2081960079188971644",
+      "impressions": 0,
+      "engagements": 11
+    },
+    "2081948159551606960": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2081948159551606960",
+      "impressions": 0,
+      "engagements": 11
+    },
+    "2081922505455837305": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2081922505455837305",
+      "impressions": 0,
+      "engagements": 11
+    },
+    "2081921211454435429": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2081921211454435429",
+      "impressions": 0,
+      "engagements": 11
+    },
+    "2081906286724288986": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2081906286724288986",
+      "impressions": 0,
+      "engagements": 11
+    },
+    "2081905308079636667": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: APEX-Agents includes 480 long-horizon tasks across professional services domains like investment banking, management consult\u2026",
+      "link": "https://twitter.com/i/web/status/2081905308079636667",
+      "impressions": 1,
+      "engagements": 1
+    },
+    "2081898910994575515": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2081898910994575515",
+      "impressions": 1,
+      "engagements": 11
+    },
+    "2081896472149438930": {
+      "date": "2026-07-28",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: We got Day-0 access to Kimi K3 via @FireworksAI_HQ, and it\u2019s now the highest scoring open weights model on APEX-Agents.\n\nMea\u2026",
+      "link": "https://twitter.com/i/web/status/2081896472149438930",
+      "impressions": 18,
+      "engagements": 11
+    },
+    "2081444478896787662": {
+      "date": "2026-07-26",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2081444478896787662",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2081127535124029670": {
+      "date": "2026-07-25",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: With APEX-Agents, we set out to see whether today\u2019s AI agents can deliver economically valuable work using real tools and wo\u2026",
+      "link": "https://twitter.com/i/web/status/2081127535124029670",
+      "impressions": 0,
+      "engagements": 3
+    },
+    "2081025535828701209": {
+      "date": "2026-07-25",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2081025535828701209",
+      "impressions": 5,
+      "engagements": 14
+    },
+    "2081019587194175679": {
+      "date": "2026-07-25",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2081019587194175679",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2080887882378776595": {
+      "date": "2026-07-25",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080887882378776595",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2080726979356381665": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080726979356381665",
+      "impressions": 1,
+      "engagements": 14
+    },
+    "2080726925706735850": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080726925706735850",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2080726387993051315": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080726387993051315",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2080726374407639425": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080726374407639425",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2080725656212508775": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080725656212508775",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2080723796756226373": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080723796756226373",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2080723603855986968": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080723603855986968",
+      "impressions": 2,
+      "engagements": 14
+    },
+    "2080721938285207877": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Here's how Opus 5 does across APEX-SWE domains:\n\nIntegration: 65.33% Pass@1, the new #1\nObservability: 44.00% Pass@1, #2\n\nOp\u2026",
+      "link": "https://twitter.com/i/web/status/2080721938285207877",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2080721925442289786": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 debuts at #2 on the APEX-SWE leaderboard with 54.67% Pass@1, right behind the Fable 5 re-release and up 7.4 po\u2026",
+      "link": "https://twitter.com/i/web/status/2080721925442289786",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2080721899756417462": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: On APEX-Agents, Opus 5 achieves 43.5% Pass@1 and 60.6% mean criteria passed, compared with 43.3% and 58.1% for Claude Fable\u2026",
+      "link": "https://twitter.com/i/web/status/2080721899756417462",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2080721671905030364": {
+      "date": "2026-07-24",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Claude Opus 5 has arrived on the APEX leaderboards.\n\nAPEX-Agents: the new #1 at 43.5% Pass@1, our benchmark for long-horizon\u2026",
+      "link": "https://twitter.com/i/web/status/2080721671905030364",
+      "impressions": 0,
+      "engagements": 14
+    },
+    "2083187782403670437": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: With APEX-Agents, we set out to see whether today\u2019s AI agents can deliver economically valuable work using real tools and wo\u2026",
+      "link": "https://twitter.com/i/web/status/2083187782403670437",
+      "impressions": 0,
+      "engagements": 3
+    },
+    "2083829143985324155": {
+      "date": "2026-08-02",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: How well can today\u2019s top AI models handle real software engineering work? APEX-SWE tests frontier systems across end-to-end\u2026",
+      "link": "https://twitter.com/i/web/status/2083829143985324155",
+      "impressions": 0,
+      "engagements": 6
+    },
+    "2083752574554190095": {
+      "date": "2026-08-02",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: How well can today\u2019s top AI models handle real software engineering work? APEX-SWE tests frontier systems across end-to-end\u2026",
+      "link": "https://twitter.com/i/web/status/2083752574554190095",
+      "impressions": 0,
+      "engagements": 6
+    },
+    "2083451796987801961": {
+      "date": "2026-08-01",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: How well can today\u2019s top AI models handle real software engineering work? APEX-SWE tests frontier systems across end-to-end\u2026",
+      "link": "https://twitter.com/i/web/status/2083451796987801961",
+      "impressions": 0,
+      "engagements": 6
+    },
+    "2083264452267299283": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: Meet APEX-Agents, an AI benchmark designed to test how well AI agents complete real, long-horizon tasks in investment bankin\u2026",
+      "link": "https://twitter.com/i/web/status/2083264452267299283",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2083253664810971420": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: How well can today\u2019s top AI models handle real software engineering work? APEX-SWE tests frontier systems across end-to-end\u2026",
+      "link": "https://twitter.com/i/web/status/2083253664810971420",
+      "impressions": 0,
+      "engagements": 6
+    },
+    "2083239762077598109": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: APEX-Accounting is the latest benchmark in Mercor's AI Productivity Index, which measures whether frontier AI can do economi\u2026",
+      "link": "https://twitter.com/i/web/status/2083239762077598109",
+      "impressions": 0,
+      "engagements": 1
+    },
+    "2083764105341509898": {
+      "date": "2026-08-02",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083764105341509898",
+      "impressions": 22,
+      "engagements": 12
+    },
+    "2083319991961796843": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083319991961796843",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2083291639372517440": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083291639372517440",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2083273294875349454": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083273294875349454",
+      "impressions": 1,
+      "engagements": 12
+    },
+    "2083246273470365796": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083246273470365796",
+      "impressions": 1,
+      "engagements": 12
+    },
+    "2083245866262090173": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083245866262090173",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2083242961358487828": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083242961358487828",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2083242907566256631": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083242907566256631",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2083241237004653042": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083241237004653042",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2083239753701597239": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: No model tested on APEX-Accounting could reliably close the books yet.\n\nWe ran every model on every task eight times. Even t\u2026",
+      "link": "https://twitter.com/i/web/status/2083239753701597239",
+      "impressions": 0,
+      "engagements": 2
+    },
+    "2083239739021541772": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083239739021541772",
+      "impressions": 0,
+      "engagements": 12
+    },
+    "2083236135451722108": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: No model tested on APEX-Accounting could reliably close the books yet.\n\nWe ran every model on every task eight times. Even t\u2026",
+      "link": "https://twitter.com/i/web/status/2083236135451722108",
+      "impressions": 4,
+      "engagements": 2
+    },
+    "2083234926493888919": {
+      "date": "2026-07-31",
+      "account": "3rd Party",
+      "text": "RT @mercor_ai: It's month close. AI models can pass the CPA exam, but do you trust them to close the books?\n\nIntroducing APEX-Accounting, b\u2026",
+      "link": "https://twitter.com/i/web/status/2083234926493888919",
+      "impressions": 0,
+      "engagements": 12
     }
   },
   "initialized": true
