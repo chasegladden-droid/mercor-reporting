@@ -52,12 +52,74 @@ def load_dash():
         return json.load(f)
 
 
+def check_output_parity(dash):
+    """The Slack report's numbers must match what the dashboard published.
+
+    Cache parity was not enough. The two agreed on their input and still published
+    different figures for two months, because the quote-post logic existed only in
+    the dashboard — a ~2.9M gap that nothing flagged. This recomputes the Slack
+    report's monthly table and compares it against social.json column by column,
+    which is the check that would have caught it.
+
+    Compared with a tolerance, because the two are generated minutes apart and
+    lifetime impressions keep accruing in between.
+    """
+    import importlib.util
+
+    sys.path.insert(0, ROOT)
+    try:
+        spec = importlib.util.spec_from_file_location(
+            "_slack_root", os.path.join(ROOT, "slack_report.py"))
+        slack = importlib.util.module_from_spec(spec)
+        sys.modules["_slack_root"] = slack
+        spec.loader.exec_module(slack)
+        import apex_social
+    except Exception as e:
+        note(f"could not load the Slack report module ({e}) — skipped output parity")
+        return
+
+    cache = slack.load_tweet_cache()
+    ids, pmap = slack.get_sprout_profiles()
+    if not ids:
+        note("Sprout unavailable — skipped output parity")
+        return
+    sprout = slack.get_all_posts(ids, start_date="2026-01-01")
+    posts, _ = apex_social.dedupe_owned(sprout, slack.cache_to_posts(cache))
+    monthly, _ = slack.build_report(posts, pmap, cache=cache)
+
+    published = {m["month"]: m for m in dash["apex"]["months"]}
+    mismatches = 0
+    for month, pub in sorted(published.items()):
+        mine = monthly.get(month)
+        if mine is None:
+            fail(f"{month} is on the dashboard but the Slack report produces nothing")
+            mismatches += 1
+            continue
+        pairs = [("Impressions", mine.get("Total Impressions", 0), pub["impressions"]),
+                 ("X total", mine.get("Twitter Total Impressions", 0), pub["twitter"]),
+                 ("LinkedIn total", mine.get("LinkedIn Total Impressions", 0), pub["linkedin"])]
+        for col, val in pub["byAccount"].items():
+            pairs.append((col, mine.get(f"{col} Impressions", 0), val))
+        for label, a, b in pairs:
+            worst = max(abs(a), abs(b), 1)
+            if abs(a - b) / worst > TOLERANCE:
+                mismatches += 1
+                if mismatches <= 5:
+                    fail(f"{month} {label}: Slack report {a:,} vs dashboard {b:,} "
+                         f"({100*(a-b)/worst:+.1f}%)")
+    if mismatches:
+        fail(f"{mismatches} value(s) diverge between the Slack report and the dashboard")
+    else:
+        note(f"output parity OK — Slack report matches the dashboard across "
+             f"{len(published)} month(s)")
+
+
 def check_no_owned_double_count():
     """The same tweet must not sit in both Sprout's output and the X cache."""
     sys.path.insert(0, HERE)
     import slack_report as rpt
 
-    cache = json.load(open(os.path.join(HERE, "tweet_cache.json")))
+    cache = json.load(open(os.path.join(ROOT, "tweet_cache.json")))
     ids, _ = rpt.get_sprout_profiles()
     if not ids:
         note("Sprout unavailable — skipped the owned double-count check")
@@ -87,7 +149,7 @@ def check_no_owned_double_count():
 
 def check_bucket_exclusivity(dash):
     """Quote posts / 3rd Party / own-account columns must not overlap."""
-    cache = json.load(open(os.path.join(HERE, "tweet_cache.json")))
+    cache = json.load(open(os.path.join(ROOT, "tweet_cache.json")))
     quote_ids = {m.group(1) for s in cache.get("quote_scans", {}).values()
                  for q in s.get("quotes", [])
                  if (m := TWEET_ID_RE.search(q.get("link") or ""))}
@@ -121,23 +183,35 @@ def check_bucket_exclusivity(dash):
 
 
 def check_cache_parity():
-    """The Slack report's cache must not fall behind the dashboard's.
+    """Both surfaces must resolve to the SAME cache file.
 
-    This is the failure that hid for eight weeks: CI could not push, so the
-    root cache stopped at June while the dashboard's kept growing.
+    They used to keep one each, which is how the Slack report's froze in June
+    while the dashboard's kept growing, and how quote scans came to exist in only
+    one of them. There is now a single cache at the repo root; this asserts
+    neither module has drifted back to a private copy.
     """
-    root = json.load(open(os.path.join(ROOT, "tweet_cache.json")))["tweets"]
-    sub = json.load(open(os.path.join(HERE, "tweet_cache.json")))["tweets"]
-    missing = {k: v for k, v in sub.items()
-               if k not in root and v.get("account") not in OWNED_ACCOUNTS}
-    if missing:
-        imp = sum(v.get("impressions", 0) or 0 for v in missing.values())
-        newest = max(v.get("date", "") for v in missing.values())
-        fail(f"Slack report's cache is missing {len(missing)} tweet(s) the "
-             f"dashboard has ({imp:,} impressions, newest {newest}) — the Slack "
-             f"report will under-report until this is pushed")
+    import importlib.util
+
+    def load(name, path):
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        sys.modules[name] = mod
+        spec.loader.exec_module(mod)
+        return mod
+
+    sys.path.insert(0, ROOT)
+    try:
+        a = load("_cp_root", os.path.join(ROOT, "slack_report.py")).TWEET_CACHE_PATH
+        b = load("_cp_dash", os.path.join(HERE, "slack_report.py")).TWEET_CACHE_PATH
+    except Exception as e:
+        note(f"could not resolve cache paths ({e})")
+        return
+    if os.path.realpath(a) != os.path.realpath(b):
+        fail(f"the two surfaces read different caches:\n    Slack: {a}\n    dash:  {b}")
     else:
-        note(f"cache parity OK (root {len(root)}, dashboard {len(sub)})")
+        cache = json.load(open(a))
+        note(f"single shared cache OK — {len(cache.get('tweets', {}))} tweets, "
+             f"{len(cache.get('quote_scans', {}))} quote-scanned posts")
 
 
 def check_totals_add_up(dash):
@@ -196,6 +270,7 @@ def main():
     check_bucket_exclusivity(dash)
     check_against_snapshot(dash, rebaseline)
     check_no_owned_double_count()
+    check_output_parity(dash)
 
     print(f"Reconciling {DASH_JSON}")
     print(f"  generated {dash.get('generatedAt')}\n")

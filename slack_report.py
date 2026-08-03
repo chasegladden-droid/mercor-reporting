@@ -7,6 +7,8 @@ from datetime import datetime, timedelta, timezone
 from collections import defaultdict
 from dotenv import load_dotenv
 
+import apex_social
+
 load_dotenv()
 
 SPROUT_API_TOKEN = os.getenv("SPROUT_API_TOKEN")
@@ -34,14 +36,7 @@ TWITTER_PERSONAL_ACCOUNTS = {
 # Accounts monitored directly (full note_tweet text checked — bypasses Twitter search truncation)
 WATCHED_TWITTER_USERNAMES = ["ArtificialAnlys", "EpochAIResearch"]
 
-# Must stay in step with the search query below, which already asks X for the
-# space-separated and -ace forms — filtering on hyphens only threw those away.
-APEX_KEYWORDS = [
-    "apex-agents", "apex agents", "apex-agents-aa",
-    "apex-swe", "apex swe",
-    "apex-ace", "apex ace",
-    "apex-accounting", "apex accounting",
-]
+APEX_KEYWORDS = apex_social.APEX_KEYWORDS  # shared with the dashboard
 
 TWEET_CACHE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tweet_cache.json")
 
@@ -333,17 +328,7 @@ def cache_to_posts(cache):
 
 
 def matches_apex(text):
-    """True if a post is about an APEX benchmark.
-
-    Either a named benchmark keyword, or the words "apex" and "mercor" together —
-    the search query already asks X for `(apex mercor)`, so without this clause the
-    filter threw those results away after paying for them. Kept as a function so
-    all four call sites share one definition.
-    """
-    t = (text or "").lower()
-    if any(kw in t for kw in APEX_KEYWORDS):
-        return True
-    return "apex" in t and "mercor" in t
+    return apex_social.matches_apex(text)
 
 
 def is_apex_post(post):
@@ -363,7 +348,21 @@ def get_account(post, profile_map):
     return "Other"
 
 
-def build_report(posts, profile_map):
+def build_report(posts, profile_map, cache=None):
+    """Monthly impressions by account.
+
+    When `cache` is supplied the shared classification runs too: the X-cache copy
+    of any post Sprout already reports is dropped, and quotes of our APEX posts
+    are bucketed as Quote posts. Both are needed for this report to agree with the
+    dashboard, which has done them since August. Callers that pass no cache get
+    the old owned-accounts-only behaviour.
+    """
+    quote_rows = []
+    if cache is not None:
+        posts = apex_social.attach_quoted_ids(posts, cache)
+        quotes = apex_social.stored_quotes(cache, posts)
+        quote_rows, posts, _ = apex_social.classify_quotes(quotes, posts)
+
     apex_posts = [p for p in posts if p.get("source") == "3rd Party" or is_apex_post(p)]
     monthly = defaultdict(lambda: defaultdict(int))
     post_log = []
@@ -391,6 +390,9 @@ def build_report(posts, profile_map):
             "link": post.get("perma_link", ""),
             "text": (post.get("text") or "")[:120],
         })
+
+    if quote_rows:
+        apex_social.apply_quotes(monthly, post_log, quote_rows)
 
     return monthly, post_log
 
@@ -460,7 +462,7 @@ def format_slack_message(monthly, post_log, profile_map):
     li_personal = sorted([v for v in profile_map.values() if "LinkedIn" in v and v != "Mercor LinkedIn"])
 
     header = (
-        f"{'Month':<10} {'TW:Mercor':>9} {'TW:Bren':>8} {'TW:Adar':>8} {'TW:3Pty':>8} {'TW:Tot':>8} "
+        f"{'Month':<10} {'TW:Mercor':>9} {'TW:Bren':>8} {'TW:Adar':>8} {'TW:3Pty':>8} {'TW:Quote':>9} {'TW:Tot':>8} "
         f"{'LI:Mercor':>9}"
         + "".join(f" {'LI:' + a.split()[0]:>8}" for a in li_personal)
         + f" {'LI:Tot':>8} {'Total':>9}"
@@ -478,6 +480,7 @@ def format_slack_message(monthly, post_log, profile_map):
             f"{m.get('Brendan Impressions', 0):>8,} "
             f"{m.get('Adarsh Impressions', 0):>8,} "
             f"{m.get('3rd Party Impressions', 0):>8,} "
+            f"{m.get('Quote posts Impressions', 0):>9,} "
             f"{m.get('Twitter Total Impressions', 0):>8,} "
             f"{m.get('Mercor LinkedIn Impressions', 0):>9,}"
             f"{li_vals} "
@@ -530,7 +533,7 @@ def post_to_notion(monthly, post_log):
 
     # Build monthly table as plain text for a code block
     li_personal = sorted([v for v in set(p["account"] for p in post_log) if "LinkedIn" in v and v != "Mercor LinkedIn"])
-    table_lines = ["Month      TW:Mercor  TW:Bren  TW:Adar  TW:3Pty   TW:Tot  LI:Mercor   LI:Tot     Total"]
+    table_lines = ["Month      TW:Mercor  TW:Bren  TW:Adar  TW:3Pty  TW:Quote   TW:Tot  LI:Mercor   LI:Tot     Total"]
     table_lines.append("-" * len(table_lines[0]))
     for month in sorted(monthly.keys()):
         label = datetime.strptime(month, "%Y-%m").strftime("%b %Y")
@@ -631,8 +634,11 @@ if __name__ == "__main__":
     cache["initialized"] = True
     save_tweet_cache(cache)
 
-    all_posts = posts + cache_to_posts(cache)
-    fresh_monthly, post_log = build_report(all_posts, profile_map)
+    # Sprout first so it wins the owned-post dedupe inside build_report.
+    all_posts, owned_dupes = apex_social.dedupe_owned(posts, cache_to_posts(cache))
+    if owned_dupes:
+        print(f"Dropped {len(owned_dupes)} tweet(s) present in both Sprout and the X cache")
+    fresh_monthly, post_log = build_report(all_posts, profile_map, cache=cache)
 
     baseline = load_baseline()
     monthly = merge_with_baseline(fresh_monthly, baseline)

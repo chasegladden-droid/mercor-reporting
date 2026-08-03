@@ -1,0 +1,57 @@
+{
+  "_readme": [
+    "Registry of paid 3rd-party placements and partner accounts. Hand-maintained.",
+    "export_dash_json.py reads this, pulls whatever it can live, and writes",
+    "~/marketing-dash/data/social.json for the dashboard's Social & Sponsorships tab.",
+    "",
+    "Per placement:",
+    "  tweet_ids  - X post IDs for the placement. Impressions/engagements pulled live.",
+    "  youtube    - no API key on file, so `views` is manual. Add YOUTUBE_API_KEY to",
+    "               ~/mercor-reporting/.env and this becomes automatic.",
+    "  spotify    - podcast platforms publish no play counts; manual or leave null.",
+    "  cost       - what we paid, if known. Drives cost-per-1k-impressions."
+  ],
+  "placements": [
+    {
+      "id": "20vc-2026-h2-sponsored-clips",
+      "partner": "20VC / Harry Stebbings",
+      "type": "Podcast sponsorship",
+      "placement": "Sponsored clip flight",
+      "date": "2026-07-16",
+      "initiative": "Brand",
+      "cost": null,
+      "tweet_ids": [
+        "2077816785970024763",
+        "2077853779035128031",
+        "2077892283119043051",
+        "2077924746558341484",
+        "2078142179458142641",
+        "2082882800672289122",
+        "2082920162823700723",
+        "2082961183016120748"
+      ],
+      "youtube": {
+        "url": null,
+        "views": null
+      },
+      "spotify": {
+        "url": null,
+        "plays": null
+      },
+      "notes": "Mercor + Factory co-branded end card. First clip flagged by Heidi 2026-07-30.",
+      "handle": "@HarryStebbings"
+    }
+  ],
+  "partner_accounts": [
+    {
+      "username": "HarryStebbings",
+      "user_id": "3253629143",
+      "partner": "20VC / Harry Stebbings",
+      "note": "Sponsorship partner \u2014 track organic Mercor mentions as earned amplification",
+      "handle": "@HarryStebbings"
+    }
+  ],
+  "partner_keywords": [
+    "mercor"
+  ]
+}

@@ -45,7 +45,12 @@ APEX_KEYWORDS = [
     "apex-ace", "apex ace",
     "apex-accounting", "apex accounting",
 ]
-TWEET_CACHE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tweet_cache.json")
+# One cache, shared with the Slack report at the repo root. Two separate cache
+# files is what let the two surfaces drift: the Slack report's copy froze in June
+# while this one kept growing, and quote scans existed in only one of them.
+TWEET_CACHE_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "tweet_cache.json")
 
 
 def get_sprout_profiles():

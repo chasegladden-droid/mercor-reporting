@@ -33,7 +33,11 @@ import requests
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE))
+# Append, do NOT insert: the repo root also holds a slack_report.py, and putting
+# it ahead of HERE makes `import slack_report` resolve to the wrong copy.
+sys.path.append(str(HERE.parent.parent))
 import slack_report as rpt  # noqa: E402  (module-level is just env + constants)
+import apex_social  # noqa: E402  the shared bucket rules, imported by both surfaces
 
 PLACEMENTS_PATH = HERE / "placements.json"
 DEFAULT_OUT = pathlib.Path.home() / "marketing-dash" / "data" / "social.json"
@@ -158,7 +162,7 @@ QUOTE_FRESH_RESCAN = 25
 
 # Cache `account` labels that mean "we posted this". Anything else in the cache
 # (notably "3rd Party") is someone else's post and is not a quote-scan source.
-OWN_POST_SOURCES = {"Mercor", "Mercor Twitter", "Brendan Foody", "Adarsh"}
+OWN_POST_SOURCES = apex_social.OWN_POST_SOURCES
 
 # Live quota left in the current quote_tweets window, from X's response headers.
 # A static budget only holds when the run starts on a fresh window; if an earlier
@@ -263,11 +267,7 @@ def apex_quote_posts(posts, refresh, cache):
 
 # Our own X accounts. A quote written by one of these is our own reach, not
 # third-party amplification, so it belongs in that account's column.
-OWN_X_ACCOUNTS = {
-    "mercor_ai": "Mercor Twitter",
-    "brendanfoody": "Brendan",
-    "adarsh_exe": "Adarsh",
-}
+OWN_X_ACCOUNTS = apex_social.OWN_X_ACCOUNTS
 
 
 def backfill_quoted_ids(cache, refresh):
@@ -304,58 +304,9 @@ def backfill_quoted_ids(cache, refresh):
 
 
 def classify_quotes(quotes, posts):
-    """Split quotes into own-account reach vs third-party Quote posts, and say
-    which cached posts must be dropped so nothing is counted twice.
-
-    The three X buckets are mutually exclusive, decided in this order:
-
-      1. own account  — the quote's author is one of ours -> that account column
-      2. Quote post   — an outside account quoting one of OUR APEX posts
-      3. 3rd Party    — an outside post that mentions us by keyword and is NOT
-                        a quote of one of our posts
-
-    A quote of ours whose commentary also happens to contain an APEX keyword
-    would otherwise be found twice — once by the quote scan and once by keyword
-    search. Rule 2 wins, so the keyword-search copy is the one dropped.
-    """
-    by_bucket, quote_ids = [], set()
-    for q in quotes:
-        qid = TWEET_ID_RE.search(q["link"]).group(1)
-        quote_ids.add(qid)
-        handle = (q.get("handle") or "").lstrip("@").lower()
-        by_bucket.append((OWN_X_ACCOUNTS.get(handle, "Quote posts"), q))
-
-    # Second, authoritative route in: a cached tweet whose stored quoted_id is one
-    # of our own posts is a quote of ours, whether or not the quote_tweets endpoint
-    # happened to surface it. Reclassify it out of 3rd Party rather than dropping
-    # it, so its impressions are kept and only the bucket changes.
-    our_ids = {m.group(1) for p in posts
-               if (p.get("source") is None or p.get("source") in OWN_POST_SOURCES)
-               and (m := TWEET_ID_RE.search(p.get("perma_link") or ""))}
-    kept, reclassified = [], 0
-    for p in posts:
-        m = TWEET_ID_RE.search(p.get("perma_link") or "")
-        tid = m.group(1) if m else None
-        if tid and tid in quote_ids:
-            continue                      # already counted as a quote row
-        quoted = p.get("quoted_id")
-        if (tid and quoted and quoted in our_ids
-                and p.get("source") not in OWN_POST_SOURCES):
-            by_bucket.append(("Quote posts", {
-                "date": (p.get("created_time") or "")[:10],
-                "handle": p.get("handle"),
-                "text": (p.get("text") or "")[:160],
-                "link": p.get("perma_link") or "",
-                "impressions": p["metrics"].get("lifetime.impressions", 0),
-                "engagements": p["metrics"].get("lifetime.engagements", 0),
-            }))
-            reclassified += 1
-            continue
-        kept.append(p)
-    if reclassified:
-        print(f"  reclassified {reclassified} cached tweet(s) from 3rd Party to "
-              f"Quote posts via quoted_id")
-    return by_bucket, kept, len(posts) - len(kept) - reclassified
+    """Delegates to apex_social so the dashboard and the Slack report cannot
+    disagree about which bucket a post belongs in. See apex_social for the rules."""
+    return apex_social.classify_quotes(quotes, posts)
 
 
 # --- blocks ---------------------------------------------------------------
