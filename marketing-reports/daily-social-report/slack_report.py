@@ -39,7 +39,12 @@ TWITTER_PERSONAL_ACCOUNTS = {
 # Accounts monitored directly (full note_tweet text checked — bypasses Twitter search truncation)
 WATCHED_TWITTER_USERNAMES = ["ArtificialAnlys", "EpochAIResearch"]
 
-APEX_KEYWORDS = ["apex-agents", "apex agents", "apex-swe", "apex swe", "apex-ace", "apex ace"]
+APEX_KEYWORDS = [
+    "apex-agents", "apex agents",
+    "apex-swe", "apex swe",
+    "apex-ace", "apex ace",
+    "apex-accounting", "apex accounting",
+]
 TWEET_CACHE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tweet_cache.json")
 
 
@@ -162,7 +167,7 @@ def discover_personal_tweets(cache):
                 if t["id"] in tweets:
                     continue
                 full_text = t.get("text", "")
-                if not any(kw in full_text.lower() for kw in APEX_KEYWORDS):
+                if not matches_apex(full_text):
                     continue
                 m = t.get("public_metrics", {})
                 tweets[t["id"]] = {
@@ -188,6 +193,7 @@ def discover_third_party_mentions(cache):
     tweets = cache.setdefault("tweets", {})
     query = (
         '("apex-agents" OR "apex agents" OR "apex-swe" OR "apex swe" '
+        'OR "apex-accounting" OR "apex accounting" '
         'OR ("apex-ace" mercor) OR ("apex ace" mercor) OR (apex mercor)) '
         '-from:mercor_ai -from:BrendanFoody -from:adarsh_exe '
         '-"apex legends" -"apex predator" -"apex folders" -is:retweet lang:en'
@@ -277,7 +283,7 @@ def discover_watched_account_tweets(cache):
                 if t["id"] in tweets:
                     continue
                 full_text = t.get("note_tweet", {}).get("text") or t.get("text", "")
-                if not any(kw in full_text.lower() for kw in APEX_KEYWORDS):
+                if not matches_apex(full_text):
                     continue
                 m = t.get("public_metrics", {})
                 tweets[t["id"]] = {
@@ -296,6 +302,65 @@ def discover_watched_account_tweets(cache):
                 break
             params["pagination_token"] = next_token
     print(f"Found {new_count} new APEX posts from watched accounts ({', '.join('@' + u for u in WATCHED_TWITTER_USERNAMES)})")
+
+
+def discover_apex_retweets(cache):
+    headers = {"Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"}
+    tweets = cache.setdefault("tweets", {})
+    query = (
+        "(retweets_of:mercor_ai OR retweets_of:BrendanFoody OR retweets_of:adarsh_exe) "
+        "is:retweet"
+    )
+    params = {
+        "query": query,
+        "max_results": 100,
+        "tweet.fields": "created_at,text,public_metrics,referenced_tweets",
+        "expansions": "referenced_tweets.id",
+    }
+    new_count = 0
+    while True:
+        try:
+            resp = requests.get("https://api.twitter.com/2/tweets/search/recent", headers=headers, params=params)
+        except Exception as e:
+            print(f"APEX retweet search connection error: {e} — skipping")
+            break
+        if not resp.ok:
+            print(f"APEX retweet search returned {resp.status_code} — skipping")
+            break
+        try:
+            data = resp.json()
+        except Exception as e:
+            print(f"APEX retweet response parse error: {e} — skipping")
+            break
+        if "errors" in data and "data" not in data:
+            print(f"Twitter API error in APEX retweet search: {data['errors']} — skipping")
+            break
+        ref_map = {t["id"]: t for t in data.get("includes", {}).get("tweets", [])}
+        for t in data.get("data", []):
+            if t["id"] in tweets:
+                continue
+            original_text = ""
+            for ref in t.get("referenced_tweets", []):
+                if ref["type"] == "retweeted":
+                    original_text = ref_map.get(ref["id"], {}).get("text", "")
+                    break
+            if not matches_apex(original_text):
+                continue
+            m = t.get("public_metrics", {})
+            tweets[t["id"]] = {
+                "date": t["created_at"][:10],
+                "account": "3rd Party",
+                "text": t.get("text", ""),
+                "link": f"https://twitter.com/i/web/status/{t['id']}",
+                "impressions": m.get("impression_count", 0),
+                "engagements": m.get("like_count", 0) + m.get("retweet_count", 0) + m.get("reply_count", 0),
+            }
+            new_count += 1
+        next_token = data.get("meta", {}).get("next_token")
+        if not next_token or not data.get("data"):
+            break
+        params["next_token"] = next_token
+    print(f"Discovered {new_count} new APEX retweets of Mercor accounts")
 
 
 def refresh_tweet_impressions(cache):
@@ -352,8 +417,22 @@ def cache_to_posts(cache):
     return posts
 
 
+def matches_apex(text):
+    """True if a post is about an APEX benchmark.
+
+    Either a named benchmark keyword, or the words "apex" and "mercor" together —
+    the search query already asks X for `(apex mercor)`, so without this clause the
+    filter threw those results away after paying for them. Kept as a function so
+    all four call sites share one definition.
+    """
+    t = (text or "").lower()
+    if any(kw in t for kw in APEX_KEYWORDS):
+        return True
+    return "apex" in t and "mercor" in t
+
+
 def is_apex_post(post):
-    return any(kw in (post.get("text") or "").lower() for kw in APEX_KEYWORDS)
+    return matches_apex(post.get("text"))
 
 
 def get_account(post, profile_map):
@@ -779,6 +858,8 @@ if __name__ == "__main__":
     discover_third_party_mentions(cache)
     print("Discovering watched account tweets...")
     discover_watched_account_tweets(cache)
+    print("Discovering APEX retweets of Mercor accounts...")
+    discover_apex_retweets(cache)
     print("Refreshing tweet impressions...")
     refresh_tweet_impressions(cache)
     cache["initialized"] = True
