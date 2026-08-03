@@ -34,7 +34,14 @@ TWITTER_PERSONAL_ACCOUNTS = {
 # Accounts monitored directly (full note_tweet text checked — bypasses Twitter search truncation)
 WATCHED_TWITTER_USERNAMES = ["ArtificialAnlys", "EpochAIResearch"]
 
-APEX_KEYWORDS = ["apex-agents", "apex-swe", "apex-agents-aa"]
+# Must stay in step with the search query below, which already asks X for the
+# space-separated and -ace forms — filtering on hyphens only threw those away.
+APEX_KEYWORDS = [
+    "apex-agents", "apex agents", "apex-agents-aa",
+    "apex-swe", "apex swe",
+    "apex-ace", "apex ace",
+    "apex-accounting", "apex accounting",
+]
 
 TWEET_CACHE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tweet_cache.json")
 
@@ -164,6 +171,7 @@ def discover_third_party_mentions(cache):
     tweets = cache.setdefault("tweets", {})
     query = (
         '("apex-agents" OR "apex agents" OR "apex-swe" OR "apex swe" '
+        'OR "apex-accounting" OR "apex accounting" '
         'OR ("apex-ace" mercor) OR ("apex ace" mercor) OR (apex mercor)) '
         '-from:mercor_ai -from:BrendanFoody -from:adarsh_exe '
         '-"apex legends" -"apex predator" -"apex folders" -is:retweet lang:en'
