@@ -591,21 +591,51 @@ def load_baseline():
 
 
 def save_baseline(merged):
-    with open(BASELINE_PATH, "w") as f:
-        json.dump({m: dict(v) for m, v in merged.items()}, f, indent=2)
+    """Write the baseline atomically.
+
+    Opening the real path for writing truncates it before the payload is built,
+    so any error in between leaves an empty file and the next run cannot start.
+    Serialise first, write to a temp file, then replace.
+
+    Months map to dicts; "_logic_version" is a bare string, so non-dict values
+    pass through untouched instead of being dict()-ed.
+    """
+    payload = json.dumps({m: (dict(v) if isinstance(v, dict) else v)
+                          for m, v in merged.items()}, indent=2)
+    tmp = BASELINE_PATH + ".tmp"
+    with open(tmp, "w") as f:
+        f.write(payload)
+    os.replace(tmp, BASELINE_PATH)
 
 
 def merge_with_baseline(fresh, baseline):
-    current_month = datetime.now(timezone.utc).strftime("%Y-%m")
-    merged = defaultdict(lambda: defaultdict(int))
+    """Keep the higher of fresh vs baseline for past months, so a failed API call
+    cannot silently delete history.
 
+    The catch: that also cements an over-count, because a corrected — lower —
+    number can never win. So when the baseline was produced by an older version of
+    the counting rules, take fresh wholesale and let the correction land. That
+    happens once per rules change; every other run keeps the max() protection.
+    """
+    current_month = datetime.now(timezone.utc).strftime("%Y-%m")
+    stamped = baseline.get("_logic_version")
+    accept_corrections = stamped != apex_social.LOGIC_VERSION
+    if accept_corrections:
+        print(f"Baseline was built by rules '{stamped}', now '{apex_social.LOGIC_VERSION}' "
+              f"— taking fresh values so corrections apply")
+
+    merged = defaultdict(lambda: defaultdict(int))
     all_months = set(fresh.keys()) | set(baseline.keys())
     for month in all_months:
+        if month.startswith("_"):
+            continue                        # metadata key, not a month
         for key in set(fresh.get(month, {}).keys()) | set(baseline.get(month, {}).keys()):
             fresh_val = fresh.get(month, {}).get(key, 0)
             base_val = baseline.get(month, {}).get(key, 0)
-            # Current month: always use fresh data; past months: take the max
-            merged[month][key] = fresh_val if month == current_month else max(fresh_val, base_val)
+            if month == current_month or accept_corrections:
+                merged[month][key] = fresh_val
+            else:
+                merged[month][key] = max(fresh_val, base_val)
 
     return merged
 
@@ -642,7 +672,22 @@ if __name__ == "__main__":
 
     baseline = load_baseline()
     monthly = merge_with_baseline(fresh_monthly, baseline)
-    save_baseline(monthly)
+
+    problems = apex_social.validate_monthly(monthly)
+    if problems:
+        # Never publish numbers that fail their own invariants. Say so instead.
+        print("VALIDATION FAILED — refusing to send the report:")
+        for p in problems:
+            print(f"  {p}")
+        send_to_slack({"blocks": [{"type": "section", "text": {"type": "mrkdwn",
+            "text": ("*:red_circle: APEX Social Report withheld*\n"
+                     "The numbers failed validation, so nothing was published.\n```"
+                     + "\n".join(problems[:8]) + "```")}}]})
+        raise SystemExit(1)
+
+    stamped = dict(monthly)
+    stamped["_logic_version"] = apex_social.LOGIC_VERSION
+    save_baseline(stamped)
     print("Baseline updated.")
 
     message = format_slack_message(monthly, post_log, profile_map)

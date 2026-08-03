@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
+      # Fail before publishing, not after. Every assertion in here is a bug that
+      # once shipped silently — a dropped keyword, a post counted twice, a quote
+      # in the wrong bucket. No network or secrets needed.
+      - name: Check the counting rules
+        run: python test_apex_social.py
+
       - name: Run social report
         env:
           SPROUT_API_TOKEN: ${{ secrets.SPROUT_API_TOKEN }}

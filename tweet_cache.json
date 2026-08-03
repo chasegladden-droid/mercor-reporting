@@ -410,7 +410,7 @@
       "account": "3rd Party",
       "text": "Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it. https://t.co/zrirfMHCwI",
       "link": "https://twitter.com/i/web/status/2057460544643404125",
-      "impressions": 479333,
+      "impressions": 479337,
       "engagements": 2044,
       "quoted_id": null
     },
@@ -465,7 +465,7 @@
       "text": "GPT 5.4 is the best model we\u2019ve ever tested on APEX-Agents. It\u2019s also the first model to pass 50% mean score.\n\nA year ago, frontier models couldn\u2019t even edit an Excel sheet and scored less than 5%. Now, in less than 3 months GPT 5.4 has improved by 15.7%.\n\nChatGPT will imminently https://t.co/Hl02CHot3U",
       "link": "https://twitter.com/i/web/status/2029626860083237231",
       "impressions": 95382,
-      "engagements": 908,
+      "engagements": 909,
       "quoted_id": null
     },
     "2026408081006248108": {
@@ -761,7 +761,7 @@
       "account": "3rd Party",
       "text": "Models now qualify for every major accounting accreditation\u2014the CB, CPB, CPA, CMA, and CIA were all saturated 24 months ago.  \n\nBut can they actually do real-world accounting work to a standard you would trust?\n\nWe built APEX-Accounting with @tryramp to put models to the test \ud83d\udc47 https://t.co/vth9L7EMb6",
       "link": "https://twitter.com/i/web/status/2083248698415575097",
-      "impressions": 348,
+      "impressions": 349,
       "engagements": 6,
       "quoted_id": "2083241469717119392"
     },
@@ -1463,8 +1463,8 @@
       "account": "3rd Party",
       "text": "Grok places second after Fable on real-world software engineering [QT: @mercor_ai APEX-SWE]",
       "link": "https://twitter.com/elonmusk/status/2075814989953114259",
-      "impressions": 2632621,
-      "engagements": 14123,
+      "impressions": 2632629,
+      "engagements": 14120,
       "quoted_id": "2075792789690888640"
     },
     "2077077092207067331": {
@@ -1472,7 +1472,7 @@
       "account": "3rd Party",
       "text": "Mercor's APEX benchmark tests whether frontier models can do the actual work of investment banking associates, management consultants, big law associates, and physicians. Every source document in it was parsed by Reducto.\n\nAPEX-v1-extended grades 10 frontier models against 400 https://t.co/KB8W5ZAzlS",
       "link": "https://twitter.com/i/web/status/2077077092207067331",
-      "impressions": 2091,
+      "impressions": 2092,
       "engagements": 19,
       "quoted_id": null
     },
@@ -1572,7 +1572,7 @@
       "text": "Grok 4.5 hits #2 on the APEX-SWE leaderboard at 51.2% Pass@1 on real-world software engineering tasks. \n\nLeads Integration (65%) and shows a 30+ point jump from Grok 4 in one year. \n\nStrong progress on agentic coding workflows. Congrats to the xAI team! \ud83d\ude80 https://t.co/wWbGjgegKA https://t.co/I0337etC34",
       "link": "https://twitter.com/i/web/status/2076190649267675517",
       "impressions": 16735,
-      "engagements": 201,
+      "engagements": 200,
       "quoted_id": "2075814989953114259"
     },
     "2076188564866334784": {

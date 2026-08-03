@@ -195,6 +195,47 @@ def apply_quotes(monthly, post_log, bucketed):
     return monthly, post_log
 
 
+# Bump when a change to the rules above legitimately alters historic numbers.
+# merge_with_baseline keeps the higher of fresh vs baseline for past months, to
+# stop a failed API call silently deleting history. The side effect is that an
+# over-count gets cemented forever and no correction can ever land. Stamping the
+# baseline with the version that produced it lets a real correction through
+# exactly once, while keeping the API-blip protection every other run.
+LOGIC_VERSION = "2026-08-03.quotes-dedupe-2nddegree"
+
+
+def validate_monthly(monthly, tolerance=2):
+    """Invariants that must hold before numbers are published anywhere.
+
+    Returns a list of human-readable problems; empty means good. Cheap and
+    dependency-free so the Slack report can run it right before it sends, and
+    refuse to publish rather than publish something wrong.
+    """
+    # build_report writes per-account keys and roll-ups into the same dict, so a
+    # naive "every LinkedIn key" sum counts LinkedIn Total on top of its own parts.
+    rollups = {"Total Impressions", "Twitter Total Impressions",
+               "LinkedIn Total Impressions", "Total Engagements"}
+    problems = []
+    for month in sorted(monthly):
+        m = monthly[month]
+        x = sum(m.get(f"{b} Impressions", 0) for b in X_BUCKETS)
+        li = sum(v for k, v in m.items()
+                 if k.endswith(" Impressions") and "LinkedIn" in k
+                 and k not in rollups)
+        stated_x = m.get("Twitter Total Impressions", 0)
+        stated_total = m.get("Total Impressions", 0)
+
+        if abs(x - stated_x) > tolerance:
+            problems.append(f"{month}: X columns sum to {x:,} but X total says {stated_x:,}")
+        if abs((x + li) - stated_total) > tolerance:
+            problems.append(f"{month}: columns sum to {x + li:,} but total says "
+                            f"{stated_total:,}")
+        for k, v in m.items():
+            if k.endswith("Impressions") and v < 0:
+                problems.append(f"{month}: {k} is negative ({v:,})")
+    return problems
+
+
 def second_degree_by_month(cache):
     """Reach of quotes of third-party posts that themselves quote us.
 
