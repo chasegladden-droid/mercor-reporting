@@ -147,7 +147,7 @@ def discover_personal_tweets(cache):
                 if t["id"] in tweets:
                     continue
                 full_text = t.get("text", "")
-                if not any(kw in full_text.lower() for kw in APEX_KEYWORDS):
+                if not matches_apex(full_text):
                     continue
                 m = t.get("public_metrics", {})
                 tweets[t["id"]] = {
@@ -259,7 +259,7 @@ def discover_watched_account_tweets(cache):
                 if t["id"] in tweets:
                     continue
                 full_text = t.get("note_tweet", {}).get("text") or t.get("text", "")
-                if not any(kw in full_text.lower() for kw in APEX_KEYWORDS):
+                if not matches_apex(full_text):
                     continue
                 m = t.get("public_metrics", {})
                 tweets[t["id"]] = {
@@ -332,8 +332,22 @@ def cache_to_posts(cache):
     return posts
 
 
+def matches_apex(text):
+    """True if a post is about an APEX benchmark.
+
+    Either a named benchmark keyword, or the words "apex" and "mercor" together —
+    the search query already asks X for `(apex mercor)`, so without this clause the
+    filter threw those results away after paying for them. Kept as a function so
+    all four call sites share one definition.
+    """
+    t = (text or "").lower()
+    if any(kw in t for kw in APEX_KEYWORDS):
+        return True
+    return "apex" in t and "mercor" in t
+
+
 def is_apex_post(post):
-    return any(kw in (post.get("text") or "").lower() for kw in APEX_KEYWORDS)
+    return matches_apex(post.get("text"))
 
 
 def get_account(post, profile_map):
