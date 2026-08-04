@@ -9,3 +9,4 @@ social_report.log
 marketing-reports/daily-social-report/refresh_dash_social.log
 marketing-reports/daily-social-report/social_audit.csv
 marketing-reports/daily-social-report/reconcile_snapshot.json
+x_spend_cache.json
