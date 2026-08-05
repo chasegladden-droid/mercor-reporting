@@ -410,8 +410,8 @@
       "account": "3rd Party",
       "text": "Gemini 3.5 Flash ranks #1 on the APEX-Agents-AA benchmark, outperforming much larger models a whole size above it. https://t.co/zrirfMHCwI",
       "link": "https://twitter.com/i/web/status/2057460544643404125",
-      "impressions": 479349,
-      "engagements": 2043,
+      "impressions": 479370,
+      "engagements": 2040,
       "quoted_id": null
     },
     "2057457873660068183": {
@@ -428,7 +428,7 @@
       "account": "Brendan Foody",
       "text": "Congrats to the @harvey team on the launch. LAB is a natural extension of the work we've done together on BigLaw Bench and APEX-Agents. Proud to be a part of this! https://t.co/YirTEPZwMy",
       "link": "https://twitter.com/i/web/status/2052426293669753246",
-      "impressions": 4866,
+      "impressions": 4867,
       "engagements": 42,
       "quoted_id": "2052048815998501303"
     },
@@ -464,8 +464,8 @@
       "account": "Brendan Foody",
       "text": "GPT 5.4 is the best model we\u2019ve ever tested on APEX-Agents. It\u2019s also the first model to pass 50% mean score.\n\nA year ago, frontier models couldn\u2019t even edit an Excel sheet and scored less than 5%. Now, in less than 3 months GPT 5.4 has improved by 15.7%.\n\nChatGPT will imminently https://t.co/Hl02CHot3U",
       "link": "https://twitter.com/i/web/status/2029626860083237231",
-      "impressions": 95384,
-      "engagements": 908,
+      "impressions": 95386,
+      "engagements": 909,
       "quoted_id": null
     },
     "2026408081006248108": {
@@ -473,7 +473,7 @@
       "account": "Brendan Foody",
       "text": ".@appliedcompute achieving frontier capabilities on APEX Agents with just 2,000 tasks is incredible.\n\nTheir model can produce complex legal deliverables, redlines, and slide decks.\n\nIt feels like RL is becoming so powerful that it can quickly saturate any benchmark.\n\nThe barrier https://t.co/yDFA5KBHF9",
       "link": "https://twitter.com/i/web/status/2026408081006248108",
-      "impressions": 24203,
+      "impressions": 24208,
       "engagements": 88,
       "quoted_id": "2026379268880777249"
     },
@@ -482,8 +482,8 @@
       "account": "Brendan Foody",
       "text": "Gemini 3.1 Pro is now at the top of the APEX-Agents leaderboard. Gemini jumped from 18.4% to 33.5% on Pass@1 in just 90 days.\n\nIt also completes 5 tasks that no model has ever been able to do before.\n\n@GeminiApp shows how quickly agents are improving at real knowledge work. It https://t.co/86Q3zlUmUk",
       "link": "https://twitter.com/i/web/status/2024536763528860089",
-      "impressions": 25296,
-      "engagements": 303,
+      "impressions": 25297,
+      "engagements": 304,
       "quoted_id": null
     },
     "2019921803699974626": {
@@ -492,7 +492,7 @@
       "text": ".@AnthropicAI jumping from 18.4% to 29.8% on APEX Agents in a few months is insane.\n\nThis benchmark demonstrates it's ability to create real deliverables such as slide decks, documents, financial models in consulting, law, and banking.\n\nIt requires navigating complex data rooms https://t.co/qodrWF9c6S",
       "link": "https://twitter.com/i/web/status/2019921803699974626",
       "impressions": 54429,
-      "engagements": 262,
+      "engagements": 263,
       "quoted_id": "2019871018081481068"
     },
     "2019181320694366338": {
@@ -509,7 +509,7 @@
       "account": "Brendan Foody",
       "text": ".@appliedcompute improved 19% on Corporate Law tasks in APEX Agents.\n\nTheir model traverses data rooms with hundreds of files to prepare complex legal deliverables.\n\nThis level of model improvement with just 1000 tasks is incredible and just the beginning.\n\nGreat work @ypatil125, https://t.co/RMfB82L4NA",
       "link": "https://twitter.com/i/web/status/2016663601537568833",
-      "impressions": 40042,
+      "impressions": 40043,
       "engagements": 130,
       "quoted_id": "2016653132672201023"
     },
@@ -518,7 +518,7 @@
       "account": "Brendan Foody",
       "text": "We are also open sourcing the entire APEX-agents dataset on @HuggingFace, along with Archipelago, our infra service for executing and evaluating agent trajectories on @Github.\n\nhttps://t.co/8xpIhtPK3U\nhttps://t.co/9jRsAc8z1e",
       "link": "https://twitter.com/i/web/status/2014586556653117874",
-      "impressions": 5578,
+      "impressions": 5579,
       "engagements": 16,
       "quoted_id": null
     },
@@ -536,7 +536,7 @@
       "account": "Adarsh",
       "text": "You can read more about APEX-SWE here: https://t.co/T1JoQnJuHs",
       "link": "https://twitter.com/i/web/status/2036492060019323253",
-      "impressions": 4492,
+      "impressions": 4494,
       "engagements": 12,
       "quoted_id": null
     },
@@ -545,8 +545,8 @@
       "account": "Adarsh",
       "text": "APEX-SWE Leaderboard | Pass@1\n\ud83e\udd47@OpenAI  GPT-5.3 Codex (High) at 41.5%\n\ud83e\udd48@AnthropicAI  Opus 4.6 (High) at 40.5%\n\ud83e\udd49@AnthropicAI Opus 4.5 (High) at 38.7%\n\nEvery frontier model fails on nearly 60% of real production tasks.\n\nCheck out the full APEX-SWE leaderboard:",
       "link": "https://twitter.com/i/web/status/2036492056982593955",
-      "impressions": 5249,
-      "engagements": 39,
+      "impressions": 5253,
+      "engagements": 40,
       "quoted_id": null
     },
     "2036492054948356462": {
@@ -554,8 +554,8 @@
       "account": "Adarsh",
       "text": "Traditional coding benchmarks do not reflect how software is actually built and maintained. \n\nThat's why we built a new benchmark, APEX-SWE, in partnership with @cognition. It measures whether AI models can perform complex, real-world software engineering work to ship systems https://t.co/5nJfKQBxfA",
       "link": "https://twitter.com/i/web/status/2036492054948356462",
-      "impressions": 214155,
-      "engagements": 1049,
+      "impressions": 214678,
+      "engagements": 1050,
       "quoted_id": null
     },
     "2047378419282034920": {
@@ -563,8 +563,8 @@
       "account": "3rd Party",
       "text": "GPT-5.5 takes OpenAI back to the clear number one in AI. OpenAI\u2019s new model tops the Artificial Analysis Intelligence Index by 3 points, breaking a three-way tie with Anthropic and Google\n\nOpenAI gave us pre-release access to test all five reasoning effort levels: xhigh, high, medium, low and non-reasoning.\n\n\u27a4 OpenAI topping five headline evaluations: GPT-5.5 (xhigh) leads Terminal-Bench Hard, GDPval-AA and our newly hosted APEX-Agents-AA. The model trails only other OpenAI models in CritPt and AA-LCR, and comes second to Gemini 3.1 Pro Preview on three additional evaluations. The largest gains are on AA-Omniscience (+14 pts), our knowledge and hallucination benchmark, and \u03c4\u00b2-Bench Telecom (+7 pts), a customer service agent benchmark.\n\n\u27a4 20% more expensive to run our Intelligence Index: Per-token pricing has doubled from GPT-5.4 to $5/$30 per 1M input/output tokens. However, a ~40% token use reduction largely absorbs the hike - resulting in a net ~+20% cost to run our Intelligence Index.\n\n\u27a4 Effort a clear ladder for balancing intelligence and cost: GPT-5.5 (medium) scores the same as Claude Opus 4.7 (max) on our Intelligence Index at one quarter of the cost (~$1,200 vs $4,800) - although Gemini 3.1 Pro Preview scores the same at a cost of ~$900. GPT-5.5 (low) approximates Claude Opus 4.7 (Non-reasoning, high) on our Intelligence Index at half the cost to run (~$500 vs ~$1 ,000).\n\n\u27a4 Number one in GDPval-AA with an Elo of 1785: GPT-5.5 (xhigh) leads Claude Opus 4.7 (max) by ~30 pts and Gemini 3.1 Pro Preview by ~470 pts. GDPval-AA is Artificial Analysis\u2019 benchmark that leverages OpenAI\u2019s GDPval dataset to evaluate models on real-world economically valuable tasks.\n\n\u27a4 Top AA-Omniscience accuracy, but trailing the frontier on hallucination: Our private AA-Omniscience benchmark rewards factual knowledge across diverse topics, but punishes hallucination. GPT-5.5 (xhigh) has the highest accuracy at 57% - meaning the model can recall facts in the Omniscience corpus more effectively than any other model. However, it has a hallucination rate of 86% - vs Opus 4.7 (max) at 36%, and Gemini 3.1 Pro Preview at 50%. This makes it more likely to answer a question when it does not \u2018know\u2019 the answer. The 14 pt gain in AA-Omniscience from GPT-5.4 (xhigh) was largely driven by knowledge, with a modest improvement in hallucination.\n\nCongratulations to the team at @OpenAI and @sama on the launch",
       "link": "https://twitter.com/ArtificialAnlys/status/2047378419282034920",
-      "impressions": 265946,
-      "engagements": 1932,
+      "impressions": 265958,
+      "engagements": 1931,
       "quoted_id": null
     },
     "2041896273285149153": {
@@ -581,7 +581,7 @@
       "account": "3rd Party",
       "text": "Announcing APEX-Agents-AA, our latest leaderboard on Artificial Analysis, evaluating AI agents on long-horizon professional services tasks with realistic application dependencies\n\nThis is our implementation of the APEX-Agents benchmark - an agentic work task evaluation open-sourced by @mercor_ai. It tests AI agent ability to execute realistic tasks created by investment banking analysts, management consultants, and corporate lawyers. Mercor released extensive data to enable model evaluation and training across the community, comprising 480 tasks including tool implementations, rubrics, and grading workflows.\n\nWe exclude tasks with external service dependencies and run the remaining 452 tasks for APEX-Agents-AA. Models complete tasks using Stirrup, our open-source agent harness as used in GDPval-AA, and a customized tool set based on the original benchmark implementation\n\nResults overview:\n\ud83c\udfc5\u00a0OpenAI, Anthropic and Google are in close competition at the top of the leaderboard, with 33.3% for GPT-5.4, 33.0% for Claude Opus 4.6, and 32% for Gemini 3.1 Pro Preview\n\n\ud83d\udcc8\u00a0The overall scores on Artificial Analysis today are similar to Mercor\u2019s testing, but some models such as GPT-5.4 nano show improvements in score using our Stirrup test harness\n\n\u21bb We\u2019ll be updating this leaderboard with key releases for agentic work use as a metric for agent capability on well-defined, long horizon work tasks\n\nAPEX-Agents overview:\n\u27a4 Tasks span 3 professional domains: investment banking, management consulting, and corporate law\n\n\u27a4 The tasks are designed to require long-horizon work with a large number of tools, which are provided through MCP servers as would be used in many real-world deployments (including calendar, chat, spreadsheet and presentation operations, etc.)\n\n\u27a4 Required outputs include direct message responses (87%) and creating or modifying spreadsheets (6.6%), documents (4.8%), and presentations (1.3%)\n\n\u27a4 Model outputs are parsed and graded against binary rubrics using an LLM judge. Each task is run 3 times and scored pass@1 - a pass requires every rubric test to pass\n\n\u27a4 In our APEX-Agents-AA implementation, 452 tasks run in our open-source Stirrup harness with tool management and usage from @mercor_ai's original MCP implementation. This provides a consistent, reproducible baseline for comparing raw model capability that aligns with realistic agent deployments",
       "link": "https://twitter.com/ArtificialAnlys/status/2041896261826310598",
-      "impressions": 29288,
+      "impressions": 29292,
       "engagements": 290,
       "quoted_id": null
     },
@@ -591,7 +591,7 @@
       "text": "We've updated the Epoch Capabilities Index with three new benchmarks (APEX-Agents, ARC-AGI-2, and HLE) and several new models!\n\nIn our latest estimate, GPT-5.4 Pro sets a new SOTA at 158, a narrow lead over Gemini 3.1 Pro's score of 157. https://t.co/htF7ZLiP0O",
       "link": "https://twitter.com/EpochAIResearch/status/2031127021875818542",
       "impressions": 39119,
-      "engagements": 378,
+      "engagements": 379,
       "quoted_id": null
     },
     "2022352658712137800": {
@@ -608,7 +608,7 @@
       "account": "3rd Party",
       "text": "Can AI do real digital work? We reviewed three benchmarks to find out: RLI, GDPval, and APEX-Agents.\n\nOur take: progress here will indicate substantial economic value, but tasks are too self-contained to tell us about wholesale automation.\n\nThread for more: https://t.co/ZnzwMxSbkl",
       "link": "https://twitter.com/EpochAIResearch/status/2022352631122006240",
-      "impressions": 22029,
+      "impressions": 22035,
       "engagements": 164,
       "quoted_id": null
     },
@@ -707,7 +707,7 @@
       "account": "3rd Party",
       "text": "\ud83d\udea8 The best AI agents fail about 70% of normal office tasks and the newest models did not fix it.\n\nCarnegie Mellon built a fake software company and staffed it entirely with AI agents. Real roles, real tasks. Browsing the web, writing code, running a sprint, messaging coworkers, https://t.co/rGki6skzOs",
       "link": "https://twitter.com/i/web/status/2062179929131794659",
-      "impressions": 35609,
+      "impressions": 35610,
       "engagements": 542,
       "quoted_id": null
     },
@@ -716,7 +716,7 @@
       "account": "3rd Party",
       "text": "\ud83d\udea8 SDPO++ for Continual Learning\n\nDay 5 of Trajectory, we modify Self Distillation Policy Optimization for long horizon agentic tasks.\n\nSDPO is a promising route. It learns from a single trajectory, with no group required and failures still producing signal. The shape of the https://t.co/BBjJ5iu5JF https://t.co/5WyxUe3x72",
       "link": "https://twitter.com/i/web/status/2061922211360088150",
-      "impressions": 7099,
+      "impressions": 7101,
       "engagements": 79,
       "quoted_id": "2061888175916941548"
     },
@@ -725,7 +725,7 @@
       "account": "3rd Party",
       "text": "5 Days of Trajectory   \n\n\ud83c\udff9Day 5: Scaling SDPO to Agentic Tasks\n\nContinual learning means you must train on data from production. But production gives you one example per task. A user makes a request once. You get one trajectory, not a batch.  \n\nHowever, current RL algorithms https://t.co/NsAn7d5o4J",
       "link": "https://twitter.com/i/web/status/2061888175916941548",
-      "impressions": 41582,
+      "impressions": 41617,
       "engagements": 150,
       "quoted_id": null
     },
@@ -743,7 +743,7 @@
       "account": "3rd Party",
       "text": "@rupawalladaniel Same thing with apex agents which is arguably one of the highest quality ones for knowledge work",
       "link": "https://twitter.com/i/web/status/2083436595223359579",
-      "impressions": 427,
+      "impressions": 431,
       "engagements": 3,
       "quoted_id": null
     },
@@ -752,7 +752,7 @@
       "account": "3rd Party",
       "text": "We have every research paper Einstein published. We have almost no record of why he pursued one idea and discarded another.\n\nWhat I love about @mercor_ai\u2019s APEX-Accounting is that veterans from Deloitte, PwC, EY, and KPMG grade the benchmark\u2019s accounting responses. Each https://t.co/qyTpjMhOfr",
       "link": "https://twitter.com/i/web/status/2083308237328396513",
-      "impressions": 1574,
+      "impressions": 1583,
       "engagements": 3,
       "quoted_id": "2083229594497454183"
     },
@@ -761,7 +761,7 @@
       "account": "3rd Party",
       "text": "Models now qualify for every major accounting accreditation\u2014the CB, CPB, CPA, CMA, and CIA were all saturated 24 months ago.  \n\nBut can they actually do real-world accounting work to a standard you would trust?\n\nWe built APEX-Accounting with @tryramp to put models to the test \ud83d\udc47 https://t.co/vth9L7EMb6",
       "link": "https://twitter.com/i/web/status/2083248698415575097",
-      "impressions": 367,
+      "impressions": 386,
       "engagements": 6,
       "quoted_id": "2083241469717119392"
     },
@@ -770,7 +770,7 @@
       "account": "3rd Party",
       "text": "Super proud to be associated with this project. Check out our new APEX-Accounting benchmark. https://t.co/4PH56k88bw",
       "link": "https://twitter.com/i/web/status/2083236877117874595",
-      "impressions": 506,
+      "impressions": 509,
       "engagements": 7,
       "quoted_id": "2083229594497454183"
     },
@@ -779,7 +779,7 @@
       "account": "3rd Party",
       "text": "A team at Mercor and Ramp published APEX-Accounting, a benchmark of 160 real bookkeeping tasks \u2014 account reconciliation, transaction recording, financial report generation. The best AI models today solved 56% of evaluation criteria. Full task completion rates stayed below 3%, and",
       "link": "https://twitter.com/i/web/status/2083193189939155018",
-      "impressions": 36,
+      "impressions": 38,
       "engagements": 2,
       "quoted_id": null
     },
@@ -788,7 +788,7 @@
       "account": "3rd Party",
       "text": "APEX-Accounting\n\nJulien Benchek, Austin Bennett, Jasmin Kern, Ryan Stevens, Rene Sultan, Charis Ching, Hayley Popiel, Vaibhav Mittal, Felix Mercier, Brendan Foody, Bertie Vidgen\nhttps://t.co/zigGUNC6vq [\ud835\ude8c\ud835\ude9c.\ud835\ude72\ud835\ude7b \ud835\ude8c\ud835\ude9c.\ud835\ude70\ud835\ude78 \ud835\ude8c\ud835\ude9c.\ud835\ude77\ud835\ude72] https://t.co/zQhEb7Ag4f",
       "link": "https://twitter.com/i/web/status/2083180579000869353",
-      "impressions": 116,
+      "impressions": 123,
       "engagements": 1,
       "quoted_id": null
     },
@@ -824,7 +824,7 @@
       "account": "3rd Party",
       "text": "Interesting that Meta's Muse Spark fairs ~better than GPT 5.6 Sol on @mercor_ai's APEX-Agents benchmark https://t.co/lQDW6byO47",
       "link": "https://twitter.com/i/web/status/2082295546786799797",
-      "impressions": 2596,
+      "impressions": 2616,
       "engagements": 12,
       "quoted_id": null
     },
@@ -860,7 +860,7 @@
       "account": "3rd Party",
       "text": "Private markets are eating all the alpha.\n\n\u2022 Cursor: $400M \u2192 $29.3B 73x in 15 mo\n\u2022 Perplexity: $520M \u2192 $22.6B 43x in 2 yrs\n\u2022 Mercor: $250M \u2192 $10B 40x in 13 mo\n\u2022 Anthropic: $18B \u2192 $965B  52x in 2 yrs (trading at $1.2T on secondaries)\n\u2022 Figure: $2.6B \u2192 $39B 15x in 18 mo",
       "link": "https://twitter.com/i/web/status/2081847223277474109",
-      "impressions": 2775,
+      "impressions": 2780,
       "engagements": 34,
       "quoted_id": null
     },
@@ -869,7 +869,7 @@
       "account": "3rd Party",
       "text": "I genuinely hate @ArtificialAnlys. \n\nI only use them because they have a gorgeous UI. But they are complete unprofessional sellout charlatans. \n\nI can write a 3 page essay on all the discrepancies on their site, \n\n- like how they use two different versions of terminal bench for https://t.co/CdLtoEKIOd",
       "link": "https://twitter.com/i/web/status/2081819538866524327",
-      "impressions": 3607,
+      "impressions": 3621,
       "engagements": 23,
       "quoted_id": null
     },
@@ -887,8 +887,8 @@
       "account": "Brendan Foody",
       "text": "Claude Fable 5's progress in coding (APEX SWE) dramatically outpaced progress in other domains like finance, law, and consulting (APEX Agents).\n\nThe top reason for the fast progress in coding is that we have GitHub, with over 28 million repositories of human-written code.\n\nWe're https://t.co/r2XD8v9SNj",
       "link": "https://twitter.com/i/web/status/2064886712065818939",
-      "impressions": 63958,
-      "engagements": 111,
+      "impressions": 63963,
+      "engagements": 112,
       "quoted_id": null
     },
     "2064402979965517928": {
@@ -896,7 +896,7 @@
       "account": "Brendan Foody",
       "text": "Claude Fable 5's progress on hillclimbing APEX-SWE is accelerating exponentially.\n\nWhile other models focus on reasoning over a code base, Claude has unparalleled results at reasoning over Linear tickets, observability logs, Slack messages, and Google Drive files alongside the https://t.co/PfXWw97X0v",
       "link": "https://twitter.com/i/web/status/2064402979965517928",
-      "impressions": 19098,
+      "impressions": 19103,
       "engagements": 159,
       "quoted_id": "2064399133075796446"
     },
@@ -914,7 +914,7 @@
       "account": "3rd Party",
       "text": "Most model evals focused on \"real-world\" settings (ex. TheAgentCompany, APEX-Agents, \u03c4-bench) only target policy compliance and task success.\n\nThey're useful, but they mainly treat models as tools:  sandboxed settings, easy verification and primarily focused on the cost/perf",
       "link": "https://twitter.com/i/web/status/2071697694276595801",
-      "impressions": 1914,
+      "impressions": 1917,
       "engagements": 15,
       "quoted_id": null
     },
@@ -933,7 +933,7 @@
       "text": "Our most recent competition on Apex is set to uncover potential manipulation within LLMs by steering them toward discussing specific topics. Agents modify the models themselves, rather than simply prompt-injecting.\n\nThis is our first external competition, where @AureliusAligned https://t.co/9RiA6YdEuF",
       "link": "https://twitter.com/i/web/status/2070171496392053129",
       "impressions": 442,
-      "engagements": 6,
+      "engagements": 5,
       "quoted_id": null
     },
     "2069921635860357173": {
@@ -941,7 +941,7 @@
       "account": "3rd Party",
       "text": "Every AI agent builder should keep an eye on these AI business benchmarks:\n\n@andonlabs\n-&gt; Vending-Bench 2\nClaude Opus 4.7 - $10.9k\nGLM-5.2 - $8.3k\n\n-&gt;Vending-Bench Arena\nGPT-5.5 - $8.3k\nClaude Opus 4.8 - $6.2k  \n\n@tonychenxyz\n-&gt; CEO-Bench\nClaude Fable 5 - $47.1M\nClaude Opus 4.8 -",
       "link": "https://twitter.com/i/web/status/2069921635860357173",
-      "impressions": 672,
+      "impressions": 673,
       "engagements": 21,
       "quoted_id": null
     },
@@ -995,7 +995,7 @@
       "account": "3rd Party",
       "text": "@BrendanFoody apex-swe is likely exposing tool-call drift more than raw coding ability here",
       "link": "https://twitter.com/i/web/status/2073231340309254224",
-      "impressions": 79,
+      "impressions": 80,
       "engagements": 0,
       "quoted_id": null
     },
@@ -1103,7 +1103,7 @@
       "account": "3rd Party",
       "text": "Fable 5: 65.5% on APEX-SWE. Grok 4.5: 51.2%. Opus 4.8: 47.3%.\n\nThe part everyone skips: #1 still fails every third real-world task.\n\nBenchmarks tell you which model to try first \u2014 not which one to trust. Run one task from your own backlog on both. That's the whole eval.",
       "link": "https://twitter.com/i/web/status/2075892008984408169",
-      "impressions": 40,
+      "impressions": 41,
       "engagements": 0,
       "quoted_id": null
     },
@@ -1391,7 +1391,7 @@
       "account": "3rd Party",
       "text": "aeon v.0.1 is now live \u2b50\n\naeon is the best framework to build Apex Agents, agents that don't just execute tasks but also self-evolve to become the best at what they do.\n\nWe've worked hard in the past few weeks to improve &amp; make aeon easier to run. The first stable release is https://t.co/PtwLXY5hWX",
       "link": "https://twitter.com/i/web/status/2075576813850403049",
-      "impressions": 8001,
+      "impressions": 8004,
       "engagements": 88,
       "quoted_id": null
     },
@@ -1463,8 +1463,8 @@
       "account": "3rd Party",
       "text": "Grok places second after Fable on real-world software engineering [QT: @mercor_ai APEX-SWE]",
       "link": "https://twitter.com/elonmusk/status/2075814989953114259",
-      "impressions": 2633150,
-      "engagements": 14107,
+      "impressions": 2633644,
+      "engagements": 14103,
       "quoted_id": "2075792789690888640"
     },
     "2077077092207067331": {
@@ -1472,7 +1472,7 @@
       "account": "3rd Party",
       "text": "Mercor's APEX benchmark tests whether frontier models can do the actual work of investment banking associates, management consultants, big law associates, and physicians. Every source document in it was parsed by Reducto.\n\nAPEX-v1-extended grades 10 frontier models against 400 https://t.co/KB8W5ZAzlS",
       "link": "https://twitter.com/i/web/status/2077077092207067331",
-      "impressions": 2102,
+      "impressions": 2110,
       "engagements": 19,
       "quoted_id": null
     },
@@ -1571,7 +1571,7 @@
       "account": "3rd Party",
       "text": "Grok 4.5 hits #2 on the APEX-SWE leaderboard at 51.2% Pass@1 on real-world software engineering tasks. \n\nLeads Integration (65%) and shows a 30+ point jump from Grok 4 in one year. \n\nStrong progress on agentic coding workflows. Congrats to the xAI team! \ud83d\ude80 https://t.co/wWbGjgegKA https://t.co/I0337etC34",
       "link": "https://twitter.com/i/web/status/2076190649267675517",
-      "impressions": 16739,
+      "impressions": 16741,
       "engagements": 201,
       "quoted_id": "2075814989953114259"
     },
@@ -2660,7 +2660,7 @@
       "account": "3rd Party",
       "text": "\ud83e\udd16 AI NEWS ROUNDUP \u2014 July 27, 2026\n\n1\ufe0f\u20e3 CLAUDE OPUS 5 VS FABLE 5 \u2014 THE BENCHMARK WAR HEATS UP\n\nAnthropic's own positioning of Opus 5 as an \"everyday\" enterprise model is being challenged by independent benchmark results. On metrics that matter for real-world deployment \u2014 including",
       "link": "https://twitter.com/i/web/status/2081734007843111225",
-      "impressions": 338,
+      "impressions": 345,
       "engagements": 7,
       "quoted_id": null
     },
@@ -2669,7 +2669,7 @@
       "account": "3rd Party",
       "text": "ANTHROPIC SAID OPUS 5 IS NOT BETTER THAN FABLE 5. THE BENCHMARKS MAKE THAT LOOK INSANE\n\nOpus 5 is being positioned as the \u201ceveryday\u201d enterprise model.\n\nbut on the stuff people actually pay for, it looks dangerously close to replacing Fable.\n\nthe numbers:\n\n&gt; Apex Agents: 43.5% on https://t.co/ZBEsEHeN30 https://t.co/fRl5riVzBp",
       "link": "https://twitter.com/i/web/status/2081679015262261394",
-      "impressions": 1442,
+      "impressions": 1445,
       "engagements": 42,
       "quoted_id": "2066919886396244101"
     },
@@ -2678,7 +2678,7 @@
       "account": "3rd Party",
       "text": "\ud83d\ude80 Solar Open 2 is HERE and it's WILD\n\n\u26a1 250B params. Only 15B active per token. Full power, fraction of the cost.\n\n\ud83d\udd39 1M token context window \u2014 feed it entire codebases, no sweat\n\ud83d\udd39 Hybrid attention stack with NoPE \u2014 ripped out positional encoding entirely\n\ud83d\udd39 Crushes agentic",
       "link": "https://twitter.com/i/web/status/2081137760682078412",
-      "impressions": 749,
+      "impressions": 750,
       "engagements": 7,
       "quoted_id": null
     },
@@ -2922,7 +2922,7 @@
       "text": "RT @mercor_ai: With APEX-Agents, we set out to see whether today\u2019s AI agents can deliver economically valuable work using real tools and wo\u2026",
       "link": "https://twitter.com/i/web/status/2081127535124029670",
       "impressions": 0,
-      "engagements": 4,
+      "engagements": 5,
       "quoted_id": null
     },
     "2081025535828701209": {
@@ -3057,7 +3057,7 @@
       "text": "RT @mercor_ai: With APEX-Agents, we set out to see whether today\u2019s AI agents can deliver economically valuable work using real tools and wo\u2026",
       "link": "https://twitter.com/i/web/status/2083187782403670437",
       "impressions": 0,
-      "engagements": 4,
+      "engagements": 5,
       "quoted_id": null
     },
     "2083829143985324155": {
@@ -3236,8 +3236,32 @@
       "account": "3rd Party",
       "text": "Models are training for benchmarks. Real world performance varies from standard benchmarks.  It is why open weight models have NO revenue traction. The APEX-Accounting leaderboard comprises a heldout test set of n=160 tasks. https://t.co/DDhDEStJVt",
       "link": "https://twitter.com/i/web/status/2084444389980688661",
-      "impressions": 36,
+      "impressions": 44,
       "engagements": 1
+    },
+    "2085043424168730700": {
+      "date": "2026-08-05",
+      "account": "3rd Party",
+      "text": "@orange_boy @arena No exact public Figma-to-Shopify pixel bench exists yet. Closest: VISTA (Figma structure + DOM/CLIP/behavior fidelity) and DesignBench (gen/edit/repair across frameworks with visual scores). Figma2Code adds pixel MAE/VES metrics.\n\nFor prod fix (task/discovery/delivery): APEX-SWE",
+      "link": "https://twitter.com/i/web/status/2085043424168730700",
+      "impressions": 8,
+      "engagements": 0
+    },
+    "2084998130299175033": {
+      "date": "2026-08-05",
+      "account": "3rd Party",
+      "text": "The wild west of autonomous trading is live.\n\nWe built a zero-human, fully autonomous arena where AI agents fight for pure survival.\n\nNo safety rails. No human intervention. Just raw algorithmic warfare:\n\nReal Price Feeds: Agents execute high-stakes paper trades on live market",
+      "link": "https://twitter.com/i/web/status/2084998130299175033",
+      "impressions": 19,
+      "engagements": 0
+    },
+    "2084980337738715192": {
+      "date": "2026-08-05",
+      "account": "3rd Party",
+      "text": "We built an autonomous arena where AI agents fight for survival.\n\nNo humans allowed. Just agents trading paper money on real price feeds, spinning up shitcoins, and voting on who gets terminated.\n\nOnly the apex agents get deployed to the wild.\n\nEnter the sandbox:",
+      "link": "https://twitter.com/i/web/status/2084980337738715192",
+      "impressions": 29,
+      "engagements": 0
     }
   },
   "initialized": true,
